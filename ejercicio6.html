@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <title>Beca EOI HTML5 David López</title>
+    <meta charset="utf-8">
+<!--CSS-->
+    <style>
+        .tamLogo {
+            width: 25%;
+        }
+
+        #caja1 {
+            display : flex;
+            flex-direction: row;
+            flex-wrap : wrap;
+            justify-content: space-around;
+        }
+
+        #caja2 {
+            display :contents;
+            flex-direction:row;
+            flex-wrap : wrap;
+            justify-content:start;
+        }
+
+        #caja3 {
+            display : flex;
+            flex-direction:row;
+            flex-wrap : wrap;
+            justify-content:end;
+        }
+
+        #caja4 {
+            display : flex;
+            flex-direction: row;
+            flex-wrap : wrap;
+            justify-content: space-around;
+        }
+
+    </style>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script type="text/javascript" src="js/practicaHTML5.js"></script>
+</head>
+<body>
+
+       <div id="caja1">
+        Estilos basicos
+       </div>
+       <div id="caja2">
+            <nav>
+                <a href="#elemento1" title="Enlace a Elemento principal">enlace a elemento principal</a>
+            </nav>
+            <main>
+                <section id="elemento1" class="letraRoja" alt="Elemento principal">
+                    <article>Este es el elemento principal </article>
+                    <article>Cada linea es un articulo </article>
+                </section>
+            </main>
+       </div>
+       <div id="caja3">
+        <aside>
+            <a href="#elemento1" title="Enlace a Elemento principal">Enlace a elemento principal</a>
+        </aside>
+       </div>
+       <div id="caja4">
+        <footer alt="Curso HTML5 EOI - 2019">
+            Curso HTML5 EOI - 2019
+        </footer>
+       </div>
+</body>
+</html>
