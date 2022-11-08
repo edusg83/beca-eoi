@@ -5,9 +5,14 @@
     <meta charset="utf-8">
 
     <style>
+        .tamLogo {
+            width: 25%;
+        }
+
         .letraRoja {
             color:#ab0000;
             background-color: black;
+            margin-bottom: 5%;
         }
     </style>
     <meta name="description" content="pagina de ejercicios">
@@ -17,10 +22,26 @@
     <script type="text/javascript" src="js/practicaHTML5.js"></script>
 </head>
 <body>
+    <header>
+        <img class="tamLogo" src="image/icon.png" alt="logotipo marca"> cabecera Web
+    </header>
+    <main>
+        <h1 class="letraRoja">Pagina de David</h1>
 
-Este es el curso HTML5 de EOI. Vamos a aprender todo lo necesario para poder realizar
-una página con HTML5 desde cero
-<h2 class="letraRoja">David</h2>
-<a href="https://www.google.es" target="_blank">gulugulu</a>
+        <section id="introduccion" class="letraRoja">
+            Este es el curso HTML5 de EOI. Vamos a aprender todo lo necesario para poder realizar
+            una página con HTML5 desde cero
+         </section>
+         <section id="introduccion2" class="letraRoja">
+            Este es el curso HTML5 de EOI. Vamos a aprender todo lo necesario para poder realizar
+            una página con HTML5 desde cero
+         </section>
+    </main>
+
+
+    <footer>
+        pie de pagina - <a href="mailto:info@nuestraweb.com" title="enlace a correo electronico"> info@nuestraweb.com</a>
+        <a href="https://www.google.com" target="_blank" title="nueva pagina: enlace a politica de privacidad">Politica de privacidad</a>
+    </footer>
 </body>
 </html>
