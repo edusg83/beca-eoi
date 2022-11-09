@@ -21,13 +21,18 @@
         <h1>Formulario</h1>
         <form id="formulario1"name="formulario1" action="">
             <fieldset>
-                <h3>Datos Personales</h3>
+                <h3>Datos de Verificación</h3>
                 <label id="etiqueta" for="nombreUsuario">Nombre del usuario</label>
-                <input type="text" name="nombreUsuario">
+                <input type="text" name="nombreUsuario" required>
+                <label id="etiqueta" for="password">Contraseña</label>
+                <input type="password" name="password" required>
+                <h3>Datos Personales</h3>
+                <label id="etiqueta" for="seguridadSocial">Nº seguridad social</label>
+                <input type="text" name="seguridadSocial" required>
                 <label id="etiqueta" for="email">Email</label>
                 <input type="email"name="email">
                 <label id="etiqueta" for="tel">Nº de tlf</label>
-                <input type="tel" name="tel">
+                <input type="tel" name="tel" multiple>
                 <h3>Datos de la Cita</h3>
                 <label id="etiqueta" for="fecha">Fecha de cita</label>
                 <input type="datetime-local" name="fecha">
