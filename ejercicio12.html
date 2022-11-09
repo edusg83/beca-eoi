@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<title>Curso HTML5 EOI</title>
+<style>
+    .centrar{
+        text-align: center;
+    }
+</style>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/practicaHTML5.css">
+<script type="text/javascript" src="js/practicaHTML5.js">
+</script>
+</head>
+<body>
+    <header class="centrar">
+        <h1>Elementos de texto</h1>
+    </header>
+    
+    <main id="main" class="main">
+        <h1>Formulario</h1>
+        <form id="formulario1"name="formulario1" action="">
+            <fieldset>
+                <h3>Datos Personales</h3>
+                <label id="etiqueta" for="nombreUsuario">Nombre del usuario</label>
+                <input type="text" name="nombreUsuario">
+                <label id="etiqueta" for="email">Email</label>
+                <input type="email"name="email">
+                <label id="etiqueta" for="tel">Nº de tlf</label>
+                <input type="tel" name="tel">
+                <h3>Datos de la Cita</h3>
+                <label id="etiqueta" for="fecha">Fecha de cita</label>
+                <input type="datetime-local" name="fecha">
+                <label id="etiqueta" for="motivo">Motivo de cita</label>
+                <select name="motivo" id="motivos">
+                    <option value="1">Revisión</option>
+                    <option value="2">Urgencia</option>
+                </select>
+                <label id="etiqueta" for="explicacion">Explicacion de la cita:</label>
+                <textarea name="explicacion" rows=“12” cols=“12”></textarea>
+                <datalist id="listaMedicos">
+                    <option value="Maria" label="medico1">
+                    <option value="Fernando" label="medico2">
+                </datalist>
+                    <label>Médico : <input type="text" name="medico" list="listaMedicos"></label>
+            </fieldset>
+        <button type="boton">Enviar</button>
+        <button type="reset">Reiniciar</button>
+        </form>
+    </main>
+    <footer id="pie">
+    </footer>
+    </body>
+</html>
