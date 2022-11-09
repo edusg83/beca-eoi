@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <title>Plantilla</title>
+    <meta charset="utf8">
+</head>
+<body>
+    <h1>Formularios</h1>
+
+    <form id="formulario1" name="formulario1">
+        <fieldset>
+            <label id="etiqueta" name="nombre usuario">Nombre de usuario:</label>
+            <input type="text" placeholder="Nombre de usuario"><br/>
+            <label id="etiqueta" name="contraseña">Contraseña:</label>
+            <input type="password" placeholder="Contraseña"><br/>
+            <input type="number" step="2"><br/>
+            <input type="checkbox"><br/>
+            <input type="search"><br/>
+            <input type="date"><br/>
+            <input type="datetime-local"><br/>
+            <button type="reset">reset</button><br/>
+            <textarea type="textarea"></textarea><br/>
+
+            <select>
+                <option value="1">Coche</option>
+                <option value="2">Moto</option>
+                <option value="3">Ciclomotor</option>
+                <option value="4">Camion</option>
+                <option value="5">bicileta</option>
+            </select><br/>
+
+            <meter value="60" min="0" max="100" low="40" high="80">60</meter>
+
+            <datalist id="listaTels">
+                <option value="122334" label="tlf1">
+                <option value="234324" label="tfl2">
+            </datalist>
+            <label> Telefono: <input type="tel" name="telefono" list="listaTels"></label>
+        </fieldset>
+
+        <button type="button">No envia</button><br/>
+        <button type="submit">Si envia</button><br/>
+    </form>
+
+
+
+</body>
+</html>
+
+

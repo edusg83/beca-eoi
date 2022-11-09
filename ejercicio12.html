@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <title>Elementos de texto</title>
+    <meta charset="utf8">
+
+    <style>        
+        #hora {
+        display : flex;
+        flex-direction: row;
+        flex-wrap : wrap;
+        justify-content:end;
+    }</style>
+
+</head>
+<body>
+    
+    <header alt="Elementos de texto">
+        DGT
+    </header>
+    <main>
+        <form id="formulario1" name="formulario1">
+            <fieldset title="Datos">
+                <legend>Datos Personales</legend>
+                <label id="usere" name="nombre usuario">Nombre de usuario:</label>
+                <input type="search" placeholder="Nombre de usuario">
+
+                <label id="password" name="contraseña">Contraseña:</label>
+                <input type="password" placeholder="Contraseña">
+
+                <label id="etiqueta" name="edad">Edad:</label>
+                <input type="number" step="1"><br/><br/>
+
+                <label id="carné" name="carné">Permiso de conducir:</label>
+                <input type="checkbox">
+
+                <label id="fechaC" name="feechaC">Fecha de autorizacion de concuccion:</label>
+                <input type="date"><br/>
+
+                <label id="Permiso" name="Permiso">Permiso de concuccion:</label>
+                <select>
+                    <option value="1">A</option>
+                    <option value="2">B</option>
+                    <option value="3">AB</option>
+                    <option value="4">C</option>
+                    <option value="5">AM</option>
+                </select><br/>
+                <meter value="80" min="0" max="100" low="40" high="80">80</meter>
+
+            </fieldset>
+            <br>
+            <fieldset title="Conctacta con DGT">
+                <legend>Conctacta con DGT</legend>
+
+                <datalist id="listaTels">
+                    <option value="dgt@gmail.com" label="correo1">
+                    <option value="dgt@hotmail.com" label="correo2">
+                </datalist>
+
+                <label> Correo DGT: <input type="search" name="correos" list="listaTels"></label>
+
+
+                <br><br><br><label id="Permiso" name="Permiso">Mensaje DGT:</label>
+                <textarea type="textarea"></textarea><br/>
+            </fieldset>
+
+            <button type="reset">reset</button>
+            <button type="button">No envia</button>
+            <button type="submit">Si envia</button>
+        </form>
+    </main>
+</body>
+</html>
