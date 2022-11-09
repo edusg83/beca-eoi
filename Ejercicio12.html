@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <title>Formulario</title>
+    <meta charset="utf8">
+
+    <style>        
+        #hora {
+        display : flex;
+        flex-direction: row;
+        flex-wrap : wrap;
+        justify-content:end;
+    }</style>
+
+</head>
+<body>
+    
+    <header alt="Formulario">
+        Formulario
+    </header>
+    <main id="main" class="main">
+        <section>
+            <form id="formulario" name="formulario">
+                <label for="nombre">Nombre de usuario:</label>
+                <input type="text" placeholder="Nombre" name="nombre" id="nombre">
+                <label>Nombre: <input type="text" name="nombre"></label>
+                <input type="password" placeholder="Password">
+                <input type="number" placeholder="Edad" step="2">
+                <input type="date" placeholder="Nacimiento">
+                <input type="datetime-local">
+                <datalist id="listaTels"> <option value="123123123" label="Tlf1">
+                    <option value="456456456" label="Tlf2"></datalist>
+                    <label>Teléfono : <input type="tel" name="telefono" list="listaTels"></label></br>
+                <select name="book" id="bookslist">
+                    <option value="1">A</option>
+                    <option value="2">B</option>
+                    <option value="3">C</option>
+                    <option value="4">D</option>
+                    </select>
+                <textarea name="parrafo" placeholder="Insertar texto"></textarea>
+                <meter value="60" min="0" max="100" low="40" high="80" optimum="100">60</meter></br>
+                <button type="button">Enviar</button>
+                <input type="reset"></input>
+            </form>
+        </section>
+    </main>
+
+    <footer alt="Curso HTML5 EOI - 2019"><b>
+        <address>
+            Alumno EOI <br/>
+            C:/La calle, 3, 03206 <br/>
+            Alicante (Alicante) <br/>
+            <a href="mailto:pepe@correo.es"><i>Enviar correo a pepe</i></a><br>
+            <a href="tel:666 00 11 22"><i>Llamar a pepe</i></a><br>
+         </address>
+        <div id="hora">
+            <time>08/11/2022 - 20:00:00 </time>
+        </div>
+    </b></footer>
+
+</body>
+</html>
