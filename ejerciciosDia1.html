@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <title>Curso HTML5 EOI</title>
+    <!--Caracteres que usa (espanol)-->
+    <meta charset="utf-8">
+    <!--Ajusta el ancho de la pagina segun el dispositivo-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- Anadimos una hoja de estilos css -->
+    <link rel="stylesheet" href="css/practicaHTML5.css"> 
+    <!-- Anadimos un fichero de JavaScript -->
+    <script type="text/javascript" src="js/practicaHTML5.js">   
+    </script>
+    <!--Icono que sale en la pestana de la pagina-->
+    <link rel="icon" href="images/SteveCarell.png" type="image/png" sizes="16x16">
+
+    <!--Aqui van todas las cosas relacionadas con la estetica de la pagina-->
+    <style>
+        .centrar{
+            text-align: center;
+        }
+
+        .left-align{
+            text-align: left;
+        }
+
+        .left-align-float{
+            text-align: left;
+            float: left;
+        }
+
+        .right-align{
+            text-align: right;
+        }
+
+        .right-align-float{
+            text-align: right;
+            float: right;
+        }
+
+        aside{
+            float:right
+        }
+
+        footer{
+            text-align: center;
+            margin-top: 15px;
+        }
+
+
+    </style>
+</head>
+
+<!--#################################################################-->
+<!--En el body esta todo lo que ve el usuario-->
+<body>
+    <!--Cabecera-->
+    <header class = centrar>
+        Elementos de texto
+    </header>
+
+    <!--Navegacion, es como un menu-->
+    <nav class="left-align">
+    </nav>
+
+    <!--Parte principal de la pagina, donde va el grueso de la info-->
+    <main class="left-align">
+        <section>
+            <article id="cita1">
+                “Lorem ipsum dolor sit amets”.
+                <br>
+                Autor desconocido
+                <aside>
+                    <a href="https://es.lipsum.com/",
+                    target="_blank">Información Lorem Ipsum</a>
+                </aside> 
+            </article>
+
+
+
+            <article id = "cita2">
+                “Todo el mundo trata de realizar algo grande, 
+                sin darse cuenta de que la vida se compone
+                de cosas pequeñas”.
+                <br>                 
+                Frank A. Clark
+                 
+                <!--Relacionado con el main, pero apartado a un lado-->
+                <aside>
+                    <a href="https://quote-citation.com/es/topic/citas-de-frank-a-clark",  
+                    target="_blank">Más citas de F. A. Clark</a>
+                </aside>  
+            </article>
+
+
+
+            <article id = "cita3">
+                “La vida es como una bicicleta. Para mantener el 
+                equilibrio tienes que seguir adelante”.
+                <br>                 
+                Albert Einstein
+                 
+                <!--Relacionado con el main, pero apartado a un lado-->
+                <aside>
+                    <a href="https://es.wikipedia.org/wiki/Albert_Einstein",
+                    target=“_blank”>Información sobre A. Einstein</a>
+                </aside>  
+            </article>
+           
+            <article>
+                <a href="ejerciciosDia1.html" download>Enlaces</a>
+            </article>
+
+
+        </section>
+       
+    </main>
+
+    <!--#################################################################-->
+    <!--Pie de pagina-->
+    <footer class="centrar">
+        
+        <div class="left-align-float">
+            <address>
+                Alumno EOI
+                <br>
+                C:/La calle, 3 , 03206
+                <br>
+                Alicante (Alicante)
+            </address>
+            <a href="mailto:pepe@correo.es">Enviar correo a Pepe</a>
+            <br>
+            <a href="tel:666 00 11 22">Llamar a Pepe</a>
+        </div>
+
+        <!--Mirar si se puede hacer sin javascript-->
+        <div class="right-align-float">
+            <time datetime="2018-07-07">July 7</time>
+            <br>
+            <time datetime="20:00">20:00</time>
+        </div>
+    </footer>
+    
+</body>
+</html>
