@@ -1,0 +1,30 @@
+
+<h1>Formularios</h1>
+
+<form id="formulario1" name="formulario1" action="#">
+    <fieldset>
+<legend>Formulario</legend>
+        <label id="etiqueta" for="nombreUsuario">Nombre de usuario</label>
+        <input type="text" name="nombreUsuario" required /><br>
+        <input type="password" placeholder="Password" /><br>
+        <input type="number" step="2" disabled="true" /><br>
+        <input type="checkbox" /><br>
+        <input type="datetime-local" /><br>
+        <textarea name="parrafo" autofocus></textarea><br>
+        <select name="book" id="bookslist">
+            <option value="1">IT</option>
+            <option value="Carrie">Carrie</option>
+            <option value="3">The Shining</option>
+            <option value="4">Misery</option>
+        </select><br>
+        <datalist id="listaTels"> 
+            <option value="123123123" label="Tlf1">
+            <option value="456456456" label="Tlf2">
+        </datalist>
+        <label>Teléfono : <input type="tel" name="telefono" list="listaTels"></label>
+        <meter value="80" min="0" max="100" low="40" high="80" optimum="100"></meter><br>
+        
+    </fieldset>
+    <button type="button">Enviar</button>
+        <button type="reset">Reset</button>
+</form>
