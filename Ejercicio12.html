@@ -1,0 +1,58 @@
+<DOCTYPE html>
+    <html lang="es" dir="ltr">
+        <head>
+            <title>Enlaces</title>
+
+            <style>
+                .centrar{
+                    display : flex;
+                    flex-direction: row;
+                    flex-wrap : wrap;
+                    justify-content:center;
+                }
+
+                
+            </style>
+        </head>
+        <body>
+            <main id="main" class="main"><aside >
+                <label>Nombre: <input type="text" name="nombre"></label>
+                <br>
+                <br>
+                <label>Contraseña: <input type="password"></label>
+                <br>
+                <br>
+                <label>Telefono: <input type="tel"></label>
+                <br>
+                <br>
+                <label>Fecha de Nacimiento: <input type="date"></label>
+                <br>
+                <br>
+                <a>Libro Favorito: </a>
+                <select name="book" id="bookslist">
+                    <option value="1">IT</option>
+                    <option value="2">Carrie</option>
+                    <option value="3">The Shining</option>
+                    <option value="4">Misery</option>
+                </select>
+                <br>
+                <br>
+                <a>Deporte: </a>
+                <label><input type="checkbox"> Tenis</label>
+                <label><input type="checkbox"> Futbol</label>
+                <label><input type="checkbox"> Baloncesto</label>
+                <br>
+                <br>
+                <a>Genero: </a>
+                <input type="radio" id="h" name="genero" value="h" checked><label>Hombre</label>
+                <input type="radio" id="m" name="genero" value="m"><label>Mujer</label>
+                <input type="radio" id="s" name="genero" value="s"><label>Otros</label>
+                <br>
+                <br>
+                <label>Foto de Perfil: <input type="file"></label>
+                <br>
+                <br>
+                <button>Guardar</button>
+            </main>
+        </body>
+    </html>
