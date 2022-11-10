@@ -1,0 +1,17 @@
+body{
+    font-family: sans-serif;
+}
+
+section[name="seccion1"]{
+    margin: 1em;
+    border: 1px;
+    border-style: dotted;
+    padding: 50px;
+    background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/29ddea64040367.5ac501df147d7.jpg);
+    background-position: left;
+    background-size: auto;
+    background-repeat: round;
+    background-size: contain;
+    background-origin: padding-box;
+
+}

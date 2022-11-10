@@ -1,0 +1,23 @@
+body{
+    font-family: sans-serif;
+}
+
+.p1{
+    margin: 1em;
+    border: 1px;
+    border-style: dotted;
+    padding: 100px;
+    background-image: url(https://motosnuevas.formulamoto.es/galeria/10534/Kawasaki_KX250.jpg);
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-origin: padding-box;
+    background-clip: content-box;
+
+}
+
+.p3{
+
+    margin: 3em;
+}
