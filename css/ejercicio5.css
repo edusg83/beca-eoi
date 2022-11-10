@@ -1,0 +1,13 @@
+body{
+    font-family: sans-serif;
+}
+
+.p1{
+    text-align: center;
+    font-size: calc(3*100%);
+}
+
+.p3{
+    font-size: calc(10*100%);
+    text-decoration: overline;
+}
