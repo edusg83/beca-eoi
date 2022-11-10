@@ -1,0 +1,15 @@
+section[name="section1"]{
+    color: red;
+}
+
+section[class="articulo2"]{
+    color: red;
+}
+
+section + p{
+    color: red;
+}
+
+article[class="articulo2"]{
+    color: red;
+}
