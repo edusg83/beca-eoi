@@ -1,0 +1,24 @@
+section[name="seccion1"] {
+    color: red;
+}
+
+section[class="articulo2"] {
+    color: red;
+}
+
+section + p{
+    color: red;
+}
+
+.articulo2{
+    color: red;
+}
+
+article[name~="articulo2"]{
+     color:red
+    }
+
+article .articulo2 {
+    color: red;
+}
+

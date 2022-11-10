@@ -1,0 +1,29 @@
+/*a)*/
+p:nth-child(2) {
+    color: red;
+}
+/*b)*/
+p:first-child {
+    color:red;
+}
+/*c)*/
+p:last-child {
+    color: red;
+}
+/*d)*/
+p:nth-child(even){
+    color: red;
+}
+p:nth-child(odd){
+    color: yellow;
+}
+
+/*e)*/
+main:only-child{
+    color: red;
+}
+/*f)*/
+p:first-of-type{
+    color: red;
+}
+/*g)*/
