@@ -1,8 +1,12 @@
 p:nth-child(odd){
+    margin: 30px;
+    margin-left: 100px;
     float:left;
     clear: both;
 }
 
 p:nth-child(even) {
+    margin: 30px;
+    margin-right: 100px;
     float: right;
 }
