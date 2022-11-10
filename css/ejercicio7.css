@@ -1,0 +1,11 @@
+section{
+    margin-top: 1px;
+    border: 1px;
+    border-style: solid;
+    padding: 150px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
+    background-origin: border-box;
+    background-image:  url("https://cdn2.yamaha-motor.eu/prod/product-assets/2022/MT09/2022-Yamaha-MT09-EU-Cyan_Storm-Studio-001-03.jpg");
+}
