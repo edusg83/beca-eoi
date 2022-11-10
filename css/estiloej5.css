@@ -1,0 +1,9 @@
+p:first-child{
+    font-size: 3em;
+    text-align: center;
+}
+
+p:nth-child(odd){
+    font-size: 10em;
+    text-decoration: overline;
+}
