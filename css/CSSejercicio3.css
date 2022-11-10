@@ -1,0 +1,37 @@
+
+/*
+.articulo1{
+
+}
+
+.articulo2{
+    color: red;
+}
+*/
+/*
+section[name = "seccion1"]{
+    color: red;
+}
+*/
+
+/*
+section+p{
+    color: red;
+}
+*/
+/*
+article[class*="articulo2"]{
+    color:Red
+}
+*/
+
+/*
+section{
+    color:red;
+}
+*/
+/*
+*[class^="art"]{
+    color:red;
+}
+*/
