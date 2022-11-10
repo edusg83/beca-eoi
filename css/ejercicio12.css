@@ -18,27 +18,17 @@ section[name="seccion1"]{
 */
     box-shadow: grey 20px 20px 20px;
     text-shadow: grey 20px 20px 20px;
-
-   
-
-}
-/*
-.flexbox{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
 }
 
-.flexbox{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}*/
-
-.flexbox{
+p:nth-child(even){
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: flex-end;
 }
-
+p:nth-child(odd){
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+}
