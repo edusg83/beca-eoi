@@ -5,3 +5,8 @@
 .p3{
     margin-top: 2em;
 }
+
+section[name="seccion1"]{
+    background-image: url(https://www.eoi.es/sites/default/files/inline-files/logoeoiok.jpg);
+    background-repeat: repeat-x;
+}
