@@ -43,9 +43,24 @@ p:not(.prohibido,.auxiliar) {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    box-shadow: rgb(150,150,150) 5px 5px;
+    transition: transform 3s ease-in-out 0s;
 }
 .p3{
     margin-top:10px;
     border:1px;
     border-style: solid;
 }
+
+article {
+    
+    animation: mianimacion 1s ease-in-out 0s infinite normal none;
+    }
+    
+    @keyframes mianimacion{
+        0%   {background-color:red; left:0px; top:0px;}
+        25%  {background-color:yellow; left:200px; top:0px;}
+        50%  {background-color:blue; left:200px; top:200px;}
+        75%  {background-color:green; left:0px; top:200px;}
+        100% {background-color:red; left:0px; top:0px;}
+        }
