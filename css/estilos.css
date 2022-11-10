@@ -4,3 +4,28 @@
 p[name="apellidos"]{
     color:blue;
 }
+
+
+/* Todos los P que estén dentro de caja */
+/*.caja p {
+    color:red;
+    }
+*/
+
+/* Todos los P que sean hijos directos de caja */
+/*.caja > p {
+color:red;
+}
+*/
+
+/* Busca el P inmediatamente posterior a un div */
+/*div + p {
+    color:red;
+}*/
+
+
+/* Busca el P inmediatamente posterior a un div y todos los siguientes*/
+div ~ p {
+    color:red;
+}
+
