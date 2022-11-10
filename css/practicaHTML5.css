@@ -1,0 +1,9 @@
+.rojo{
+    color: red;
+}
+.azul{
+    color: blue;
+}
+p[name="rojo"] {
+    background-color: black;
+}
