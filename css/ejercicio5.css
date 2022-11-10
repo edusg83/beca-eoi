@@ -5,9 +5,11 @@ body{
 .p1{
     text-align: center;
     font-size: calc(3*100%);
+    margin: 1em;
 }
 
 .p3{
     font-size: calc(10*100%);
     text-decoration: overline;
+    margin: 3em;
 }
