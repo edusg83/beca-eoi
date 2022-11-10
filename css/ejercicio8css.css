@@ -1,0 +1,13 @@
+.p1{
+  margin: 1em;
+}
+
+.p3{
+   margin: 2em;
+}
+
+.p2{
+  border: 1px solid;
+  border-radius: 2em;
+  border-color: blue;
+}
