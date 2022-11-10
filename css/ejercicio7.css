@@ -1,0 +1,9 @@
+section {
+    border: 1px;
+    border-style: solid;
+    background-image: url("https://www.eoi.es/sites/default/files/inline-files/logoeoiok.jpg");
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-origin: border-box;;
+}
