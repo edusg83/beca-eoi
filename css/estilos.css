@@ -1,0 +1,6 @@
+.colorRojo {
+    color:red;
+}
+p[name="apellidos"]{
+    color:blue;
+}
