@@ -27,3 +27,6 @@ p:first-of-type{
     color: red;
 }
 /*g)*/
+/*:not(p){
+    color: red;
+}*/
