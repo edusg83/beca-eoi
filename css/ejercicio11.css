@@ -1,0 +1,25 @@
+@keyframes animacion {
+
+0%{
+    background: red; left: 0px; top: 0px;
+}
+25%{
+    background: blue ; left: 200px; top: 0px;
+}
+50%{
+    background: green; left: 200px; top: 200px;
+}
+75%{
+  background: yellow; left: 0px; top: 200px;
+}
+100%{
+background: rgb(205, 63, 122); left: 0px; right: 0px;
+}
+    
+}
+
+.p2{
+    
+    animation: animacion 1s ease-in-out 0s infinite normal none;
+    position: relative;
+}
