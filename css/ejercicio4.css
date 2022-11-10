@@ -1,0 +1,23 @@
+p:nth-child(2) {
+    color: red;
+    }
+p:first-of-type{
+    color: red;
+}
+
+p:last-child{
+    color: red
+}
+
+p:nth-child(4),p:nth-child(2){
+    background-color: red;
+    
+}
+
+section:only-child{
+    color: red;
+}
+
+p:first-of-type{
+    color: red;
+}
