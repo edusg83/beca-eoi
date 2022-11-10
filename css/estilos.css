@@ -33,3 +33,19 @@ p:not(.prohibido,.auxiliar) {
     color:blue;
 }
 
+.p1{
+    margin-top:1px;
+    margin-bottom:0px;
+    border:1px;
+    border-style: solid;
+    padding:150px;
+    background-image: url('https://moto.suzuki.es/assets/images/colores/ficha_fondo_gris/2020/GSX-S750ZAM0_YSF_D.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.p3{
+    margin-top:10px;
+    border:1px;
+    border-style: solid;
+}
