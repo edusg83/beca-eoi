@@ -29,3 +29,7 @@ div ~ p {
     color:red;
 }
 
+p:not(.prohibido) {
+    color:blue;
+}
+
