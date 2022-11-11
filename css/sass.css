@@ -1,0 +1,17 @@
+nav {
+  width: 80%;
+  height: 23px;
+}
+nav ul {
+  list-style-type: none;
+}
+nav li {
+  font-size: 20px;
+  float: left;
+}
+nav li a {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=sass.css.map */
