@@ -1,0 +1,21 @@
+@mixin cambiar1 () {
+    font: {
+        size: 30px;
+    }
+    color:crimson;
+}
+
+@mixin cambiar2 () {
+    font: {
+        size: 40px;
+    }
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.p2, .p4 {
+    @include cambiar1;
+}
+
+.p3{
+    @include cambiar2;
+}
