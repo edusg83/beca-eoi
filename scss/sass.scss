@@ -50,3 +50,15 @@ color: black;}}
     }
     
 
+    @each $animal in puma, sea-slug, egret, salamander {
+        .#{$animal}-icon {
+        background-image: url('/images/#{$animal}.png');
+        }
+        }
+    
+        
+
+        @for $i from 1 through 3 {
+            .item-#{$i} { width: 2em * $i; }
+            }
+        
