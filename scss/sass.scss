@@ -1,12 +1,52 @@
-nav {
+$altura: height;
+$ancho: width;
+$el1:5em;
+$colorTitulo:blue;
+$colorDescripciones:blue;
+$listaMargen:(10px 15px 0 0);
+$map:(clave1:20px,clave2:30px,clave3:40px);
 
-    width: 80%;
-    height: 23px;
-    ul { list-style-type: none; }
-    li {
-    font-size:20px;
-    float: left;
-    a { font-weight: bold; font-size:20px;}
-    
-    }
+nav {
+#{$ancho}: 80%;
+#{$altura}: 23px;
+ul { list-style-type: none; }
+li {
+float: left;
+a { font-weight: bold; font-size: $el1;}
 }
+}
+
+.titulo1 {
+    color:$colorTitulo;
+}
+
+.titulo2 {
+    color:to-upper-case('red');
+    background-color:if(2==3, red, blue);
+    /*font-size:if(2==2,20px,10px);*/
+    margin:$listaMargen;
+    font-size: map-get($map,"clave1");
+    
+}
+
+$type: monster;
+p {
+@if $type == ocean {
+color: blue;
+} @else if $type == matador {
+color: red;
+} @else if $type == monster {
+color: green;
+} @else {
+color: black;}}
+
+.error {
+    border: 1px #f00;
+    background-color: #fdd;
+    }
+    .seriousError {
+    @extend .error;
+    border-width: 3px;
+    }
+    
+

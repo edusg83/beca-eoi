@@ -6,12 +6,36 @@ nav ul {
   list-style-type: none;
 }
 nav li {
-  font-size: 20px;
   float: left;
 }
 nav li a {
   font-weight: bold;
+  font-size: 5em;
+}
+
+.titulo1 {
+  color: blue;
+}
+
+.titulo2 {
+  color: "RED";
+  background-color: blue;
+  /*font-size:if(2==2,20px,10px);*/
+  margin: 10px 15px 0 0;
   font-size: 20px;
+}
+
+p {
+  color: green;
+}
+
+.error, .seriousError {
+  border: 1px #f00;
+  background-color: #fdd;
+}
+
+.seriousError {
+  border-width: 3px;
 }
 
 /*# sourceMappingURL=sass.css.map */
