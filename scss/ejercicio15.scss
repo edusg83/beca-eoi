@@ -1,0 +1,42 @@
+
+nav {
+    width: 80%;
+    height: 23px;
+    &:hover { text-decoration: underline;}
+    ul {
+        list-style-type: none; 
+    }
+    li {
+        float: left;
+        a { font-weight: bold;}
+    }
+}
+
+@for $i from 1 through 3 {
+    .item-#{$i} { width: 2em * $i; }
+}
+
+$type: azul;
+p {
+    @if $type == azul {
+        color: blue;
+    } @else if $type == rojo {
+        color: red;
+    } @else if $type == verde {
+        color: green;
+    } @else {
+        color: black;}
+}
+
+@mixin rounded($vert, $horz, $radius: 10px) {
+    border: 1px;
+    border-style: dotted;
+    border-#{$vert}-#{$horz}-radius: $radius;
+    -moz-border-radius-#{$vert}#{$horz}: $radius;
+    -webkit-border-#{$vert}-#{$horz}-radius: $radius;
+}
+
+    nav{
+        @include rounded(top, left, 5px);
+}
+
