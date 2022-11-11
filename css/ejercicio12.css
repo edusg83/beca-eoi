@@ -13,6 +13,7 @@ section[name="seccion1"]{
     background-size: auto;
     background-repeat: round;
     background-size: contain;
+    
     background-origin: padding-box;
     border-radius: 60px 40px 20px 0px;
 */
