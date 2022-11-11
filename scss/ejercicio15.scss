@@ -1,0 +1,22 @@
+/*Funciones
+propias, Mixins, Funciones y estilos parciales*/
+
+@mixin rounded($vert, $horz) {
+    $radius: 10px;
+    border-#{$vert}-#{$horz}-radius: $radius;
+    -moz-border-radius-#{$vert}#{$horz}: $radius;
+    -webkit-border-#{$vert}-#{$horz}-radius: $radius;
+}
+
+
+nav {@include rounded(top, left);}
+
+.p1{
+    border: 1px rgb(135, 80, 80);
+    background-color: rgb(127, 153, 114);
+}
+
+.p3{
+    @extend .p1;
+    border-width: 3px;
+}

@@ -1,0 +1,18 @@
+/*Funciones
+propias, Mixins, Funciones y estilos parciales*/
+nav {
+  border-top-left-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px;
+}
+
+.p1, .p3 {
+  border: 1px rgb(135, 80, 80);
+  background-color: rgb(127, 153, 114);
+}
+
+.p3 {
+  border-width: 3px;
+}
+
+/*# sourceMappingURL=ej15.css.map */
