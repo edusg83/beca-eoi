@@ -1,0 +1,26 @@
+$type: monster;
+
+p {
+
+@if $type == ocean {
+
+color: blue;
+
+} @else if $type == matador {
+
+color: red;
+
+} @else if $type == monster {
+
+color: green;
+
+} @else {
+
+color: black;}}
+
+a {
+    $i: 6;
+    @while $i > 0 {
+    .item-#{$i} { width: 2em * $i; }
+    $i: $i -2;}
+}
