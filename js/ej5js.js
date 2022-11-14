@@ -6,6 +6,7 @@ for (let index = 0; index < array1.length; index++) {
         case 2: console.log("DOS"); break;
         case 3: console.log("TRES"); break;
         case 4: console.log("CUATRO"); break;
+        default: console.log("Array vacia"); break;
     }
 }
 
