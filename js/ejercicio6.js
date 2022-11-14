@@ -1,7 +1,7 @@
 var array1 = [1, 2, 3, 4];
 var resultado ="";
 
-for(var i= 0; i < array1.length; i++){
+for(var i in array1) {
     switch(array1[i]){
         case 1:
             resultado ="1"; break;
