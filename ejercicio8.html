@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
+    <script src="js/ejercicio8.js"></script>
     <head>
         <title>Elementos de Texto</title>
         <style>
@@ -26,6 +27,9 @@
                 <p>La vida es como una bicicleta. Para mantener el equilibrio tienes que seguir adelante.
                     De cosas pequeñas <br><a href="https://es.wikipedia.org/wiki/AlbertEinstein">Albert Einstein</a></p>
             </div>
+            <button onclick="suma(12,12)">Sumar 12 + 12</button>
+            <h1>Resultado</h1>
+            <div id="resultado"></div>
         </aside></main>
         <footer class="centrar"><b>Curso HTML5 EOI – 2022
             <br>Alumno EOI</br>
@@ -36,4 +40,9 @@
             <a href="images/forest.png" download="imagen">Descargar Imagen</a>
         </b></footer>
     </body>
+
+    Escribo desde javascript en una etiqueta HTML ==> document.getElementById("resultado").innerHTML=param1+param2;
+
+  Leo desde javascript el contenido de una etiqueta HTML ==>console.log(document.getElementById("entrada").innerHTML);
+
 </html>
