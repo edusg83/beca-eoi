@@ -1,3 +1,4 @@
+console.time();
 console.log("prueba",1,{},[1,2,3]);
 console.info("informacion");
 console.warn("Warning");
@@ -10,3 +11,4 @@ var numero1=2;
 var numero2=34;
 console.dir(numero1);
 console.dir(numero2);
+console.timeEnd();
