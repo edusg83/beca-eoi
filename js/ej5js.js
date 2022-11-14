@@ -13,5 +13,5 @@ for (let index = 0; index < array1.length; index++) {
 array1.push(3);
 console.log(array1);
 
-array1.length = array1.length -3;
+array1.splice(-3);
 console.log(array1);
