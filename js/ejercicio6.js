@@ -1,6 +1,6 @@
 var array1 = [1, 2, 3, 4];
 
-for(var i = 0; i<array1.length + 1; i++){
+for(var i in array1){
     switch(i){
         case 1:
             console.log("UNO")
