@@ -11,7 +11,7 @@ console.log(miObjeto.nombre);
 console.log(typeof(null));
 console.log(typeof(undefined));
 console.log(null===undefined);
-console.log(null==undefined);*/
+console.log(null==undefined);
 
 var sema=undefined;
 console.log(sema==undefined);
@@ -45,5 +45,8 @@ var c = !(a>b || a != b) && a!="Eric";
 
 console.log("a: "+a);
 console.log("b: "+b);
-console.log("c: "+c);
+console.log("c: "+c);*/
 
+(function (uno,dos){
+    console.log(uno+dos);
+  }(1,2))
