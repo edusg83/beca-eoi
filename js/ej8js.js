@@ -3,6 +3,6 @@ function suma (param1,param2){
     return console.log(resultado);
 }
 
-(function suma (param1,param2){
+(function (param1,param2){
     suma(param1,param2);
 }(5,5))
