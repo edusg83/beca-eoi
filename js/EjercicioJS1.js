@@ -8,5 +8,5 @@ console.timeEnd();
 var numero1=2;
 var numero2=34;
 
-console.info(numero1+numero2);
-console.info(numero1-numero2);
+console.log(numero1+numero2);
+console.log(numero1-numero2);
