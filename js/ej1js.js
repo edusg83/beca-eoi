@@ -6,3 +6,7 @@ console.dir(1+2);
 console.dir(2-2);
 console.dir({objeto1: 1});
 console.dir([{objeto1: 1},{objeto2: 2},{objeto3: 3}]);
+var numero1=2;
+var numero2=34;
+console.dir(numero1);
+console.dir(numero2);
