@@ -5,7 +5,7 @@ var cadena2;
 console.log(typeof(cadena1));
 console.log(typeof(cadena2));
 
-if(cadena2 == undefined){
+if(typeof(cadena2) == undefined){
     console.info("SIN DEFINIR");
 }
 
