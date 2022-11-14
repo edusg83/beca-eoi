@@ -10,8 +10,6 @@ console.error("MENSAJE DE ERROR");
 console.log("MENSAJE DE LOG");
 
 console.time("Time");
-for (var i = 0; i < 10; i++) {
-}
 console.timeEnd("Time");
 
 console.log(numero1 + numero2);
