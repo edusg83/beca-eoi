@@ -15,3 +15,4 @@ console.log(array1);
 
 array1.splice(-3);
 console.log(array1);
+
