@@ -1,15 +1,25 @@
-var numero1=1;
 
-var miVariable, miVariable2=3, miVariable3="un valor";
 
-console.log(typeof(miVariable));
-console.log(typeof(miVariable2));
+/*var miObjeto = {
+    nombre:'Eduardo',
+    apellidos:'Severá',
+    edad:39
+}
 
-var variable1 = new Number(16);
-console.log(variable1.valueOf());
+console.log(miObjeto.nombre);
 
-console.log(miVariable3.length);
+console.log(typeof(null));
+console.log(typeof(undefined));
+console.log(null===undefined);
+console.log(null==undefined);*/
 
-var cadena="ser o no ser, esa es la cuestión";
+var sema=undefined;
+console.log(sema==undefined);
+console.log(sema===undefined);
+console.log(typeof(sema)=="undefined");
+console.log(typeof(sema)==undefined);
+console.log(typeof(sema)==="undefined");
+console.log(typeof(sema)===undefined);
 
-console.log(cadena.toUpperCase());
+
+
