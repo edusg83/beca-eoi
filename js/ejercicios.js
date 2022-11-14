@@ -7,3 +7,9 @@ console.log(typeof(miVariable2));
 
 var variable1 = new Number(16);
 console.log(variable1.valueOf());
+
+console.log(miVariable3.length);
+
+var cadena="ser o no ser, esa es la cuestión";
+
+console.log(cadena.toUpperCase());
