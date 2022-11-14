@@ -4,6 +4,5 @@ function suma (param1,param2){
 }
 
 (function suma (param1,param2){
-    var resultado = param1+param2
-    return console.log(resultado);
+    suma(param1,param2);
 }(5,5))
