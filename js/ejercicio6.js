@@ -1,7 +1,7 @@
 var array1 = [1, 2, 3, 4];
 
 for(var i in array1){
-    switch(i){
+    switch(array1[i]){
         case 1:
             console.log("UNO")
             break
