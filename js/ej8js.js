@@ -5,4 +5,4 @@ function suma (param1,param2){
 
 (function (param1,param2){
     suma(param1,param2);
-}(5,5))
+}(12,12))
