@@ -4,7 +4,7 @@
 <head>
     <title>Start Bootstrap</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 
 <style>
@@ -33,11 +33,16 @@
     }
 </style>
 <header>
-    <nav id="menu">
-        <p style="color: white" > START BOOTSTRAP</p>
-        <p style="color: white"> Portfolio</p>
-        <p style="color: white"> About </p>
-        <p style="color: white"> Contact </p>
+    <nav class="navbar">
+        <div class="container">
+            <div class="collapse navbar-collapse">
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+            </div>
+
+        </div>
+
     </nav>
 </header>
 

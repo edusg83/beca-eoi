@@ -1,0 +1,35 @@
+nav {
+    width: 80%;
+    height: 23px;
+    &:hover { text-decoration:underline;}
+    ul { list-style-type: none; }
+    li {
+    float: left; 
+    a { font-weight: bold; }
+    }
+    }
+
+   $fontSize:3px;
+   $color1:red;
+   $color2:blue;
+
+    @function fontCheck($fontSize){
+        @if ($fontSize==2px){}
+            color:$color1;
+        }@else{
+            color:$color2;
+        }
+    }
+
+    $image:"images\avatar.png";
+    $repeat:no-repeat;
+
+    @mixin setImage ($image,$repeat) {
+
+        background-image: url($image);
+        background-repeat: $repeat;
+        
+        
+        
+        
+    }
