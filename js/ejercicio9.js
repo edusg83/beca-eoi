@@ -15,7 +15,7 @@ function operaciones(){
     let sum = suma(n1, n2);
     let multi = mult(n1, n2);
     let resultado=suma(sum, multi);
-    document.getElementById("resultado").innerHTML=resultado;
+    document.getElementById("resultado").innerHTML = resultado;
     
 }
 
