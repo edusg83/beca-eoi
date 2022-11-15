@@ -3,8 +3,6 @@ function fecha() {
     var meses = document.getElementById("meses").innerHTML;
 
     var fechaActual = fecha.split("-");
-    
-    console.log(fechaActual);
 
     var suma = (Number(fechaActual[1]) + Number(meses));
 
