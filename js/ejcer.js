@@ -17,11 +17,11 @@ function Pro(num1, num2) {
    return num1*num2;
 }
 
-function llamadaSum(para1,para2) {
+function llamadaSum() {
     let para1 = Number(document.getElementById("para1").innerHTML);
     let para2 = Number(document.getElementById("para2").innerHTML);
     let sum = Sum(para1,para2);
     let multi = Pro(para1,para2);
     let resultados = Sum(sum,multi);
-    document.getElementById("resultado").innerHTML = para1+para2;
+    document.getElementById("resultados").innerHTML = resultados;
 }
