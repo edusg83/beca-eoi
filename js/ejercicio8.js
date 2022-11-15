@@ -6,7 +6,7 @@ var result = param1 + param2;
 
 function Sum(param1, param2) {
     alert(param1 + param2);
-    document.getElementById("resultado").innerHTML=param1 + param2;
+    document.getElementById("result").innerHTML=param1 + param2;
     return console.log(result);  
 }
 
