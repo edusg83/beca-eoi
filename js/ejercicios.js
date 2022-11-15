@@ -1,55 +1,15 @@
-/*(function(num){
-    var counter=0;
-
-    function viaAlert() {alert("Valor: "+(++num)); };
-    function viaConsole() {console.log("Valor: "+(num--));};
-
-    viaAlert();
-    viaConsole();
-    counter++;
-    console.log("Valor num: "+num);
-})(3);*/
-
-/*var color="Azul";
-
-function experimento(){
-    var color="Amarillo";
-    console.log(color);
+function inicializa()
+{
+    var obj={
+        clicks:0,
+        init:function(){
+            console.log("init: ", this);
+            $("#elemento").click(function(){
+                console.log("Clicked: ",this);
+                this.clicks+=1;
+                console.log("Clicks: "+this.clicks);
+            });
+        }
+    };
+    obj.init();
 }
-
-experimento();
-
-var color="Verde";
-
-experimento();
-
-console.log(color);*/
-
-/*var obj={
-    counter:0,
-    inc: function(value){
-        this.counter+=typeof value==='number' ? value: 1;
-
-    },
-};
-
-obj.inc();
-console.log(obj.counter);
-
-obj.inc(2);
-console.log(obj.counter);*/
-
-var nombre="Sonia";
-var obj={
-    nombre:"Sandra",
-    saludo: function() {
-        console.log("hola " + this.nombre);
-    }
-}
-obj.saludo();
-
-var maria = {
-    nombre: "María"
-};
-maria.saludo=obj.saludo;
-maria.saludo();
