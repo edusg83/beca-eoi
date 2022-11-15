@@ -9,3 +9,18 @@ for(var i=0;i<array1.length;i++){
         default: console.error("ERROR");
     }
 }
+
+function Sumar (param1, param2){
+    let resultado;
+
+    resultado=param1+param2;
+    console.log(resultado);
+
+    return resultado;
+}
+
+var resultadoSuma=Sumar(Number("12"),Number("12"));
+
+alert(resultadoSuma);
+let resultadoString=String(resultadoSuma);
+console.log(resultadoString);
