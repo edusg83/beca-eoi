@@ -25,7 +25,7 @@ experimento();
 
 console.log(color);*/
 
-var obj={
+/*var obj={
     counter:0,
     inc: function(value){
         this.counter+=typeof value==='number' ? value: 1;
@@ -37,4 +37,19 @@ obj.inc();
 console.log(obj.counter);
 
 obj.inc(2);
-console.log(obj.counter);
+console.log(obj.counter);*/
+
+var nombre="Sonia";
+var obj={
+    nombre:"Sandra",
+    saludo: function() {
+        console.log("hola " + this.nombre);
+    }
+}
+obj.saludo();
+
+var maria = {
+    nombre: "María"
+};
+maria.saludo=obj.saludo;
+maria.saludo();
