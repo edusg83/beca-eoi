@@ -2,25 +2,30 @@ function fecha() {
     var fecha = document.getElementById("fecha").innerHTML;
     var meses = document.getElementById("meses").innerHTML;
 
-    var year = fecha.substring(0,4);
-    var mes = fecha.substring(5,7);
-    var dia = fecha.substring(8,10);
-
-    sumarmeses(Number(year),Number(mes),Number(meses),Number(dia));
-}
-
-function sumarmeses(year, mes, meses, dia) {
-    var totalMeses = mes+meses
-
-    while(totalMeses > 12) {
-        year = year + 1;
-        totalMeses = totalMeses - 12;
-    };
+    var fechaActual = fecha.split("-");
     
-    mensaje(year,totalMeses,dia);
+    console.log(fechaActual);
+
+    var suma = (Number(fechaActual[1]) + Number(meses));
+
+    sumarmeses(suma,fechaActual);
 }
 
-function mensaje(year,mes,dia) {
-    var updateFecha = year + "/" + mes + "/" + dia;
+function sumarmeses(suma,fechaActual) {
+ 
+    while(suma > 12) {
+        fechaActual[0] = Number(fechaActual[0]) + 1;
+        suma = Number(suma) - 12;
+    };
+    fechaActual[1] = suma;
+    
+    mensaje(fechaActual);
+}
+
+function mensaje(fechaActual) {
+    if (fechaActual[1] < 10) {fechaActual[1] = '0'+String(fechaActual[1])};
+    if (fechaActual[2] < 10) {fechaActual[2] = '0'+fechaActual[2]};
+
+    var updateFecha = fechaActual[0] + "/" + fechaActual[1] + "/" + fechaActual[2];
     document.getElementById("resultado").innerHTML=updateFecha;
 }
