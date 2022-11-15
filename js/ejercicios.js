@@ -1,52 +1,40 @@
+/*(function(num){
+    var counter=0;
 
+    function viaAlert() {alert("Valor: "+(++num)); };
+    function viaConsole() {console.log("Valor: "+(num--));};
 
-/*var miObjeto = {
-    nombre:'Eduardo',
-    apellidos:'Severá',
-    edad:39
+    viaAlert();
+    viaConsole();
+    counter++;
+    console.log("Valor num: "+num);
+})(3);*/
+
+/*var color="Azul";
+
+function experimento(){
+    var color="Amarillo";
+    console.log(color);
 }
 
-console.log(miObjeto.nombre);
+experimento();
 
-console.log(typeof(null));
-console.log(typeof(undefined));
-console.log(null===undefined);
-console.log(null==undefined);
+var color="Verde";
 
-var sema=undefined;
-console.log(sema==undefined);
-console.log(sema===undefined);
-console.log(typeof(sema)=="undefined");
-console.log(typeof(sema)==undefined);
-console.log(typeof(sema)==="undefined");
-console.log(typeof(sema)===undefined);
+experimento();
 
+console.log(color);*/
 
+var obj={
+    counter:0,
+    inc: function(value){
+        this.counter+=typeof value==='number' ? value: 1;
 
-let numeroUno=1;
-let resultado;
+    },
+};
 
-numeroUno+=2;
-numeroUno=numeroUno+2;
+obj.inc();
+console.log(obj.counter);
 
-console.log(numeroUno);
-
-var verdadero = ("1"==true);
-var falso = ("1"===true);
-
-console.log(verdadero);
-console.log(falso);
-
-var a="Er";
-a += "ic";
-var b=a>"John Lennon" || a + " Clapton";
-a=b;
-var c = !(a>b || a != b) && a!="Eric";
-
-console.log("a: "+a);
-console.log("b: "+b);
-console.log("c: "+c);*/
-
-(function (uno,dos){
-    console.log(uno+dos);
-  }(1,2))
+obj.inc(2);
+console.log(obj.counter);
