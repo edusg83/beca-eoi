@@ -2,9 +2,8 @@ var nombre = "Sonia";
 var obj = {
     nombre: "Pepito",
     saludo: function(nombre){
-        nombre = this.nombre;
         var saludo_fn = function(){
-            console.log("hola " + nombre)
+            console.log("hola " + this.obj.nombre)
         };
     saludo_fn();
     }
