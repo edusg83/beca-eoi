@@ -22,7 +22,6 @@ function sumarmeses(suma,fechaActual) {
 
 function mensaje(fechaActual) {
     if (fechaActual[1] < 10) {fechaActual[1] = '0'+String(fechaActual[1])};
-    if (fechaActual[2] < 10) {fechaActual[2] = '0'+fechaActual[2]};
 
     var updateFecha = fechaActual[0] + "/" + fechaActual[1] + "/" + fechaActual[2];
     document.getElementById("resultado").innerHTML=updateFecha;
