@@ -7,6 +7,8 @@ var objetoPadre={
     }
     };
 
+    console.log(objetoPadre);
+
     var hijo1=Object.create(objetoPadre);
 hijo1.edad=21;
 hijo1.nombre='Antonio';
