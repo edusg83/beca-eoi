@@ -17,6 +17,10 @@ function Pro(num1, num2) {
    return num1*num2;
 }
 
+//var num1 = prompt("Insertar el Primer Numero: ");
+//var num2 = prompt("Insertar el Segundo Numero: ");
+// var resultado = Number(num1) + Number(num2);
+
 function llamadaSum() {
     let para1 = Number(document.getElementById("para1").innerHTML);
     let para2 = Number(document.getElementById("para2").innerHTML);
