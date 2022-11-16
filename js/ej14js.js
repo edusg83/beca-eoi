@@ -1,28 +1,28 @@
-function fecha() {
-    var fecha = document.getElementById("fecha").innerHTML;
-    var meses = document.getElementById("meses").innerHTML;
+var objetoPadre={
+    edad:null,
+    nombre:null,
+    apellidos:null,
+    muestraDatos:function() {
+        console.log(this.nombre+' '+this.apellidos+' '+this.edad);
+    }
+};
 
-    var fechaActual = fecha.split("-");
+var hijo1=Object.create(objetoPadre);
+hijo1.edad=21;
+hijo1.nombre='Antonio';
+hijo1.apellidos='Martinez Garcia';
 
-    var suma = (Number(fechaActual[1]) + Number(meses));
+var hijo2=Object.create(objetoPadre);
+hijo2.edad=30;
+hijo2.nombre='Pepe';
+hijo2.apellidos='Martinez Garcia';
 
-    sumarmeses(suma,fechaActual);
-}
+hijo1.muestraDatos();
+hijo2.muestraDatos();
 
-function sumarmeses(suma,fechaActual) {
- 
-    while(suma > 12) {
-        fechaActual[0] = Number(fechaActual[0]) + 1;
-        suma = Number(suma) - 12;
-    };
-    fechaActual[1] = suma;
-    
-    mensaje(fechaActual);
-}
+objetoPadre['verEdad'] = function () {
+    console.log(this.edad);
+};
 
-function mensaje(fechaActual) {
-    if (fechaActual[1] < 10) {fechaActual[1] = '0'+String(fechaActual[1])};
-
-    var updateFecha = fechaActual[0] + "/" + fechaActual[1] + "/" + fechaActual[2];
-    document.getElementById("resultado").innerHTML=updateFecha;
-}
+hijo1.verEdad();
+hijo2.verEdad();
