@@ -1,1 +1,1 @@
-document.write("Mi primera linea de texto con write");
+document.write("<strong>Mi primera linea de texto con write</strong>");
