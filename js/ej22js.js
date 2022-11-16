@@ -5,6 +5,7 @@
             izq = el.offsetLeft;
 
             if ((pasos > 0 && izq > 399) || (pasos < 0 && izq < 51)) {
+                var timeout = 0;
                 clearTimeout(timer);
                 timer = setInterval(function() {
                     mueveCaja(pasos * -1);
