@@ -1,4 +1,4 @@
 var nombre = prompt("Introduzca nombre: ");
 console.log(nombre);
-var confirmacion = confirm("¿Desea Coninuar?");
-console.log(confirmacion);
+var continuar = confirm("¿Desea Coninuar?");
+console.log(continuar);
