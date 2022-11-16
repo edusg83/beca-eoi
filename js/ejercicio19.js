@@ -1,8 +1,22 @@
-var tagHeader = document.getElementsByTagName("header");
-console.log(tagHeader);
+(function(){
+    var doc = document,
+    elem = doc.createElement("p"),
+    contenido = doc.createTextNode("<strong>Nuevo parrafo creado dinamicamente</strong>"),
+    pTres = doc.getElementById("tres");
 
-var idHeader = document.getElementById("idHeader");
-console.log(idHeader);
+elem.appendChild(contenido);
+elem.id ="conAppendChild";
 
-var queryHeader = document.querySelector("header");
-console.log(queryHeader);
+pTres.parentNode.appendChild(elem);
+}());
+
+(function(){
+    var doc = document,
+    elem = doc.createElement("p"),
+    pTres = doc.getElementById("tres");
+
+elem.innerHTML = "<strong>Nuevo parrafo creado dinamicamente</strong>";
+elem.id ="conInner";
+
+pTres.parentNode.replaceChild(elem, pTres);
+}());
