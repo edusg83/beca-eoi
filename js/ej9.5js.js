@@ -1,8 +1,6 @@
 var param1 = prompt("Introduzca nombre: ");
 var param2 = prompt("Introduzca nombre: ");
 
-
-
 //B
 function suma (param1,param2) {
     return param1+param2;
