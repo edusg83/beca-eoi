@@ -1,5 +1,5 @@
 console.log("Idioma = " + navigator.language);
-console.log("Cookies = " + navigator.cookieEnabled);
+console.log("Cookies activados = " + navigator.cookieEnabled);
 console.log("Nombre de app = " + navigator.appName);
 console.log("Version de app = " + navigator.appVersion);
 console.log("Producto = " + navigator.product);
