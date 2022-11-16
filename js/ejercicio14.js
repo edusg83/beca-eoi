@@ -3,7 +3,7 @@ var objetoPadre={
     nombre:null,
     apellidos:null,
     muestraDatos:function(){
-        consol.log(this.nombre+' '+this.apellidos+' tiene una edad de '+this.edad);
+        console.log(this.nombre+' '+this.apellidos+' tiene una edad de '+this.edad);
     }
 };
 
