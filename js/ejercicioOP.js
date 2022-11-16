@@ -5,7 +5,7 @@
     pTres = doc.getElementById("tres");
 
     element.appendChild(contenido);
-    elem.id = "conAppendChild";
+    element.id = "conAppendChild";
 
     pTres.parentNode.appendChild(element);
 }());
