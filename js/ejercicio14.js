@@ -12,10 +12,14 @@ hijo1.edad=21;
 hijo1.nombre='Antonio';
 hijo1.apellidos='Martinez Garcia';
 
+console.log(hijo1);
+
 var hijo2=Object.create(objetoPadre);
 hijo2.edad=30;
 hijo2.nombre='Pepe';
 hijo2.apellidos='Martinez Garcia';
+
+console.log(hijo2);
 
 hijo1.muestraDatos();
 hijo2.muestraDatos();
