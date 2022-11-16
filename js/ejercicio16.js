@@ -1,13 +1,19 @@
+var objetoNave={
+    Lenguaje: console.log(navigator.language),
+    Cookies: console.log(navigator.cookieEnabled),
+    Nombre: console.log(navigator.appName),
+    Version: console.log(navigator.appVersion),
+    Producto: console.log(navigator.product),
+    Agente: console.log(navigator.userAgent)
+};
 
 
-console.log(navigator.language);
 
-console.log(navigator.cookieEnabled);
 
-console.log(navigator.appName);
 
-console.log(navigator.appVersion);
 
-console.log(navigator.product);
 
-console.log(navigator.userAgent);
+
+
+
+
