@@ -1,13 +1,13 @@
 (function(){
     cuerpo = document.getElementById("cuerpo");
     
-    newP = document.createElement("p"),
+    newParra = document.createElement("p"),
     contenido = document.createTextNode("Párrafo 1"),
     
-    newP.appendChild(contenido);
-    newP.id = "p1";
+    newParra.appendChild(contenido);
+    newParra.id = "p1";
 
-    cuerpo.appendChild(newP);
+    cuerpo.appendChild(newParra);
 }());
 
 
