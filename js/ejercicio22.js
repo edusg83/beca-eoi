@@ -13,7 +13,7 @@ const nombre = document.getElementById("nombre"),
         var provincia = formData.get("provincia");
         
         var ok = false;
-        if(nombre.length > 0 && nombre.length <= 20 && nombre.includes("Antonio") && email != "" && provincia != ""){
+        if(nombre.length > 0 && nombre.length <= 20 && nombre.includes("Antonio") && email != "" && provincia != "default"){
             parrafo.innerHTML = "Nombre: " + nombre + "</br>" + "Email: " + email + "</br>" + "Provincia: " + provincia;
             return ok = true;
         } else {
