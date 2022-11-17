@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <title>Curso HTML5 EOI</title>
+    <meta charset="utf-8">
+
+</head>
+<body>
+    <h1>Formulario</h1>
+        <form id="formulario1" name="formulario1" method="GET" action="">
+            <fieldset>
+                <legend>Datos Personales</legend>
+                <p><label id="nombre" for="nombre">Nombre</label>
+                <input type="text" name="nombre"></p>
+
+                <p><label id="email" for="email">Email</label>
+                <input type="email"name="email"></p>
+                
+                <p><label id="provincia" for="provincia">Provincia</label>
+                <select name="provincia" id="provincia">
+                    <optgroup label="Comunidad Valenciana">
+                        <option value="ali">ALICANTE</option>
+                        <option value="cast">CASTELLON</option>
+                    </optgroup>
+                    <optgroup label="Comunidad Murciana">
+                        <option value="mur">MURCIA</option>
+                        <option value="tota">TOTANA</option></p>
+                    </optgroup>
+                </select>
+            </fieldset>
+            <button type="submit" value="Enviar" onclick="validarform()">Enviar</button>
+        </form>
+        <div id="parrafo"></div>
+    <script src="js/ejercicio22.js">
+    </script>
+</body>
+</html>
