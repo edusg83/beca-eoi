@@ -6,11 +6,31 @@ formu.addEventListener('submit', function(e) {
     const formuData = new FormData(formu);
 
     var nombre = formuData.get("name");
-    if(nombre.length >= 20){
-        window.alert("Su nombre es demasiado largo");
-        return false;
+    var email = formuData.get("email");
+    var select = formuData.get("provincias");
+
+    var nameInicial = nombre.startsWith("ANTONIO");
+    var confi = [false, false, false];
+    var result = "";
+
+    if(nombre.length < 20 && nameInicial === true){
+        result += "Nombre: " + nombre;
+        confi[0] = true;
+    } 
+
+    if(email.length > 0){
+        result += "<br>";
+        result = "Email: " + email;
+        result += "<br>";
+        confi[1] = true;
+    }
+
+    result += "Provincia: " + select;
+
+    if(verificado[0] === true && verificado[1] === true) {
+        document.getElementById("resultado").innerHTML = result;
     } else {
-        return true;
+        document.getElementById("resultado").innerHTML = "Los resultados obtenidos no son correctos";
     }
 });
 
