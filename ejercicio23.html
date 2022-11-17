@@ -1,28 +1,50 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-    <body>
-        <form id="form" name="form">
-            <fieldset>
-                <legend>Datos Personales</legend>
-                <p>Nombre: <input type="text" id="name" name="name"></p>
-                <p>Email: <input type="email" id="email" name="email"></p>
-                <p>Provincia: <select name="provincias" id="provi">
-                    <optgroup label="Comunidad Valenciana">
-                        <option value="Alicante">ALICANTE</option>
-                    <option value="Castellón">CASTELLÓN</option>
-                    </optgroup>
-                    <optgroup label="Comunidad Murciana">
-                        <option value="Murcia">MURCIA</option>
-                    <option value="Totana">TOTANA</option>
-                    </optgroup>
-                    
-                </select></p>
-                <p><input type="submit" value="Enviar" /></p>
-            
-            </fieldset>
-            
-        </form>
-        <div id="resultado"></div>
-        <script src="js/ejercicio23.js"></script>
-    </body>
+<head>
+    <title>Curso HTML5 EOI</title>
+    <!--Caracteres que usa (espanol)-->
+    <meta charset="utf-8">
+    <!--Ajusta el ancho de la pagina segun el dispositivo-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    
+</head>
+ 
+<body id = "cuerpo">
+    <form name="formulario", id = "formulario1">
+        <fieldset id = "info">
+            <legend>Datos Personales</legend>     
+                <p>
+                    <label for = "nombre">Nombre</label>
+                    <input type="text", name="nombre", id="nom", max="20", placeholder="Nombre de usuario" />
+                </p>    
+                <p>
+                    <label for = "nombre">Email</label>
+                    <input type="text", name="email", id="em", placeholder="Email" />
+                </p>    
+                <p>
+                    <label for="provincia">Provincia</label>
+                    <select name="provincia", id="provinciaId">
+                        <optgroup label="Comunidad Valenciana">
+                            <option value="Alicante">ALICANTE</option> 
+                            <option value="Castellon">CASTELLÓN</option>
+                            <option value="Valencia">VALENCIA</option>
+                        </optgroup>
+                        <optgroup label="Comunidad de Murcia">
+                            <option value="Murcia">MURCIA</option>
+                            <option value="Cartagena">CARTAGENA</option>
+                        </optgroup>
+                    </select>
+                </p>
+                <button type="submit">Enviar</button>
+                <button type="reset">Reset</button>
+         </fieldset>
+    </form>
+   
+    <div id = "resultado">
+
+    </div>
+
+</body>
+<script src="js/ejercicio23.js"></script>
 </html>

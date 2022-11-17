@@ -1,36 +1,25 @@
-const formu = document.getElementById("form");
+const formulario = document.getElementById("formulario1");
 
-formu.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const formuData = new FormData(formu);
-
-    var nombre = formuData.get("name");
-    var email = formuData.get("email");
-    var select = formuData.get("provincias");
-
-    var nameInicial = nombre.startsWith("ANTONIO");
-    var confi = [false, false, false];
-    var result = "";
-
-    if(nombre.length < 20 && nameInicial === true){
-        result += "Nombre: " + nombre;
-        confi[0] = true;
-    } 
-
-    if(email.length > 0){
-        result += "<br>";
-        result = "Email: " + email;
-        result += "<br>";
-        confi[1] = true;
-    }
-
-    result += "Provincia: " + select;
-
-    if(confi[0] === true && confi[1] === true) {
-        document.getElementById("resultado").innerHTML = result;
-    } else {
-        document.getElementById("resultado").innerHTML = "Los resultados obtenidos no son correctos";
-    }
+formulario.addEventListener("submit", function(element){
+    element.preventDefault();
+    const formData = new FormData(formulario);
+    var nombre = formData.get("nombre");
+    var email = formData.get("email");
+    var provincia = formData.get("provincia");
+    validacion(nombre, email, provincia);
+    
 });
+
+let ok = false;
+let resultado = "Los datos del formulario son incorrectos";
+
+function validacion (nombre, email, provincia){
+    if (nombre.lenght > 20 || !nombre.startsWith("ANTONIO") || nombre == "" || email == ""){        
+    } else {
+        ok = true;
+        resultado = "Nombre: " + nombre + "<br>Email: " + email + "<br>Provincia: " + provincia;
+    }
+    document.getElementById("resultado").innerHTML = resultado;
+    return ok;
+}
 
