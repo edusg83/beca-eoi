@@ -65,7 +65,7 @@ let ok = false;
 let resultado = "Los datos del formulario son incorrectos";
 
 function validacion (nombre, email, provincia){
-    if (nombre.lenght > 20 || !nombre.includes("ANTONIO") || nombre == "" || email == ""){        
+    if (nombre.lenght > 20 || !nombre.startsWith("ANTONIO") || nombre == "" || email == ""){        
     } else {
         ok = true;
         resultado = "Nombre: " + nombre + "<br>Email: " + email + "<br>Provincia: " + provincia;
