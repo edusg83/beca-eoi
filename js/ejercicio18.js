@@ -6,3 +6,6 @@ console.log(idHeader);
 
 var queryHeader = document.querySelector("header");
 console.log(queryHeader);
+
+var queryIdHeader = document.querySelector("#idHeader");
+console.log(queryIdHeader);

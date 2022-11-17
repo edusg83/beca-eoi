@@ -13,13 +13,16 @@ function multiplicar(n1, n2) {
     return n1 * n2;
 }
 
-var n1 = prompt("Introduzca el primer valor");
-var n2 = prompt("Introduzca el segundoo valor");
+var numero1 = prompt("Introduzca el primer valor");
+var numero2 = prompt("Introduzca el segundoo valor");
 
-function operaciones() {
-    var suma = sumar(n1, n2);
-    var multiplicacion = multiplicar(n1, n2);
+numero1 = Number(numero1);
+numero2 = Number(numero2);
+
+(function operaciones() {
+    var suma = sumar(numero1, numero2);
+    var multiplicacion = multiplicar(numero1, numero2);
     var resultado = sumar(suma, multiplicacion);
     document.getElementById("resultado").innerHTML = resultado;
     console.log(resultado);
-}
+}())
