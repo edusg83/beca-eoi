@@ -27,7 +27,7 @@ formu.addEventListener('submit', function(e) {
 
     result += "Provincia: " + select;
 
-    if(verificado[0] === true && verificado[1] === true) {
+    if(confi[0] === true && confi[1] === true) {
         document.getElementById("resultado").innerHTML = result;
     } else {
         document.getElementById("resultado").innerHTML = "Los resultados obtenidos no son correctos";
