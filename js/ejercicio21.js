@@ -33,12 +33,12 @@ function asignarOnclick(){
     if (atributoParrafo1 != "parrafo"){
         parrafo1.setAttribute("class", "parrafo");
         boton1.setAttribute("class", "aplicado");
-        boton1.firstChild.data = "Quitar estilo a párrafo";
+        boton1.innerText = "Quitar estilo a párrafo";
         
     } else if (atributoParrafo1 == "parrafo"){
         parrafo1.setAttribute("class", "");
         boton1.setAttribute("class", "");
-        boton1.firstChild.data = "Aplicar estilo a párrafo";
+        boton1.innerText = "Aplicar estilo a párrafo";
     }
 }
 
