@@ -1,19 +1,36 @@
-var velocidad = 2000,
-    i = 0;
+(function () {
+    var elem = document.createElement("p"),
+        text = document.createTextNode("Párrafo 1"),
+        pend = document.getElementById("body");
+    
+        elem.setAttribute("id","p1");
+        elem.appendChild(text);
+    
+        pend.parentNode.appendChild(elem);
+}());
 
-miFuncion = function () {
-    console.log("batman vuelve " + i++);
-    if (i < 10) {
-        setTimeout(miFuncion, velocidad);
+(function () {
+    var elem = document.createElement("button"),
+        text = document.createTextNode("Aplicar estilo a párrafo"),
+        pend = document.getElementById("p1");
+
+        elem.setAttribute("id","boton1");
+        elem.appendChild(text);
+
+        pend.parentNode.appendChild(elem);
+}());
+
+(function (){
+var boton = document.getElementById("boton1"),
+    par1 = document.getElementById("p1");
+
+boton.onclick = function () {
+        if(par1.className==""){
+            par1.classList.add("parrafo","aplicado");
+            boton.innerHTML="Quitar estilo a párrafo";
+        } else {
+            par1.classList.remove("parrafo","aplicado");
+            boton.innerHTML="Aplicar estilo a párrafo";
+        };
     }
-};
-setTimeout(miFuncion,velocidad);
-
-miFuncion2 = function() {
-    console.log("batman vuelve " + i++);
-    if(i > 9) {
-        clearInterval(timer);
-    }
-};
-var timer = setInterval(miFuncion2,velocidad);
-
+}());
