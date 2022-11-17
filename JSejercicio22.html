@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <title>Curso HTML5 EOI</title>
+    <!--Caracteres que usa (espanol)-->
+    <meta charset="utf-8">
+    <!--Ajusta el ancho de la pagina segun el dispositivo-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   
+   
+    <style>
+        
+    </style>
+
+    
+</head>
+ 
+<body id = "cuerpo">
+    <form name="formulario", id = "formulario1">
+        <fieldset id = "info">
+            <legend>Datos Personales</legend>     
+                <p>
+                    <label for = "nombre">Nombre</label>
+                    <input type="text", name="nombre", id="nom", max="20", placeholder="Nombre de usuario" />
+                </p>    
+                <p>
+                    <label for = "nombre">Email</label>
+                    <input type="text", name="email", id="em", placeholder="Email" />
+                </p>    
+                <p>
+                    <label for="provincia">Provincia</label>
+                    <select name="provincia", id="provinciaId">
+                        <optgroup label="Comunitat Valenciana">
+                            <option value="Alicante">ALICANTE</option> 
+                            <option value="Castellon">CASTELLÓN</option>
+                            <option value="Valencia">VALENCIA</option>
+                        </optgroup>
+                        <optgroup label="Región de Murcia">
+                            <option value="Murcia">MURCIA</option>
+                            <option value="Cartagena">CARTAGENA</option>
+                        </optgroup>
+                    </select>
+                </p>
+                <button type="submit">Enviar</button>
+                <button type="reset">Reset</button>
+         </fieldset>
+    </form>
+   
+    <div id = "resultado">
+
+    </div>
+
+</body>
+<script type="text/javascript" src="js/ejercicio22.js"></script>
+</html>
