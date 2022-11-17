@@ -1,0 +1,1 @@
+document.write("<strong>Mi primera linea de texto con write</strong>");
