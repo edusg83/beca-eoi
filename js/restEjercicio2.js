@@ -7,7 +7,7 @@ const credentials = request.credentials;
 fetch(request)
     .then(response=> response.json())
     .then(data=> {
-        var datos = data.arrayUsuarios
+        var datos = data.arrayUsuarios;
         
 let tabla = `<table id="dataTable">
 <thead>
