@@ -1,30 +1,39 @@
 (function(){
     var doc = document,
-    elem = doc.createElement("p"),
-    pbody = doc.getElementById("body");
-elem.innerHTML = "Parrafo1";
-elem.setAttribute("id", "p1");
-pbody.parentNode.appendChild(elem);
+        body = doc.getElementById("body"),
+        newP = doc.createElement("p"),
+        contenido = doc.createTextNode("Párrafo 1");
+    
+    newP.appendChild(contenido);
+    newP.id = "p1";
+    body.appendChild(newP);
 }());
 
 (function(){
     var doc = document,
-    elem = doc.createElement("button"),
-    pbody = doc.getElementById("p1");
-elem.innerHTML = "Aplicar estilo a parrafo";
-elem.setAttribute("id", "boton1");
-pbody.parentNode.appendChild(elem);
+        boton = doc.createElement("button"),
+        pbody = doc.getElementById("p1");
+        contenido = doc.createTextNode("Aplicar estilo a parrafo");
+
+    boton.appendChild(contenido);
+    boton.id = "boton1";
+    boton.setAttribute("onclick", "asignarEstilo()");
+
+    pbody.appendChild(boton);
 }());
 
-var el = document.getElementById("boton1");
-el.onclick = function aplicarEstilo() {
-    var parr = document.getElementById("p1")
-    if(parr.style != parr.getAttribute) {
-       parr.setAttribute("class", "parrafo");
-       elem.innerHTML = "Quitar estilo a párrafo";
-    }else if(parr.style == parr.getAttribute) {
-        parr.setAttribute("class", "aplicado");
-        elem.innerHTML = "Aplicar estilo a párrafo";
+function asignarEstilo() {
+    var doc = document,
+        p = doc.getElementById("p1"),
+        atributoP = p.getAttribute("class");
+    
+    if(atributoP != "parrafo"){
+        p.setAttribute("class", "parrafo");
+        boton1.setAttribute("class", "aplicado");
+        boton1.innerText = "Quitar estilo a parrafo";
+    } else if (atributoP == "parrafo") {
+        p.setAttribute("class", "");
+        boton1.setAttribute("class", "");
+        boton1.innerText = "Aplicar estilo a parrafo";
     }
-};
-
+}
