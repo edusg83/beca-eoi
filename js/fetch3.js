@@ -7,17 +7,17 @@ const credentials = request.credentials;
 fetch(request)
     .then(response => response.json())
     .then(data => {
-        usersArrayName = data.arrayUsuarios[0].nombre[0];
-        usersArrayApe = data.arrayUsuarios[0].apellidos[0];
-        userArrayDirr = data.arrayUsuarios[0].direcciones[0];
-        usersArray = usersArrayName + usersArrayApe + usersArrayDirr;
+        usersArrayName = data.arrayUsuarios[0].nombre;
+        usersArrayApe = data.arrayUsuarios[0].apellidos;
+        userArrayDirr = data.arrayUsuarios[0].direcciones;
+        
 
         let tabla = `<table id = "table">
 <thead>
     <tr>
         <th>Nombre</th>
-        <th>Apellidos</th>
-        <th>Direcciones</th>
+        <th>Poblacion</th>
+       
     </tr>
 </thead>
 <tbody>`;
@@ -27,15 +27,16 @@ let finTabla=`</tbody>
 
 let filas=``;
 
-usersArray.forEach(item => {
+userArrayDirr.forEach(item => {
     filas+=`
     <tr>
         <td>${item.nombre}</td>
-        <td>${item.apellidos}</td>
-        <td>${item.direcciones}</td>
+        <td>${item.poblacion}</td>
     </tr>`;    
 });
 
 tabla+=filas+finTabla;
+document.getElementById("nombre").innerHTML = usersArrayName;
+document.getElementById("apellidos").innerHTML = usersArrayApe;
 document.getElementById("resultado").innerHTML=tabla;
     });
