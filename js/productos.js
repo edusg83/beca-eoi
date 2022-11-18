@@ -11,13 +11,13 @@ axios.get(url)
 
 
 function tablaProductos(productos){
-    let tabla = `<table id="dataTable">
+    let tabla = `<table id="dataTable", class="tg">
     <thead>
         <tr>
-            <th>Id</th>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Codigo</th>
+            <th class="th">Id</th>
+            <th class="th">Nombre</th>
+            <th class="th">Descripción</th>
+            <th class="th">Codigo</th>
         </tr>
     </thead>
     <tbody>`;
@@ -30,10 +30,10 @@ function tablaProductos(productos){
     productos.forEach(item => {
     filas+=`
         <tr>
-            <td>${item.id}</td>
-            <td>${item.name}</td>
-            <td>${item.description}</td>
-            <td>${item.code}</td>
+            <td class="tg-0lax">${item.id}</td>
+            <td class="tg-0lax">${item.name}</td>
+            <td class="tg-0lax"> ${item.description}</td>
+            <td class="tg-0lax">${item.code}</td>
         </tr>`;
     });
     
