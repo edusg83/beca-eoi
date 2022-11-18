@@ -4,11 +4,11 @@ var datos
 fetch(request)
   .then(response => response.json())
   .then(data => {
-    var user1 = data.arrayUsuarios[0]
+    var user = data.arrayUsuarios[0]
 
     let nom = `
-    Nombre: ${user1.nombre}<br>
-    Apellidos: ${user1.apellidos}<br>
+    Nombre: ${user.nombre}<br>
+    Apellidos: ${user.apellidos}<br>
 
     <table class="text-center bg-personal1 border border-3 border-success">
     <thead class="border border-3 border-success">
@@ -21,7 +21,7 @@ fetch(request)
 
     let dir = ``;
 
-    user1.direcciones.forEach(item => {
+    user.direcciones.forEach(item => {
     dir +=`
     <tr class="border-personal">
       <td>${item.nombre}</td>
