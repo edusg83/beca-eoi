@@ -1,6 +1,12 @@
 @charset "UTF-8";
+.border-personal {
+    border: yellow;
+    border-style: dotted;
+    border-width: 2px;
+}
 .bg-personal1 {
     background-color: #373c41;
+    color: white;
 }
 .bg-personal2 {
     background-color: rgb(43, 199, 95);
