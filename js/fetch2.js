@@ -32,9 +32,9 @@ usersArray.forEach(item => {
         <td>${item.direccion}</td>
     </tr>`;    
 });
+tabla+=filas+finTabla;
+document.getElementById("resultado").innerHTML=tabla;
     });
 
 
 
-tabla+=filas+finTabla;
-document.getElementById("resultado").innerHTML=tabla;
