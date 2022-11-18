@@ -1,4 +1,4 @@
-const request = new Request("https://j4jjw.mocklab.io/users");
+const request = new Request("https://j4jjw.mocklab.io/usersDataList");
 
 const URL = request.url;
 const method = request.method;
@@ -7,14 +7,15 @@ const credentials = request.credentials;
 fetch(request)
     .then(response=> response.json())
     .then(data=> {
-        var datos = data.arrayUsuarios
+        var nombre1 = data.arrayUsuarios[0].nombre;
+        var apellidos1 = data.arrayUsuarios[0].apellidos;
+        var direcciones1 = data.arrayUsuarios[0].direcciones;
         
 let tabla = `<table id="dataTable">
 <thead>
     <tr>
         <th>Nombre</th>
-        <th>Apellidos</th>
-        <th>Direccion</th>
+        <th>Poblacion</th>
     </tr>
 </thead>
 <tbody>`;
@@ -24,15 +25,15 @@ let finTabla=`</tbody>
 
 let filas=``;
 
-datos.forEach(item => {
+direcciones1.forEach(item => {
 filas+=`
 <tr>
     <td>${item.nombre}</td>
-    <td>${item.apellidos}</td>
-    <td>${item.direccion}</td>
+    <td>${item.poblacion}</td>
 </tr>`;
 });
 
 tabla += filas+finTabla;
-document.getElementById("resultados").innerHTML = tabla;
+document.getElementById("resultados").innerHTML = tabla
+
 });
