@@ -17,7 +17,7 @@ function tablaProductos(productos){
             <th class="th">Id</th>
             <th class="th">Nombre</th>
             <th class="th">Descripción</th>
-            <th class="th">Codigo</th>
+            <th class="th">Código</th>
         </tr>
     </thead>
     <tbody>`;
