@@ -1,20 +1,15 @@
-let usersArray=[{
-    "nombre":"Oscar",
-    "apellidos":"Martinez Orts",
-    "direccion":"C/Segura 14"
-},
-{
-    "nombre":"Alejandro",
-    "apellidos":"Marcs Orts",
-    "direccion":"C/Segura 13" 
-},
-{
-    "nombre":"Pablor",
-    "apellidos":"Martinez Pelayo",
-    "direccion":"C/Segura 12"
-}];
+const request = new Request('https://j4jjw.mocklab.io/users');
+var usersArray;
+const URL = request.url;
+const method = request.method;
+const credentials = request.credentials;
 
-let tabla = `<table id = "table">
+fetch(request)
+    .then(response => response.json())
+    .then(data => {
+        usersArray = data.arrayUsuarios; 
+
+        let tabla = `<table id = "table">
 <thead>
     <tr>
         <th>Nombre</th>
@@ -37,6 +32,9 @@ usersArray.forEach(item => {
         <td>${item.direccion}</td>
     </tr>`;    
 });
+    });
+
+
 
 tabla+=filas+finTabla;
 document.getElementById("resultado").innerHTML=tabla;
