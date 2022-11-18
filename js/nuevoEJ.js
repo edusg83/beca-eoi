@@ -22,8 +22,28 @@ function operaciones (){
         mesesTotales = mesesTotales - 12;
     }
 
-    let cadena = dia + "/" + mesesTotales + "/" + ano;  
-    document.getElementById("resultado").innerHTML = cadena;
+
+    let showResult = true;
+
+
+    switch(mesesTotales){
+        case 2:
+            if (dia>28){
+                alert("Fecha incorrecta")
+                showResult = false;
+            }
+        case 4: case 6: case 9: case 11:
+            if (dia>30){
+                alert("Fecha incorrecta")
+                showResult = false;
+            }
+    }
+
+    if (showResult === true){
+        let cadena = dia + "/" + mesesTotales + "/" + ano;  
+        document.getElementById("resultado").innerHTML = cadena;
+    }
+
 }
 
 
