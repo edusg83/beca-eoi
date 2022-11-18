@@ -6,9 +6,9 @@ const credentials = request.credentials;
 
 axios.get(request)
     .then((data) => {
-        usersArrayName = data.arrayUsuarios[0].nombre;
-        usersArrayApe = data.arrayUsuarios[0].apellidos;
-        userArrayDirr = data.arrayUsuarios[0].direcciones;
+        usersArrayName = data.data.arrayUsuarios[0].nombre;
+        usersArrayApe = data.data.arrayUsuarios[0].apellidos;
+        userArrayDirr = data.data.arrayUsuarios[0].direcciones;
         
 
         let tabla = `<table id = "table">

@@ -6,7 +6,7 @@ const credentials = request.credentials;
 
 axios.get(request)
     .then((data) => {
-        usersArray = data.arrayUsuarios; 
+        usersArray = data.data.arrayUsuarios; 
 
         let tabla = `<table id = "table">
 <thead>
