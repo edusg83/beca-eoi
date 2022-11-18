@@ -1,12 +1,11 @@
-const request = new Request('https://j4jjw.mocklab.io/users');
+const request = 'https://j4jjw.mocklab.io/users';
 var usersArray;
 const URL = request.url;
 const method = request.method;
 const credentials = request.credentials;
 
-fetch(request)
-    .then(response => response.json())
-    .then(data => {
+axios.get(request)
+    .then((data) => {
         usersArray = data.arrayUsuarios; 
 
         let tabla = `<table id = "table">

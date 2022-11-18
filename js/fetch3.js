@@ -1,12 +1,11 @@
-const request = new Request('https://j4jjw.mocklab.io/usersDataList');
+const request = 'https://j4jjw.mocklab.io/usersDataList';
 var usersArray;
 const URL = request.url;
 const method = request.method;
 const credentials = request.credentials;
 
-fetch(request)
-    .then(response => response.json())
-    .then(data => {
+axios.get(request)
+    .then((data) => {
         usersArrayName = data.arrayUsuarios[0].nombre;
         usersArrayApe = data.arrayUsuarios[0].apellidos;
         userArrayDirr = data.arrayUsuarios[0].direcciones;
