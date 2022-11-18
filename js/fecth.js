@@ -6,6 +6,8 @@ const credentials = request.credentials;
 
 fetch(request)
     .then(response => response.json())
-    .then(data => {});
+    .then(data => {
+        console.log(data); 
+    });
 
-console.log(request);    
+   
