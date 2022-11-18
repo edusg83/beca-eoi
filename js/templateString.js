@@ -11,7 +11,7 @@ let arrayEjemplo=[{
 {
     "id":"3",
     "tarjeta":"9999 1010 1111 1212",
-    "propietario": "Propietario tarjeta 2"
+    "propietario": "Propietario tarjeta 3"
 }];
 
 
