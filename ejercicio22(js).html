@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="get" id="formulario">
+        <fieldset>Datos personales</fieldset>
+        <p>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre">
+            
+        </p>
+        <p>
+            <label for="mail">Email</label>
+            <input type="text" name="mail">
+        </p>
+
+        <p>
+            <label for="provincia">Provincia</label>
+            <select name="provincia">
+                <option value="Comunidad Valenciana">Comunidad Valenciana</option>
+                <option value="Comunidad de Murcia">Comunidad de Murcia</option>
+                <option value="Comunidad de Navarra">Comunidad de Navarra</option>
+            </select>
+
+        </p>
+        <button type="submit">Enviar</button>
+        </fieldset>
+
+    </form>
+    <div id="resultado"></div>
+    <script src="js/ejercicio22.js"></script>
+    
+</body>
+</html>
