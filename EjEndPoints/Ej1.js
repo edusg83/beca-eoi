@@ -1,5 +1,8 @@
-const request = "https://j4jjw.mocklab.io/users";
-const request2 = "https://j4jjw.mocklab.io/usersDataList";
+const request = new Request("https://j4jjw.mocklab.io/users");
+const request2 = new Request("https://j4jjw.mocklab.io/usersDataList");
+
+
+
 
 fetch(request)
   .then(response => response.json())
