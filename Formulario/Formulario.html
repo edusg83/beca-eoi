@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    </head>
+    <body>
+        <h1>Formularios</h1>
+
+        <form id="formulario1" name="formulario1">
+            <fieldset>
+        <legend>Formulario</legend>
+                <label id="etiqueta" for="nombreUsuario">Nombre de usuario</label>
+                <input type="text" name="nombreUsuario" id="nombreUsuario" required /><br>
+                <input type="text" name="email" placeholder="Introduce tu email"/><br/>
+               
+                
+            </fieldset>
+            <button type="submit">Enviar</button>
+                <button type="reset">Reset</button>
+        </form>
+
+        <div id="resultados"></div>
+
+        <script src="js/Formulario.js"></script>
+    </body>
+</html>
