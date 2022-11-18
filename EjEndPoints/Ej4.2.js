@@ -1,9 +1,9 @@
-const request = new Request("https://j4jjw.mocklab.io/usersDataList");
+const request = "https://j4jjw.mocklab.io/usersDataList";
 
 axios.get(request)
 .then((data)=> {
 
-  var user = data.arrayUsuarios[0]
+  var user = data.data.arrayUsuarios[0]
 
     let nom = `
     Nombre: ${user.nombre}<br>
