@@ -1,7 +1,7 @@
 const urlUsers = "https://j4jjw.mocklab.io/usersDataList";
 
 axios.get(urlUsers)
-    .then(respuestaUsuarios=> {
+    .then((respuestaUsuarios)=> {
         var nombre1 = respuestaUsuarios.data.arrayUsuarios[0].nombre;
         var apellidos1 = respuestaUsuarios.data.arrayUsuarios[0].apellidos;
         var direcciones1 = respuestaUsuarios.data.arrayUsuarios[0].direcciones;
