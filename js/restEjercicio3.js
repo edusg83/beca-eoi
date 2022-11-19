@@ -33,7 +33,7 @@ filas+=`
 });
 
 tabla += filas+finTabla;
-document.getElementById("parrafoCard").innerHTML ="Las direcciones de <b>" + nombre1 + " " + apellidos1 + "</b> son: ";
+document.getElementById("parrafoCard").innerHTML ="Las direcciones de " + nombre1 + " " + apellidos1 + " son: ";
 document.getElementById("parrafoTable").innerHTML = tabla;
 
 });
