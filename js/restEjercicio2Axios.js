@@ -1,6 +1,6 @@
-const urlUsers = "https://j4jjw.mocklab.io/users";
+const urlUsers = 'https://j4jjw.mocklab.io/users';
 
-axios.get(urlUsers,{})
+axios.get(urlUsers)
     .then((respuestaUsuarios)=>{
         let datos = respuestaUsuarios.data.arrayUsuarios;
 

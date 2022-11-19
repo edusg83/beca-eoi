@@ -22,19 +22,18 @@ let tabla = `<table id="dataTable">
 
 let finTabla=`</tbody>
     </table>`;
-
 let filas=``;
 
 direcciones1.forEach(item => {
 filas+=`
 <tr>
-    <td>${item.nombre}</td>
-    <td>${item.poblacion}</td>
+    <td class="col">${item.nombre}</td>
+    <td class="col">${item.poblacion}</td>
 </tr>`;
 });
 
 tabla += filas+finTabla;
-document.getElementById("parrafoCard").innerHTML ="Las direcciones de " + nombre1 + " " + apellidos1 + " son: ";
+document.getElementById("parrafoCard").innerHTML ="Las direcciones de <b>" + nombre1 + " " + apellidos1 + "</b> son: ";
+document.getElementById("parrafoTable").innerHTML = tabla;
 
 });
-document.getElementById("resultados").innerHTML = tabla;
