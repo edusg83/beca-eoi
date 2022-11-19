@@ -10,8 +10,8 @@ axios.get(urlUsers,{headers})
         let datos;
         datos = respuestaProductos.data;
 
-    let tabla = `<table id="dataTable">
-    <thead>
+    let tabla = `<table id="dataTable" class="table table-striped">
+    <thead class="table-dark">
         <tr>
             <th>Id</th>
             <th>Name</th>
