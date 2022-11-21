@@ -1,9 +1,20 @@
 @charset "UTF-8";
+.sidebar {
+    width: 20%;
+    height: 100vh;
+    background: #343a40;
+  }
 .border-personal {
-    border: yellow;
-    border-style: dotted;
+    border: rgb(255, 255, 255);
+    border-style: solid;
     border-width: 2px;
 }
+
+.bg-personal0 {
+    background-color: #005fbe;
+    color: white;
+}
+
 .bg-personal1 {
     background-color: #373c41;
     color: white;
