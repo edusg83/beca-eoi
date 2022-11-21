@@ -4,6 +4,7 @@ form.addEventListener("submit",function(elem) {
     elem.preventDefault();
 
     const formData = new FormData(form);
+
     var prod = formData.get("producto"),
         desc = formData.get("descripcion"),
         cod = formData.get("codigo");
@@ -19,7 +20,7 @@ form.addEventListener("submit",function(elem) {
         mensaje(0);
 
     }
-},false)
+},false);
 
 function mensaje(param1) {
     if(param1 == 0) {
