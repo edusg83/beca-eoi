@@ -46,7 +46,7 @@ axios.get(request,{headers})
 });
 
 
-
+//MODIFICACION DE PRODUCTOS
 function verProducto(param1) {
   var url = request+"/"+param1
 
@@ -57,7 +57,6 @@ function verProducto(param1) {
   document.getElementById("descripcion-container").value = data.data.description;
   document.getElementById("codigo-container").value = data.data.code;
 
-  //formulario
   var form = document.getElementById("formularioUpdate");
 
   form.addEventListener("submit",function(element) {
@@ -76,7 +75,7 @@ function verProducto(param1) {
 });
 }
 
-
+//BORRADO DE PRODUCTOS
 function delProducto(param1) {
   var url = request+"/"+param1
 
@@ -88,10 +87,8 @@ function delProducto(param1) {
 
   form.addEventListener("submit",function(element) {
     element.preventDefault();
-    const envio = {
-      "id":data.data.id
-    };
-    axios.delete(url,envio,{headers})
+
+    axios.delete(url,{headers})
     .then(window.location.assign("EjendpointGET.html"));
 
   });
