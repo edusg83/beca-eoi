@@ -143,10 +143,7 @@ function POSTProducto(){
         'Acces-Control-Allow-Origin':'*'
     };
 
-    const response = {
-        ""
-    }
-
+    
     axios.post("http://ligafalm.eu:28100/products",{headers},{
         name:document.getElementById("inNombre").value ,
         description:document.getElementById("inDescription").value,
