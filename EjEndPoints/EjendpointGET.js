@@ -5,7 +5,7 @@ const headers = {
 
 const request = "http://ligafalm.eu:28100/products";
 
-axios.get(request)
+axios.get(request,{headers})
 .then((data)=> {
 
   var user = data.data
@@ -30,7 +30,9 @@ axios.get(request)
       <td>${item.name}</td>
       <td>${item.description}</td>
       <td>${item.code}</td>
-      <td><button>Update.</button> <button>Delete.</button></td>
+      <td><button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal">Update</button>
+
+      <button>Delete.</button></td>
     </tr>`
     });
 
@@ -42,7 +44,3 @@ axios.get(request)
     document.getElementById("resultados").innerHTML = result;
     
 });
-
-
-
-
