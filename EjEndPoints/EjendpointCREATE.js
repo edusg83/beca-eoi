@@ -10,14 +10,10 @@ form.addEventListener("submit",function(elem) {
 
     const formData = new FormData(form);
 
-    var prod = formData.get("producto"),
-        desc = formData.get("descripcion"),
-        cod = formData.get("codigo");
-
     var newProducto = {
-        "name":document.getElementById("producto").value,
-        "description":document.getElementById("descripcion").value,
-        "code":document.getElementById("codigo").value
+        "name":formData.get("producto"),
+        "description":formData.get("descripcion"),
+        "code":formData.get("codigo")
     };
     axios.post(url,newProducto,{headers})
     .then(()=> {
