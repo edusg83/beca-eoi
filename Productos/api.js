@@ -139,6 +139,6 @@ function PUTproducto(){
                 description:document.getElementById("inDescription").value,
                 code:document.getElementById("inCodigo").value
             });
-    
+     window.location.href = "index.html" 
 }
 
