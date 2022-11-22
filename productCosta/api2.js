@@ -28,7 +28,7 @@ function mostrar(){
          productos.forEach(producto => {
             /*console.log("ID: "+producto.id+" Name: "+producto.name+" Descrpt: "+producto.description+" Code: "+producto.code);*/
             filastablas+=`
-                    <div class="col-4"  style="background-color: Lightgrey;"><a href="producto.html?id=${producto.id}">${producto.name}</a></div>
+                    <div class="col-4"  style="background-color: Lightgrey;"><a href="product.html?id=${producto.id}">${producto.name}</a></div>
                     <div class="col-4" style="background-color: Lightgrey;">${producto.description}</div>
                     <div class="col-4" style="background-color: Lightgrey;">${producto.code}</div>`;
          });
