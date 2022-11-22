@@ -23,9 +23,10 @@ function mostrar(){
          let tabla=`
          <div class="container">
          <div class="row m-10">
-                        <div class="col-4" style="background-color: Grey;">Nombre</div>
-                        <div class="col-4" style="background-color: Grey;">Description</div>
-                        <div class="col-4" style="background-color: Grey;">Codigo</div> `;
+                        <div class="col-3" style="background-color: Grey;">Nombre</div>
+                        <div class="col-3" style="background-color: Grey;">Description</div>
+                        <div class="col-3" style="background-color: Grey;">Codigo</div> 
+                        <div class="col-1" style="background-color: Grey;">Opciones</div> `;
         
          let finTabla=`</div>`;
         
@@ -33,9 +34,10 @@ function mostrar(){
          productos.forEach(producto => {
             /*console.log("ID: "+producto.id+" Name: "+producto.name+" Descrpt: "+producto.description+" Code: "+producto.code);*/
             filastablas+=`
-                    <div class="col-4"  style="background-color: Lightgrey;"><a href="producto.html?id=${producto.id}">${producto.name}</a></div>
-                    <div class="col-4" style="background-color: Lightgrey;">${producto.description}</div>
-                    <div class="col-4" style="background-color: Lightgrey;">${producto.code}</div>`;
+                    <div class="col-3"  style="background-color: Lightgrey;"><a href="producto.html?id=${producto.id}">${producto.name}</a></div>
+                    <div class="col-3" style="background-color: Lightgrey;">${producto.description}</div>
+                    <div class="col-3" style="background-color: Lightgrey;">${producto.code}</div>
+                    <div class="col-1" onClick=borrar(${producto.id}) style="background-color: Lightgrey;">Borrar</div>`;
          });
          tabla += filastablas+finTabla;
          document.getElementById("resultados").innerHTML=tabla;
@@ -59,16 +61,18 @@ function mostrarID(id){
                 <div class="row m-10">
                                 <div class="col-4" style="background-color: Grey;">Nombre</div>
                                 <div class="col-4" style="background-color: Grey;">Description</div>
-                                <div class="col-4" style="background-color: Grey;">Codigo</div> `;
+                                <div class="col-4" style="background-color: Grey;">Codigo</div>
+                                <div class="col-4" style="background-color: Grey;">Opciones</div> `;
                 
                 let finTabla=`</div> </div>`;
                 
                 let filastablas=``;
                     /*console.log("ID: "+producto.id+" Name: "+producto.name+" Descrpt: "+producto.description+" Code: "+producto.code);*/
                     filastablas+=`
-                            <div class="col-4" style="background-color: Lightgrey;">${productos.name}</div>
-                            <div class="col-4" style="background-color: Lightgrey;">${productos.description}</div>
-                            <div class="col-4" style="background-color: Lightgrey;">${productos.code}</div>`;
+                            <div class="col-2" style="background-color: Lightgrey;">${productos.name}</div>
+                            <div class="col-2" style="background-color: Lightgrey;">${productos.description}</div>
+                            <div class="col-2" style="background-color: Lightgrey;">${productos.code}</div>
+                            <div class="col-2" onClick=borrar(${productos.id})  style="background-color: Lightgrey;">Borrar</div>`;
                 
                 tabla += filastablas+finTabla;
                 document.getElementById("resultados").innerHTML=tabla;
@@ -117,7 +121,18 @@ function buscar(){
     console.log( );
     
 }
+function borrar(id){
+    if (window.confirm("Estas seguro que deseas eliminar este producto?")) {
+        axios.delete("http://ligafalm.eu:28100/products/"+id)
+        .then(() => {
+            window.alert("Eliminado");
+            document.getElementById("resultados").innerHTML = "";
+            mostrar();
+        });
+      }
+     
 
+}
 function producto(){
     var html = window.location.href; 
   
@@ -138,7 +153,25 @@ function PUTproducto(){
                 name:document.getElementById("inNombre").value ,
                 description:document.getElementById("inDescription").value,
                 code:document.getElementById("inCodigo").value
+                
+            }).then(() => {
+                window.location.href = "index.html";
             });
-     window.location.href = "index.html" 
+            
 }
+function crear(){
+    window.location.href = "crear.html"
+}
+function Postproducto(){
+    axios.post("http://ligafalm.eu:28100/products",{
+        name:document.getElementById("inNombre").value ,
+        description:document.getElementById("inDescription").value,
+        code:document.getElementById("inCodigo").value
+        
+    }).then(() => {
+        window.location.href = "index.html";
+    });
+    
 
+    
+}
