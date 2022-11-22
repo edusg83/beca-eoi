@@ -137,6 +137,25 @@ function PUTproducto(){
      window.location.href = "indexPR.html" 
 }
 
+function POSTProducto(){
+    const headers ={
+        'Content-Type':'application/json',
+        'Acces-Control-Allow-Origin':'*'
+    };
+
+    const response = {
+        ""
+    }
+
+    axios.post("http://ligafalm.eu:28100/products",{headers},{
+        name:document.getElementById("inNombre").value ,
+        description:document.getElementById("inDescription").value,
+        code:document.getElementById("inCodigo").value
+    });
+
+    window.location.href = "indexPR.html"
+}
+
 function DELETEproducto(){
     const headers ={
         'Content-Type':'application/json',
