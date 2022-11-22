@@ -138,17 +138,23 @@ function PUTproducto(){
 }
 
 function DELETEproducto(){
+    const headers ={
+        'Content-Type':'application/json',
+        'Acces-Control-Allow-Origin':'*'
+    };
+
     var html = window.location.href; 
 
     var arrHtml = html.split("=");
     idStr = arrHtml[1];
     
-      axios.delete("http://ligafalm.eu:28100/products/"+idStr, {
-                id:idStr,
-                name:document.getElementById("inNombre").value ,
-                description:document.getElementById("inDescription").value,
-                code:document.getElementById("inCodigo").value
-            });
-     window.location.href = "indexPR.html" 
-
+      axios.delete("http://ligafalm.eu:28100/products/"+idStr,{headers})
+      .then((respuesta)=>{
+            console.log(respuesta.data);
+            window.location.href = "indexPR.html";
+        })
+      .catch((error)=>{
+        console.log(error);
+      });
+      
 }
