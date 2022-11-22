@@ -22,6 +22,8 @@ function tablaProductos(productos){
         </tr>
     </thead>
     <tbody>`;
+
+ //            <th class="th">Opciones</th>   
     
     let finTabla=`</tbody>
         </table>`;
@@ -42,6 +44,8 @@ function tablaProductos(productos){
         </tr>`;
     });
     
+//  <td class="tg-0lax"> <a href="producto.html?id=${item.id}")"><img src="SteveCarell.png", width=20px> </a><a href = nuevoProducto.html><img src="SteveCarell.png", width=20px></a></td>
+
     tabla += filas+finTabla;
     document.getElementById("resultados").innerHTML = tabla;
 }
