@@ -1,44 +1,65 @@
+const headers = {
+    'Content-Type':'application/json',
+    'Access-Control-Allow-Origin':'*'
+};
+
+
+
+
+
+
+
 // Recuperamos el id
 let url = window.location.href;
 let id = url.split("=")[1];
 
 
-// Recuperamos el producto y lo mostramos
 
 
 
 
-
-muestraProducto(id);
 actualizarProducto(id);
 
 
 
 function actualizarProducto(id){
-    const formulario = document.getElementById("formulario1");
-    formulario.addEventListener("submit", function(element){
-        element.preventDefault();
-        const formData = new FormData(formulario);
-        var nombre = formData.get("nombre");
-        var descripcion = formData.get("descripcion");
-        var codigo = formData.get("codigo");
+
+    axios.get('http://ligafalm.eu:28100/products/'+id, {headers})
+    .then((producto) => { 
+        // Recuperamos los datos del producto y los metemos en el formulario
+        document.getElementById("nom").value = producto.data.name;
+        document.getElementById("desc").value = producto.data.description;
+        document.getElementById("cod").value = producto.data.code;
 
 
-        const headers = {
-            'Content-Type':'application/json',
-            'Access-Control-Allow-Origin':'*'
-        };
+        // Recuperamos los datos del formulario
+        const formulario = document.getElementById("formulario1");
+        formulario.addEventListener("submit", function(element){
+            element.preventDefault();
+            const formData = new FormData(formulario);
+            
+            let nombre = formData.get("nombre");
+            let descripcion = formData.get("descripcion");
+            let codigo = formData.get("codigo");
+            
 
-        axios.put('http://ligafalm.eu:28100/products/'+id, {headers})
-            .then((elemento)=>{
-                let producto = elemento.data;
-                producto.name = nombre;
-                producto.description = descripcion;
-                producto.code = codigo;
-            })
-       
 
-        
+            const dataRequest = {
+                "name":nombre,
+                "description": descripcion,
+                "code": codigo
+            };
+   
+            console.log(dataRequest)
+            
+            axios.put('http://ligafalm.eu:28100/products/'+id, dataRequest, {headers})
+                
+    });
+
+
+
+
+      
 });
 }
 
@@ -49,7 +70,10 @@ function actualizarProducto(id){
 
 
 
-
+/*ç
+.then((url)=>{
+                    window.location.assign("index.html");
+                })
 // Funcion que recupera el producto y lo muestra en una tabla
 function muestraProducto(id){
     axios.get('http://ligafalm.eu:28100/products/'+id)
@@ -80,3 +104,4 @@ function muestraProducto(id){
         document.getElementById("resultados").innerHTML = tabla;     
     });
 }
+*/
