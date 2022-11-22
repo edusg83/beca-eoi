@@ -36,7 +36,7 @@ function tablaProductos(productos){
                 ${item.id}
             </td>
             <td class="tg-0lax">
-                <a href="file:///C:/Users/Chule/git/beca-eoi/productos/producto.html\?id=${item.id}", target="_blank")">${item.name}</a>
+                <a href="file:///C:/Users/Chule/git/beca-eoi/productos/producto.html\?id=${item.id}")">${item.name}</a>
             </td>
             <td class="tg-0lax"> ${item.description}</td>
             <td class="tg-0lax">${item.code}</td>

@@ -45,14 +45,18 @@ function actualizarProducto(id){
 
 
             const dataRequest = {
+                "id":id,
                 "name":nombre,
                 "description": descripcion,
                 "code": codigo
             };
    
-            console.log(dataRequest)
+ 
             
             axios.put('http://ligafalm.eu:28100/products/'+id, dataRequest, {headers})
+                .then((url)=>{
+                    window.location.assign("indice.html");
+                })
                 
     });
 
