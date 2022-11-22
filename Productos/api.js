@@ -87,6 +87,24 @@ function mostrarID(id){
                 });
 }
 
+function mostrarIDPro(id){
+   
+    const headers ={
+            'Content-Type':'application/json',
+            'Acces-Control-Allow-Origin':'*'
+        };
+        
+        const urlUsers = "http://ligafalm.eu:28100/products/"+id;
+        
+        axios.get(urlUsers,{headers})
+        .then((respuestaProductos) => {
+            let productos=respuestaProductos.data;
+            document.getElementById("inNombre").value=productos.name;
+            document.getElementById("inDescription").value=productos.description;
+            document.getElementById("inCodigo").value=productos.code;
+            });
+}
+
 function buscar(){
     if(document.getElementById("buscador").value==""){
         mostrar();
@@ -102,14 +120,25 @@ function buscar(){
 
 function producto(){
     var html = window.location.href; 
-    console.log(html);
-
-   
+  
     var arrHtml = html.split("=");
     idStr = arrHtml[1];
 
-    console.log(idStr);
+    mostrarIDPro(idStr);
+}
 
-    mostrarID(idStr)
+function PUTproducto(){
+    var html = window.location.href; 
+  
+    var arrHtml = html.split("=");
+    idStr = arrHtml[1];
+    
+      axios.put("http://ligafalm.eu:28100/products/"+idStr, {
+                id:idStr,
+                name:document.getElementById("inNombre").value ,
+                description:document.getElementById("inDescription").value,
+                code:document.getElementById("inCodigo").value
+            });
+    
 }
 
