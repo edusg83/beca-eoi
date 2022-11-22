@@ -133,8 +133,11 @@ function PUTproducto(){
                 name:document.getElementById("inNombre").value ,
                 description:document.getElementById("inDescription").value,
                 code:document.getElementById("inCodigo").value
+            })
+            .then((respuesta)=>{
+                window.location.href = "indexPR.html" 
+
             });
-     window.location.href = "indexPR.html" 
 }
 
 function POSTProducto(){
