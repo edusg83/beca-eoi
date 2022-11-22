@@ -6,7 +6,9 @@ const headers = {
 
 
 
-
+function volver(){
+    url = window.location.assign("indice.html");
+}
 
 
 
