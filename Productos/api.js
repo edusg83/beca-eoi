@@ -1,5 +1,13 @@
+if(window.location.href.indexOf("index")>0){
+    mostrar();
+}else{
+    producto();
+}
 
-mostrar();
+
+
+
+
 
 function mostrar(){
     const headers ={
@@ -25,7 +33,7 @@ function mostrar(){
          productos.forEach(producto => {
             /*console.log("ID: "+producto.id+" Name: "+producto.name+" Descrpt: "+producto.description+" Code: "+producto.code);*/
             filastablas+=`
-                    <div class="col-4" style="background-color: Lightgrey;">${producto.name}</div>
+                    <div class="col-4"  style="background-color: Lightgrey;"><a href="producto.html?id=${producto.id}">${producto.name}</a></div>
                     <div class="col-4" style="background-color: Lightgrey;">${producto.description}</div>
                     <div class="col-4" style="background-color: Lightgrey;">${producto.code}</div>`;
          });
@@ -90,7 +98,18 @@ function buscar(){
 
     console.log( );
     
+}
 
-    
+function producto(){
+    var html = window.location.href; 
+    console.log(html);
+
+   
+    var arrHtml = html.split("=");
+    idStr = arrHtml[1];
+
+    console.log(idStr);
+
+    mostrarID(idStr)
 }
 
