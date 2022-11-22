@@ -1,4 +1,9 @@
-const form = document.getElementById("formularioC");
+const headers = {
+    'Content-Type':'application/json',
+    'Access-Control-Allow-Origin': '*'
+  };
+const url = "http://ligafalm.eu:28100/products",
+      form = document.getElementById("formularioC");
 
 form.addEventListener("submit",function(elem) {
     elem.preventDefault();
@@ -9,23 +14,14 @@ form.addEventListener("submit",function(elem) {
         desc = formData.get("descripcion"),
         cod = formData.get("codigo");
 
-    if(prod != "" && desc != "" && cod != "") {
+    var newProducto = {
+        "name":document.getElementById("producto").value,
+        "description":document.getElementById("descripcion").value,
+        "code":document.getElementById("codigo").value
+    };
+    axios.post(url,newProducto,{headers})
+    .then(()=> {
+        window.location.assign("EjendpointGET.html")
+      });
 
-        console.log("funciona c:");
-        mensaje(1);
-
-    } else {
-
-        console.log("Error");
-        mensaje(0);
-
-    }
 },false);
-
-function mensaje(param1) {
-    if(param1 == 0) {
-        alert("Los datos no son correctos");
-    } else {
-        alert("Codigo: "+codigo.value+" | Producto: "+producto.value+" | Descripcion: "+descripcion.value);
-    }
-}
