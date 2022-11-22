@@ -18,6 +18,9 @@ function borrarProducto(){
             .then((url)=>{
                 window.location.assign("indice.html");
             })
+            .catch((error)=>
+            console.log(error)
+            );
             
     }  
     };
