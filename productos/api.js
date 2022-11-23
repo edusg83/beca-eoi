@@ -10,7 +10,7 @@ function mostrar(){
         'Acces-Control-Allow-Origin':'*'
     };
     
-    const urlUsers = "http://ligafalm.eu:28100/products";
+    const urlUsers = "http://ligafalm.eu:28100/products?page=0&size=100";
     
     axios.get(urlUsers,{headers})
     .then((respuestaProductos) => {
@@ -120,7 +120,12 @@ function producto(){
     var arrHtml = html.split("=");
     idStr = arrHtml[1];
 
-    mostrarIDPro(idStr);
+    if (idStr!=undefined)
+    {
+        mostrarIDPro(idStr);
+
+    }
+  
 }
 
 function PUTproducto(){
@@ -134,8 +139,13 @@ function PUTproducto(){
                 name:document.getElementById("inNombre").value ,
                 description:document.getElementById("inDescription").value,
                 code:document.getElementById("inCodigo").value
+            })
+            .then((respuesta)=> {
+                window.location.href = "index.html";
+            })
+            .catch((error)=>{
+                console.log(error);
             });
-     window.location.href = "index.html" 
 }
 
 
@@ -173,11 +183,19 @@ function POSTproducto() {
         'Content-Type':'application/json',
         'Acces-Control-Allow-Origin':'*'
     };
+
+    const dataRequest={
+                name:document.getElementById("inNombre").value ,
+                description:document.getElementById("inDescription").value,
+                code:document.getElementById("inCodigo").value
+    }
     
-      axios.post("http://ligafalm.eu:28100/products/", {headers}, {
-            name:document.getElementById("inNombre").value,
-            description:document.getElementById("inDescription").value,
-            code:document.getElementById("inCodigo").value
-        });
-    window.location.href = "index.html" 
+      axios.post("http://ligafalm.eu:28100/products/",dataRequest, {headers})
+      .then((respuesta)=>{
+        console.log(respuesta.data);
+        window.location.href = "index.html" 
+      })
+      .catch((error)=>{
+        console.log(error);
+      });
 }
