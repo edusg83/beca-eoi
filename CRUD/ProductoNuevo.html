@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <script src="bootstrap.bundle.min.js"></script>
+    <main id="main" class="main">
+        <div class="row">
+            <div class="col-2"></div>
+            <h1 class="col-10 fw-semibold">PRODUCTOS</h1>
+           
+        </div>
+        <p class="col-3">Nombre: <input id="inNombre">
+        <p class="col-3">Description: <input id="inDescription">
+        <p class="col-3">Codigo: <input id="inCodigo">  
+        <p class="col-3">
+        <input onclick="POSTproducto()" type="submit" value="Crear" />     
+        <input onclick="paginaPrincipal()" type="submit" value="Volver" /> 
+        <div id="resultados">
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script  src="Api.js"></script>
+    </main>
+</body>
+</html>
