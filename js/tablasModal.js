@@ -126,6 +126,7 @@ function deleteElemento(){
     axios.delete(usersURL+"/"+idItemEliminar,{headers})
     .then((respuesta)=>{
         console.log(respuesta.data);
+        window.location.href="tablasModal.html"
     })
     .catch((error)=>{
         console.log(error);
