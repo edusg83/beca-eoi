@@ -2,10 +2,14 @@ const usersURL = 'http://ligafalm.eu:28100/products';
 var respuesta;
 var idItemEliminar;
 
-axios.get(usersURL)
+const headers ={
+    'Content-Type':'application/json',
+    'Access-Control-Allow-Origin': '*'
+};
 
+
+axios.get(usersURL,{headers})
     .then(data => {
-
         let respuesta = data.data;
         let filas = ``;
         respuesta.forEach(element => {
@@ -36,7 +40,7 @@ function mostrar(id){
     const usersURL = 'http://ligafalm.eu:28100/products/' + id;
     var respuesta;
 
-    axios.get(usersURL)
+    axios.get(usersURL,{headers})
         .then(data => {
             let respuesta = data.data;
             
@@ -44,17 +48,15 @@ document.getElementById("nombre").innerHTML=respuesta.name;
 document.getElementById("descripcion").innerHTML=respuesta.description;
 document.getElementById("codigo").innerHTML=respuesta.code;
 
-})
+});
+
 }
 
 
 function create(){
     const form = document.getElementById("formCrear");
     const url = 'http://ligafalm.eu:28100/products';
-    const headers ={
-        'Content-Type':'application/json',
-        'Access-Control-Allow-Origin': '*'
-    };
+   
     
         const formData = new FormData(form);
         formData.append("name",document.getElementById("nameNew").value);
@@ -72,8 +74,6 @@ function create(){
             console.log(error);
         });
         
-   
-
 }
 
 
@@ -81,15 +81,13 @@ function showUpdate(id){
     const usersURL = 'http://ligafalm.eu:28100/products/';
     var respuesta;
 
-    axios.get(usersURL+id)
+    axios.get(usersURL+id,{headers})
     .then(data=>{
         respuesta=data.data;
         document.getElementById("nameUpdate").value=respuesta.name;
         document.getElementById("descUpdate").value=respuesta.description;
         document.getElementById("codeUpdate").value=respuesta.code;
         document.getElementById("idUpdate").value=respuesta.id;
-
-
     });
 
 }
@@ -98,10 +96,7 @@ function update(){
     let id=document.getElementById("idUpdate").value;
     const form = document.getElementById("formUpdate");
     const url = 'http://ligafalm.eu:28100/products/'+id;
-    const headers ={
-        'Content-Type':'application/json',
-        'Access-Control-Allow-Origin': '*'
-    };
+   
     const formData = new FormData(form);
         formData.append("id",Number(id));
         formData.append("name",document.getElementById("nameUpdate").value);
@@ -124,12 +119,11 @@ function update(){
 
 function deleteElemento(){
     const url = 'http://ligafalm.eu:28100/products/' + idItemEliminar;
-    const headers ={
-        'Content-Type':'application/json',
-        'Access-Control-Allow-Origin': '*'
-    };
+   
     axios.delete(url,{headers})
-    
+    .then((respuesta)=>{
+        console.log(respuesta.data);
+    })
     .catch((error)=>{
         console.log(error);
 
