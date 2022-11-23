@@ -13,21 +13,21 @@
  
 <body>
     <div id = "resultados", style = "padding: 30px"></div>  
-    <form name="formulari5", id = "formulario5", class="formularioTipo1">
+    <form name="formulari5", id = "formulario6", class="formularioTipo1">
         <fieldset id = "info">
-            <legend>Crear transacción</legend>     
+            <legend>Crear transacción</legend>
                 <p>
-                    <label for = "nombre">Código producto</label>
-                    <input type="text", name="codeProduct", id="codProd", max="20", placeholder="Código del producto" />
-                </p>    
+                    <label for="listaCodigos">Código producto</label>
+                    <div id="listaCodigosProductos"></div>
+                </p>       
                 <p>
                     <label for = "nombre">Cantidad de existencias</label>
                     <input type="text", name="total", id="tot", placeholder="Cantidad de existencias" />
                 </p>    
                 <p>
-                    <label for = "nombre">Objetivo</label>
-                    <input type="text", name="objetivo", id="obj", placeholder="Objetivo" />
-                </p>    
+                    <label for="listaObjetivos">Objetivo</label>
+                    <div id="listaObjetivos"></div>
+                </p>       
                 <button type="submit">Crear</button>
                 <button type="button", onclick="volver()">Volver</button>
          </fieldset>

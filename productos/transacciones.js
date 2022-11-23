@@ -56,6 +56,7 @@ function tablaTransacciones(transacciones){
     });
     tabla += filas+finTabla;
     document.getElementById("tablaTransacciones").innerHTML = tabla;
+    console.log(transacciones)
 }
 
 
