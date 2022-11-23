@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <script src="bootstrap.bundle.min.js"></script>
+    <main id="main" class="main">
+        <div class="row">
+            <div class="col-2"></div>
+            <h1 class="col-10">Transacción</h1>
+           
+        </div>
+        
+        <p class="col-2">Codigo: <input id="inCodigo">
+        <p class="col-2">Total: <input id="inTotal">
+        <p class="col-2">Goal: <input id="inGoal">   
+        <input  onclick="PUTproducto()" type="submit" value="Send" />     
+
+        <input onclick="DELETEproducto()" type="submit" value="Borrar"/>
+
+        <div id="resultados">
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script  src="apiTransaction.js"></script>
+    </main>
+</body>
+</html>
