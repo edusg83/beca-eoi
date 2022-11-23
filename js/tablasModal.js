@@ -1,4 +1,4 @@
-const usersURL = 'http://ligafalm.eu:28100/products';
+const usersURL = 'http://ligafalm.eu:28100/products?page=0&size=100';
 var respuesta;
 var idItemEliminar;
 
