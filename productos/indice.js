@@ -3,7 +3,6 @@ const headers = {
     'Access-Control-Allow-Origin':'*'
 };
 
-
 // URL de la api
 const url = 'http://ligafalm.eu:28100/products';
 
@@ -13,7 +12,6 @@ axios.get(url)
         let productos = productosLista.data;
         tablaProductos(productos);
     });
-
 
 // Funcion que muestra la lista de productos en una tabla
 function tablaProductos(productos){
@@ -54,7 +52,6 @@ function tablaProductos(productos){
     document.getElementById("tablaProductos").innerHTML = tabla;
 }
         
-
 function borrarProducto(id){
     let borrar = confirm("¿Desea borrar este producto?");
 
@@ -69,18 +66,12 @@ function borrarProducto(id){
     }  
     };
 
-
-
-
 const formulario = document.getElementById("formulario3");
 formulario.addEventListener("submit", function(element){
     element.preventDefault();
     const formData = new FormData(formulario);
     
     let ID = formData.get("ID");
-    //document.getElementById("articuloEncontrado").innerHTML = " ";
-
-    
 
     axios.get('http://ligafalm.eu:28100/products/'+ID, {headers})
         .then((respuesta)=>{
@@ -91,21 +82,11 @@ formulario.addEventListener("submit", function(element){
             } else {
                 encuentraProducto(producto);
             }
-
-
-            //let mensaje = "Producto no existente";
-            
-            //let productoEncontrado =  document.getElementById("articuloEncontrado").innerHTML;
-            //if (productoEncontrado === ""){
-            //    document.getElementById("articuloEncontrado").innerHTML = mensaje;
-            //}
-           
         })
         .catch((error)=>{
             document.getElementById("articuloEncontrado").innerHTML = "Producto no existente",
             console.log(error)
     });    
-    
 });
 
 
