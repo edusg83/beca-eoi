@@ -13,21 +13,20 @@
  
 <body>
     <div id = "resultados", style = "padding: 30px"></div>  
-
-    <form name="formulari2", id = "formulario2", class="formularioTipo1">
+    <form name="formulari5", id = "formulario5", class="formularioTipo1">
         <fieldset id = "info">
-            <legend>Crear producto</legend>     
+            <legend>Crear transacción</legend>     
                 <p>
-                    <label for = "nombre">Nombre</label>
-                    <input type="text", name="nombre", id="nom", max="20", placeholder="Nuevo nombre" />
+                    <label for = "nombre">Código producto</label>
+                    <input type="text", name="codeProduct", id="codProd", max="20", placeholder="Código del producto" />
                 </p>    
                 <p>
-                    <label for = "nombre">Descripción</label>
-                    <input type="text", name="descripcion", id="desc", placeholder="Nueva descripción" />
+                    <label for = "nombre">Cantidad de existencias</label>
+                    <input type="text", name="total", id="tot", placeholder="Cantidad de existencias" />
                 </p>    
                 <p>
-                    <label for = "nombre">Código</label>
-                    <input type="text", name="codigo", id="cod", placeholder="Nuevo código" />
+                    <label for = "nombre">Objetivo</label>
+                    <input type="text", name="objetivo", id="obj", placeholder="Objetivo" />
                 </p>    
                 <button type="submit">Crear</button>
                 <button type="button", onclick="volver()">Volver</button>
@@ -35,7 +34,7 @@
     </form>
 </body>
 
-<script type="text/javascript" src="nuevoProducto.js"></script>
+<script type="text/javascript" src="crearTransaccion.js"></script>
 <script src="bootstrap.bundle.min.js"></script>
 
 <link rel="stylesheet" href="bootstrap.min.css"> 
