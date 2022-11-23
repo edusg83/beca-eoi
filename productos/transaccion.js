@@ -6,6 +6,60 @@ const headers = {
 
 
 // ########### CRUD ##############################################################################################
+// PUT ONE TRANSACTION
+// Recuperamos el id
+let url = window.location.href;
+let id = url.split("=")[1];
+axios.get('http://ligafalm.eu:28100/transactions/'+id, {headers})
+.then((transaccion) => { 
+    // Recuperamos los datos del producto y los metemos en el formulario
+    document.getElementById("codProd").value = transaccion.data.productCode;
+    document.getElementById("tot").value = transaccion.data.total;
+    document.getElementById("obj").value = transaccion.data.goal;
+
+    // Recuperamos los datos del formulario si, y sólo si, apretamos el boton actualizar
+    const formulario = document.getElementById("formulario5");
+    formulario.addEventListener("submit", function(element){
+        element.preventDefault();
+        const formData = new FormData(formulario);
+        
+        let codigoProducto = formData.get("codeProduct");
+        let total = formData.get("total");
+        let objetivo = formData.get("objetivos");
+
+        const dataRequest = {
+            "id":id,
+            "productCode":codigoProducto,
+            "total": total,
+            "goal": objetivo,
+            "type":"SELL",
+            "done":1,
+        };
+    
+        axios.put('http://ligafalm.eu:28100/transactions/'+id, dataRequest, {headers})
+            .then((url)=>{
+                window.location.assign("transacciones.html");
+            })
+    });
+});
+
+
+// DELETE ONE TRANSACTION
+function borrarTransaccion(){
+    let borrar = confirm("¿Desea borrar esta transacción?");
+
+    if (borrar === true){
+        axios.delete('http://ligafalm.eu:28100/transactions/'+id, {headers})
+            .then((url)=>{
+                window.location.assign("transacciones.html");
+            })
+            .catch((error)=>
+            console.log(error)
+            );
+            
+    }  
+    };
+
 
 // GET ALL PRODUCTS
 // Recuperamos la lista de productos y la mostramos en el formulario
@@ -45,42 +99,10 @@ axios.get('http://ligafalm.eu:28100/goals')
 
 
 
-// PUT ONE
-// Recuperamos el id
-let url = window.location.href;
-let id = url.split("=")[1];
-axios.get('http://ligafalm.eu:28100/transactions/'+id, {headers})
-.then((transaccion) => { 
-    // Recuperamos los datos del producto y los metemos en el formulario
-    document.getElementById("codProd").value = transaccion.data.productCode;
-    document.getElementById("tot").value = transaccion.data.total;
-    document.getElementById("obj").value = transaccion.data.goal;
 
-    // Recuperamos los datos del formulario si, y sólo si, apretamos el boton actualizar
-    const formulario = document.getElementById("formulario5");
-    formulario.addEventListener("submit", function(element){
-        element.preventDefault();
-        const formData = new FormData(formulario);
-        
-        let codigoProducto = formData.get("codeProduct");
-        let total = formData.get("total");
-        let objetivo = formData.get("objetivos");
 
-        const dataRequest = {
-            "id":id,
-            "productCode":codigoProducto,
-            "total": total,
-            "goal": objetivo,
-            "type":"SELL",
-            "done":1,
-        };
-    
-        axios.put('http://ligafalm.eu:28100/transactions/'+id, dataRequest, {headers})
-            .then((url)=>{
-                window.location.assign("transacciones.html");
-            })
-    });
-});
+
+
 
 
 

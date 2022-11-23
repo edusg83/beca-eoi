@@ -15,28 +15,24 @@ const url = 'http://ligafalm.eu:28100/transactions';
 axios.get(url)
     .then((respuesta) => { 
         let transacciones = respuesta.data;
-        tablaTransacciones(transacciones);
-    });
-// Funcion que muestra la lista de productos en una tabla
-function tablaTransacciones(transacciones){
-    let tabla = `
-    <h1>Lista de transacciones</h1>
-    <table id="dataTable", class="tg">
-        <thead>
-            <tr>
-                <th class="th">Id</th>
-                <th class="th">Código del producto</th>
-                <th class="th">Total</th>
-                <th class="th">Tipo</th>
-                <th class="th">Objetivo</th> 
-                <th class="th">Opciones</th>  
-            </tr>
-        </thead>
-        <tbody>`;         
+        let tabla = `
+            <h1>Lista de transacciones</h1>
+            <table id="dataTable", class="tg">
+                <thead>
+                    <tr>
+                        <th class="th">Id</th>
+                        <th class="th">Código del producto</th>
+                        <th class="th">Total</th>
+                        <th class="th">Tipo</th>
+                        <th class="th">Objetivo</th> 
+                        <th class="th">Opciones</th>  
+                    </tr>
+                </thead>
+                <tbody>`;         
     let filas=``;
     let finTabla=`
-        </tbody>
-    </table>`;
+                </tbody>
+            </table>`;
 
     transacciones.forEach(item => {
     filas+=`
@@ -54,12 +50,26 @@ function tablaTransacciones(transacciones){
             </td>
         </tr>`;
     });
+
     tabla += filas+finTabla;
     document.getElementById("tablaTransacciones").innerHTML = tabla;
-    console.log(transacciones)
-}
+    });
 
 
+// DELETE ONE TRANSACTION
+function borrarTransaccion(id){
+    let borrar = confirm("¿Desea borrar esta transacción?");
+
+    if (borrar === true){
+        axios.delete('http://ligafalm.eu:28100/transactions/'+id, {headers})
+            .then((url)=>{
+                window.location.assign("transacciones.html");
+            })
+            .catch((error)=>
+            console.log(error)
+            );      
+    }  
+    };
 
 
 
