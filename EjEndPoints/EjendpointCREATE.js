@@ -19,5 +19,8 @@ form.addEventListener("submit",function(elem) {
     .then(()=> {
         window.location.assign("EjendpointGET.html")
       });
+    .catch((error)=>{
+      console.log(error);
+    });
 
 },false);
