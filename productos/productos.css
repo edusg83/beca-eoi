@@ -57,3 +57,10 @@ header{
 legend{
     text-decoration: underline;
 }
+
+
+footer{
+    background-color: rgb(42, 39, 39);
+    padding: 30px;
+    text-align: right;
+}

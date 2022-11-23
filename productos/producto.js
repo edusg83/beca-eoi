@@ -5,13 +5,8 @@ const headers = {
 
 
 
-
-function volver(){
-    url = window.location.assign("productos.html");
-}
-
-
-
+// ############## CRUD #####################################
+// DELETE ONE
 function borrarProducto(){
     let borrar = confirm("¿Desea borrar este producto?");
 
@@ -27,20 +22,10 @@ function borrarProducto(){
     }  
     };
 
-
-
-
-
-
-
-
-
-
+// PUT ONE
 // Recuperamos el id
 let url = window.location.href;
 let id = url.split("=")[1];
-
-
 axios.get('http://ligafalm.eu:28100/products/'+id, {headers})
 .then((producto) => { 
     // Recuperamos los datos del producto y los metemos en el formulario
@@ -72,6 +57,11 @@ axios.get('http://ligafalm.eu:28100/products/'+id, {headers})
     });
 });
 
+
+// ########### MOVIMIENTOS ##########################################################################################
+function volver(){
+    url = window.location.assign("productos.html");
+}
 
 
 
