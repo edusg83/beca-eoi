@@ -1,5 +1,4 @@
-const usersURL = 'http://ligafalm.eu:28100/products?page=0&size=100';
-var respuesta;
+const usersURL = 'http://ligafalm.eu:28100/products';
 var idItemEliminar;
 
 const headers ={
@@ -7,8 +6,11 @@ const headers ={
     'Access-Control-Allow-Origin': '*'
 };
 
+getInit();
 
-axios.get(usersURL,{headers})
+function getInit(){
+
+axios.get(usersURL+"?page=0&size=100",{headers})
     .then(data => {
         let respuesta = data.data;
         let filas = ``;
@@ -33,14 +35,17 @@ axios.get(usersURL,{headers})
         document.getElementById("filas").innerHTML = filas;
 
 })
+.catch((error)=>{
+    console.log(error);
+});
+
+}
 
 
 
 function mostrar(id){
-    const usersURL = 'http://ligafalm.eu:28100/products/' + id;
-    var respuesta;
 
-    axios.get(usersURL,{headers})
+    axios.get(usersURL+"/"+id,{headers})
         .then(data => {
             let respuesta = data.data;
             
@@ -48,6 +53,9 @@ document.getElementById("nombre").innerHTML=respuesta.name;
 document.getElementById("descripcion").innerHTML=respuesta.description;
 document.getElementById("codigo").innerHTML=respuesta.code;
 
+})
+.catch((error)=>{
+    console.log(error);
 });
 
 }
@@ -55,7 +63,6 @@ document.getElementById("codigo").innerHTML=respuesta.code;
 
 function create(){
     const form = document.getElementById("formCrear");
-    const url = 'http://ligafalm.eu:28100/products';
    
     
         const formData = new FormData(form);
@@ -66,7 +73,7 @@ function create(){
         
         //document.getElementById("idNew").value;
 
-        axios.post(url,formData,{headers})
+        axios.post(usersURL,formData,{headers})
         .then((respuesta)=>{
             console.log(respuesta.data);
         })
@@ -78,16 +85,18 @@ function create(){
 
 
 function showUpdate(id){
-    const usersURL = 'http://ligafalm.eu:28100/products/';
     var respuesta;
 
-    axios.get(usersURL+id,{headers})
+    axios.get(usersURL+"/"+id,{headers})
     .then(data=>{
         respuesta=data.data;
         document.getElementById("nameUpdate").value=respuesta.name;
         document.getElementById("descUpdate").value=respuesta.description;
         document.getElementById("codeUpdate").value=respuesta.code;
         document.getElementById("idUpdate").value=respuesta.id;
+    })
+    .catch((error)=>{
+        console.log(error);
     });
 
 }
@@ -95,7 +104,6 @@ function showUpdate(id){
 function update(){
     let id=document.getElementById("idUpdate").value;
     const form = document.getElementById("formUpdate");
-    const url = 'http://ligafalm.eu:28100/products/'+id;
    
     const formData = new FormData(form);
         formData.append("id",Number(id));
@@ -103,12 +111,8 @@ function update(){
         formData.append("description",document.getElementById("descUpdate").value);
         formData.append("code",document.getElementById("codeUpdate").value);
         
-        
-        //const dataRequest={"id":10,"name":"javiUpdate","description":"descUpdate","code":"codeUpdate"};
-    
-        
 
-        axios.put(url,formData,{headers})
+        axios.put(usersURL+"/"+id,formData,{headers})
         .then((respuesta)=>{
             console.log(respuesta.data);
         })
@@ -118,9 +122,8 @@ function update(){
 }
 
 function deleteElemento(){
-    const url = 'http://ligafalm.eu:28100/products/' + idItemEliminar;
    
-    axios.delete(url,{headers})
+    axios.delete(usersURL+"/"+idItemEliminar,{headers})
     .then((respuesta)=>{
         console.log(respuesta.data);
     })
