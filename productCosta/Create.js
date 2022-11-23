@@ -20,8 +20,9 @@ form.addEventListener("submit",function(elem) {
         "code":document.getElementById("codigo").value
     };
     axios.post(url,newProducto,{headers})
-    .then(()=> {
-        window.location.assign("EjeCreate.html")
+    .then((respuesta)=> {
+        console.log(respuesta);
+        window.location.href = "indexPR.html"
       });
 
 },false);

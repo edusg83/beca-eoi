@@ -9,20 +9,25 @@
         <main id="main" class="main">
             <div class="row">
                 <div class="col-2"></div>
-                <h1 class="col-10">PRODUCTOS</h1>
-                <div class="col-2"></div>
-                <p class="col-2">ID: <input id="buscador">  <button onclick="buscar()">Buscar</button></p>
-               
+                <h1 class="col-10">NUESTROS PRODUCTOS ACTUALES</h1>
+                <div class="col-2 px-5">
+                    <p class="col-2 mx-5 pt-4"><input placeholder="Buscar por ID" id="buscador">  </p>
+                </div>
+                <div class="col-2 mx-5 pt-4">
+                    <button onclick="buscar()" style="background-color:aqua">Buscar</button>
+                </div>
+                <div class="col-2 mx-5 pt-3">
+                    <a href="EjeCreate.html" class="btn btn-primary">CREAR</a>
+                </div>
+                
             </div>
-            
-            <a href="createProduct.html" class="btn btn-primary">CREAR</a>
 
             <div id="resultados">
     
             </div>
 
             <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-            <script  src="api2.js"></script>
+            <script src="api2.js"></script>
         </main>
     </body>
 </html>
