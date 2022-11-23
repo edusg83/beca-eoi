@@ -56,14 +56,20 @@ function create(){
     };
     
         const formData = new FormData(form);
-        formData.append("id",document.getElementById("idNew").value);
         formData.append("name",document.getElementById("nameNew").value);
         formData.append("description",document.getElementById("descNew").value);
         formData.append("code",document.getElementById("codeNew").value);
-        console.log([...formData]);
+        //console.log([...formData]);
         
+        //document.getElementById("idNew").value;
 
         axios.post(url,formData,{headers})
+        .then((respuesta)=>{
+            console.log(respuesta.data);
+        })
+        .catch((error)=>{
+            console.log(error);
+        })
         
    
 
