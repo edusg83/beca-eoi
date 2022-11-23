@@ -58,7 +58,7 @@ function borrarProducto(id){
     if (borrar === true){
         axios.delete('http://ligafalm.eu:28100/products/'+id, {headers})
             .then((url)=>{
-                window.location.assign("indice.html");
+                window.location.assign("productos.html");
             })
             .catch((error)=>
             console.log(error)

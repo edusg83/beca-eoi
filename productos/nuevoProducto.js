@@ -7,7 +7,7 @@ const headers = {
 
 
 function volver(){
-    url = window.location.assign("indice.html");
+    url = window.location.assign("productos.html");
 }
 
 
@@ -29,6 +29,6 @@ formulario.addEventListener("submit", function(element){
 
     axios.post('http://ligafalm.eu:28100/products', dataRequest, {headers})
         .then((url)=>{
-            window.location.assign("indice.html");
+            window.location.assign("productos.html");
         })
 });

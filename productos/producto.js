@@ -7,7 +7,7 @@ const headers = {
 
 
 function volver(){
-    url = window.location.assign("indice.html");
+    url = window.location.assign("productos.html");
 }
 
 
@@ -18,7 +18,7 @@ function borrarProducto(){
     if (borrar === true){
         axios.delete('http://ligafalm.eu:28100/products/'+id, {headers})
             .then((url)=>{
-                window.location.assign("indice.html");
+                window.location.assign("productos.html");
             })
             .catch((error)=>
             console.log(error)
@@ -67,7 +67,7 @@ axios.get('http://ligafalm.eu:28100/products/'+id, {headers})
     
         axios.put('http://ligafalm.eu:28100/products/'+id, dataRequest, {headers})
             .then((url)=>{
-                window.location.assign("indice.html");
+                window.location.assign("productos.html");
             })
     });
 });
