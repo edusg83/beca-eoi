@@ -19,7 +19,7 @@ axios.get(usersURL)
             <td>${element.code}</td>
             <td><button type="button" class="btn btn-primary" data-toggle="modal" onclick="showUpdate(${element.id})" data-target="#modalUpdate" 
             >UPDATE</td>
-            <td><button type="button" onclick="idItemEliminar=${element.id}" class="btn btn-primary" data-toggle="modal" data-target="#deleModal" style="background-color: #f44336" 
+            <td><button type="button" onclick="idItemEliminar=${element.id}" class="btn btn-primary" data-toggle="modal" data-target="#modalDelete" style="background-color: #f44336" 
             >DELETE</td>
             </tr>
             `
@@ -123,11 +123,15 @@ function update(){
 }
 
 function deleteElemento(){
-    axios.delete(url+idItemEliminar,{headers})
-    .then((respuesta)=>{
-
-    })
+    const url = 'http://ligafalm.eu:28100/products/' + idItemEliminar;
+    const headers ={
+        'Content-Type':'application/json',
+        'Access-Control-Allow-Origin': '*'
+    };
+    axios.delete(url,{headers})
+    
     .catch((error)=>{
+        console.log(error);
 
     });
 }
