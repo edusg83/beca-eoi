@@ -32,7 +32,8 @@ function mostrar(){
                     <div class="col-4" style="background-color: Lightgrey;">${producto.description}</div>
                     <div class="col-4" style="background-color: Lightgrey;">${producto.code}</div>`;
          });
-         tabla += filastablas+finTabla;
+            opcionCrear=`<div class="d-flex justify-content-around"><a href="productonuevo.html">Crear</button></div>`
+         tabla += filastablas+ opcionCrear + finTabla;
          document.getElementById("resultados").innerHTML=tabla;
         });
 }
@@ -137,7 +138,8 @@ function PUTproducto(){
      window.location.href = "index.html" 
 }
 
-//Falta pasarle el ID y llamar a la funcion
+
+
 function DELETEproducto() {
     const headers ={
         'Content-Type':'application/json',
@@ -149,11 +151,40 @@ function DELETEproducto() {
     var arrHtml = html.split("=");
     idStr = arrHtml[1];
 
+    var borrar = confirm("¿Seguro que quiere borrar este producto?");
+
+    if(borrar === true){
     axios.delete('http://ligafalm.eu:28100/products/'+idStr,{headers})
     .then((respuesta)=>{
-    console.log(respuesta.data)})
+    console.log(respuesta.data);
+    window.location.href = "index.html";
+    })
     .catch(error=>{
         console.log(error);    
     });
-    window.location.href = "index.html"
+    }
+}
+
+function paginaPrincipal() {
+    window.location.href = "index.html";
+}
+
+function POSTproducto() {
+    var html = window.location.href; 
+  
+    var arrHtml = html.split("=");
+    idStr = arrHtml[1];
+    
+      axios.post("http://ligafalm.eu:28100/products/", {
+            name:document.getElementById("inNombre").value,
+            description:document.getElementById("inDescription").value,
+            code:document.getElementById("inCodigo").value
+        })
+    .then((respuesta)=>{
+    console.log(respuesta.data);
+    window.location.href = "index.html" 
+    })
+    .catch((error)=>{
+        console.log(error);
+    });
 }
