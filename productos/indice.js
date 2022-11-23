@@ -1,3 +1,8 @@
+const headers = {
+    'Content-Type':'application/json',
+    'Access-Control-Allow-Origin':'*'
+};
+
 
 // URL de la api
 const url = 'http://ligafalm.eu:28100/products';
@@ -42,7 +47,11 @@ function tablaProductos(productos){
             <td class="tg-0lax">${item.name}</td>
             <td class="tg-0lax"> ${item.description}</td>
             <td class="tg-0lax">${item.code}</td>
-            <td class="opciones"> <a href="producto.html?id=${item.id}")"><img src="editar.png", width=20px></a></td>
+            <td class="opciones"> 
+                <a href="producto.html?id=${item.id}")"><img src="editar.png", width=20px></a>
+                <a onclick="borrarProducto(${item.id})"><img src="borrar.png", width=20px>
+            </a>
+            </td>
         </tr>`;
     });
     
@@ -53,7 +62,20 @@ function tablaProductos(productos){
 }
         
 
+function borrarProducto(id){
+    let borrar = confirm("¿Desea borrar este producto?");
 
+    if (borrar === true){
+        axios.delete('http://ligafalm.eu:28100/products/'+id, {headers})
+            .then((url)=>{
+                window.location.assign("indice.html");
+            })
+            .catch((error)=>
+            console.log(error)
+            );
+            
+    }  
+    };
 
 
 

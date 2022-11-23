@@ -1,11 +1,29 @@
-.tg  {border-style: solid; border-width: 3px; border-color: black; align-items: center; }
-.tg td{border-color:black;border-style:solid;border-width:3px;
-       overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:3px;
-       font-weight:normal; text-align: center; font-weight: bold;}
-.tg .tg-0lax{text-align:left;vertical-align:top; font-weight: 300;}
+.tg  {border-style: solid; 
+    border-width: 3px; 
+    border-color: black; 
+    align-items: center;}
 
-.opciones{text-align:center;vertical-align:top; font-weight: 300;}
+.tg td{border-color:black;
+    border-style:solid;
+    border-width:3px;
+    overflow:hidden;
+    padding:10px 5px;
+    word-break:normal;}
+
+.tg th{border-color:black;
+    border-style:solid;
+    border-width:3px;
+    font-weight:normal; 
+    text-align: center; 
+    font-weight: bold;}
+
+.tg .tg-0lax{text-align:left;
+    vertical-align:top; 
+    font-weight: 300;}
+
+.opciones{text-align:center;
+    vertical-align:top; 
+    font-weight: 300;}
 
 .formularioTipo1{
     margin: 20px;
