@@ -12,14 +12,14 @@ axios.get(usersURL)
 
             filas += `<tr>
             
-            <th scope="row"><button type="button" class="btn btn-primary" data-toggle="modal" onclick="insertDataModal(${element.id})" data-target="#miModal" 
+            <th scope="row"><button type="button" class="btn btn-primary" data-toggle="modal" onclick="mostrar(${element.id})" data-target="#modalShow" 
             >${element.id} </th>
             <td>${element.name}</td>
             <td>${element.description}</td>
             <td>${element.code}</td>
-            <td><button type="button" class="btn btn-primary" data-toggle="modal" onclick="updateModal(${element.id})" data-target="#modalUpdate" 
+            <td><button type="button" class="btn btn-primary" data-toggle="modal" onclick="showUpdate(${element.id})" data-target="#modalUpdate" 
             >UPDATE</td>
-            <td><button type="button" class="btn btn-primary" data-toggle="modal" onclick="insertDataModal(${element.id})" data-target="#deleModal" style="background-color: #f44336" 
+            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleModal" style="background-color: #f44336" 
             >DELETE</td>
             </tr>
             `
@@ -31,7 +31,8 @@ axios.get(usersURL)
 })
 
 
-function insertDataModal(id){
+
+function mostrar(id){
     const usersURL = 'http://ligafalm.eu:28100/products/' + id;
     var respuesta;
 
@@ -75,14 +76,50 @@ function create(){
 
 };
 
-function updateModal(id){
-    const usersURL = 'http://ligafalm.eu:28100/products/' + id;
+
+function showUpdate(id){
+    const usersURL = 'http://ligafalm.eu:28100/products/';
     var respuesta;
 
-    axios.get(usersURL)
-        .then(data => {
-            let respuesta = data.data;
+    axios.get(usersURL+id)
+    .then(data=>{
+        respuesta=data.data;
+        document.getElementById("nameUpdate").value=respuesta.name;
+        document.getElementById("descUpdate").value=respuesta.description;
+        document.getElementById("codeUpdate").value=respuesta.code;
+        document.getElementById("idUpdate").value=respuesta.id;
 
-})
-};
+
+    });
+
+}
+
+function update(){
+    let id=document.getElementById("idUpdate").value;
+    const form = document.getElementById("formUpdate");
+    const url = 'http://ligafalm.eu:28100/products/10';
+    const headers ={
+        'Content-Type':'application/json',
+        'Access-Control-Allow-Origin': '*'
+    };
+    const formData = new FormData(form);
+        formData.append("id",Number(id));
+        formData.append("name",document.getElementById("nameUpdate").value);
+        formData.append("description",document.getElementById("descUpdate").value);
+        formData.append("code",document.getElementById("codeUpdate").value);
+        const dataRequest={"id":10,"name":"javiUpdate","description":"descUpdate","code":"codeUpdate"};
+    
+        
+
+        axios.put(url,dataRequest,{headers})
+        .then((respuesta)=>{
+            console.log(respuesta.data);
+        })
+        .catch((error)=>{
+            console.log(error);
+        });
+
+    
+
+}
 
