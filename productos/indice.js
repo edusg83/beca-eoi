@@ -15,29 +15,26 @@ axios.get(url)
     });
 
 
-// Funcion que muestra la lista de productos
+// Funcion que muestra la lista de productos en una tabla
 function tablaProductos(productos){
     let tabla = `
     <h1>Lista de productos</h1>
     <table id="dataTable", class="tg">
-    <thead>
-        <tr>
-            <th class="th">Id</th>
-            <th class="th">Nombre</th>
-            <th class="th">Descripción</th>
-            <th class="th">Código</th>
-            <th class="th">Opciones</th>  
-        </tr>
-    </thead>
-    <tbody>`;
-
- //             
-    
-    let finTabla=`</tbody>
-        </table>`;
-    
+        <thead>
+            <tr>
+                <th class="th">Id</th>
+                <th class="th">Nombre</th>
+                <th class="th">Descripción</th>
+                <th class="th">Código</th>
+                <th class="th">Opciones</th>  
+            </tr>
+        </thead>
+        <tbody>`;         
     let filas=``;
-    
+    let finTabla=`
+        </tbody>
+    </table>`;
+
     productos.forEach(item => {
     filas+=`
         <tr>
@@ -49,14 +46,10 @@ function tablaProductos(productos){
             <td class="tg-0lax">${item.code}</td>
             <td class="opciones"> 
                 <a href="producto.html?id=${item.id}")"><img src="editar.png", width=20px></a>
-                <a onclick="borrarProducto(${item.id})"><img src="borrar.png", width=20px>
-            </a>
+                <a onclick="borrarProducto(${item.id})"><img src="borrar.png", width=20px></a>
             </td>
         </tr>`;
     });
-    
-  
-
     tabla += filas+finTabla;
     document.getElementById("tablaProductos").innerHTML = tabla;
 }
@@ -72,49 +65,58 @@ function borrarProducto(id){
             })
             .catch((error)=>
             console.log(error)
-            );
-            
+            );      
     }  
     };
 
 
 
-/*
-function muestraProducto(enlace){
-    axios.get(enlace)
-        .then((elemento) => { 
-            let producto = elemento.data
-            let docu = producto.html;
-            let tabla = `<table id="dataTable", class="tg">
-                <thead>
-                     <tr>
-                        <th class="th">Id</th>
-                        <th class="th">Nombre</th>
-                        <th class="th">Descripción</th>
-                        <th class="th">Código</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="tg-0lax">
-                            ${producto.id}
-                        </td>
-                        <td class="tg-0lax">
-                            ${producto.name}
-                        </td>
-                        <td class="tg-0lax"> ${producto.description}</td>
-                        <td class="tg-0lax">${producto.code}</td>
-                    </tr>;
-                </tbody>
-                </table>`;
-                docu.getElementById("resultados").innerHTML = tabla;
-        });
-         
+
+const formulario = document.getElementById("formulario3");
+formulario.addEventListener("submit", function(element){
+    element.preventDefault();
+    const formData = new FormData(formulario);
+    
+    let ID = formData.get("ID");
+
+    
+
+    axios.get('http://ligafalm.eu:28100/products/'+ID, {headers})
+        .then((respuesta)=>{
+            let producto = respuesta.data;
+            encuentraProducto(producto);
+        })
+});
+
+
+
+function encuentraProducto(producto){
+    let tabla = `
+    <table id="dataTable", class="tg">
+        <thead>
+            <tr>
+                <th class="th">Id</th>
+                <th class="th">Nombre</th>
+                <th class="th">Descripción</th>
+                <th class="th">Código</th>
+                <th class="th">Opciones</th>  
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="tg-0lax">
+                    ${producto.id}
+                </td>
+                <td class="tg-0lax">${producto.name}</td>
+                <td class="tg-0lax"> ${producto.description}</td>
+                <td class="tg-0lax">${producto.code}</td>
+                <td class="opciones"> 
+                    <a href="producto.html?id=${producto.id}")"><img src="editar.png", width=20px></a>
+                    <a onclick="borrarProducto(${producto.id})"><img src="borrar.png", width=20px></a>
+                </td>
+            </tr>        
+        </tbody>
+    </table>`;
+    document.getElementById("articuloEncontrado").innerHTML = tabla;
 }
-*/
-
-
-
-
-
 

@@ -27,11 +27,12 @@
     font-weight: 300;}
 
 .formularioTipo1{
-    margin: 20px;
+    
     padding:10px; 
     border-style: solid; 
     border-width: 3px; 
     margin-right: 800px;
+    margin-left: 15px;
 }
 
 
@@ -53,3 +54,6 @@ header{
 }
 
 
+legend{
+    text-decoration: underline;
+}
