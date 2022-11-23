@@ -7,19 +7,30 @@
     <body>
         <script src="bootstrap.bundle.min.js"></script>
         <main id="main" class="main">
-            <div class="row">
-                <div class="col-2"></div>
-                <h1 class="col-10">PRODUCTOS</h1>
-                <div class="col-2"></div>
-                <p class="col-2">ID: <input id="buscador">  <button onclick="buscar()">Buscar</button></p>
-               <button class="col-1" onClick="crear()">Crear</button>
-               
-            </div>
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Productos</a>
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="crear.html">Crear</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" style="cursor:pointer; cursor: hand" aria-current="page" onclick="mostrarTodos()">Mostrar Todos</a>
+                      </li>
+                  </ul>
+                    <form class="d-flex" role="search">
+                      <input class="form-control me-2" id="buscador" type="search" placeholder="ID" aria-label="Search">
+                      <button class="btn btn-outline-primary" onclick="buscar()">Search</button>
+                    </form>
+                  </div>
+                </div>
+              </nav>
+            <div  id="resultados">
+        
+            </div> 
             
-            <div id="resultados">
-    
-            </div>
-    
+           
+            
             <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
             <script  src="api.js"></script>
         </main>

@@ -1,10 +1,7 @@
-
 // -- Inicio -----
-switch(window.location.href){
-    case "index":
-}
 if(window.location.href.indexOf("index")>0){
-    mostrar();
+        mostrar();
+   
 }else if(window.location.href.indexOf("producto")>0){
     producto();
 }
@@ -128,8 +125,7 @@ function buscar(){
     }else{
         document.getElementById("resultados").innerHTML = null;
         mostrarID(document.getElementById("buscador").value);
-    }
-    
+    } 
 }
 
 function mostrarTodos(){
