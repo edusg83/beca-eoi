@@ -28,9 +28,9 @@ function mostrar(){
          productos.forEach(producto => {
             /*console.log("ID: "+producto.id+" Name: "+producto.name+" Descrpt: "+producto.description+" Code: "+producto.code);*/
             filastablas+=`
-                    <div class="col-4"  style="background-color: #EAEAEA;"><a href="producto.html?id=${producto.id}">${producto.name}</a></div>
-                    <div class="col-4" style="background-color: #EAEAEA;">${producto.description}</div>
-                    <div class="col-4" style="background-color: #EAEAEA;">${producto.code}</div>`;
+                    <div class="col-4"  style="background-color: #F1F1F1;"><a href="producto.html?id=${producto.id}">${producto.name}</a></div>
+                    <div class="col-4" style="background-color: #F1F1F1;">${producto.description}</div>
+                    <div class="col-4" style="background-color: #F1F1F1;">${producto.code}</div>`;
          });
             // opcionCrear=`<div class="d-flex justify-content-around"><a href="productonuevo.html">Crear</button></div>`
          tabla += filastablas+ finTabla;
@@ -53,9 +53,9 @@ function mostrarID(id){
                 let tabla=`
                 <div class="container">
                 <div class="row m-10">
-                                <div class="col-3" style="background-color: #EAEAEA;">Nombre</div>
-                                <div class="col-3" style="background-color: #EAEAEA;">Description</div>
-                                <div class="col-3" style="background-color: #EAEAEA;">Codigo</div> 
+                                <div class="col-3" style="background-color: #F1F1F1;">Nombre</div>
+                                <div class="col-3" style="background-color: #F1F1F1;">Description</div>
+                                <div class="col-3" style="background-color: #F1F1F1;">Codigo</div> 
                                 `;
                 
                 let finTabla=`</div> </div>`;
@@ -63,9 +63,9 @@ function mostrarID(id){
                 let filastablas=``;
                     /*console.log("ID: "+producto.id+" Name: "+producto.name+" Descrpt: "+producto.description+" Code: "+producto.code);*/
                     filastablas+=`
-                            <div class="col-3" style="background-color: #EAEAEA;">${productos.name}</div>
-                            <div class="col-3" style="background-color: #EAEAEA;">${productos.description}</div>
-                            <div class="col-3" style="background-color: #EAEAEA;">${productos.code}</div>`;
+                            <div class="col-3" style="background-color: #F1F1F1;">${productos.name}</div>
+                            <div class="col-3" style="background-color: #F1F1F1;">${productos.description}</div>
+                            <div class="col-3" style="background-color: #F1F1F1;">${productos.code}</div>`;
                 
                 tabla += filastablas+finTabla;
                 document.getElementById("resultados").innerHTML=tabla;
