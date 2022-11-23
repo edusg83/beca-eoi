@@ -78,16 +78,35 @@ formulario.addEventListener("submit", function(element){
     const formData = new FormData(formulario);
     
     let ID = formData.get("ID");
+    //document.getElementById("articuloEncontrado").innerHTML = " ";
 
     
 
     axios.get('http://ligafalm.eu:28100/products/'+ID, {headers})
         .then((respuesta)=>{
             let producto = respuesta.data;
-            encuentraProducto(producto);
-        })
-});
+            
+            if(producto.id===undefined){
+               document.getElementById("articuloEncontrado").innerHTML = "Introduzca un ID";
+            } else {
+                encuentraProducto(producto);
+            }
 
+
+            //let mensaje = "Producto no existente";
+            
+            //let productoEncontrado =  document.getElementById("articuloEncontrado").innerHTML;
+            //if (productoEncontrado === ""){
+            //    document.getElementById("articuloEncontrado").innerHTML = mensaje;
+            //}
+           
+        })
+        .catch((error)=>{
+            document.getElementById("articuloEncontrado").innerHTML = "Producto no existente",
+            console.log(error)
+    });    
+    
+});
 
 
 function encuentraProducto(producto){
