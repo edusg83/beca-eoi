@@ -16,7 +16,7 @@ function mostrar(){
     .then((respuestaProductos) => {
          let productos=respuestaProductos.data;
          let tabla=`
-         <div class="container">
+         <div class="container ">
          <div class="row m-10">
                         <div class="col-4" style="background-color: Grey;">Nombre</div>
                         <div class="col-4" style="background-color: Grey;">Description</div>
@@ -139,7 +139,6 @@ function PUTproducto(){
 }
 
 
-
 function DELETEproducto() {
     const headers ={
         'Content-Type':'application/json',
@@ -170,21 +169,15 @@ function paginaPrincipal() {
 }
 
 function POSTproducto() {
-    var html = window.location.href; 
-  
-    var arrHtml = html.split("=");
-    idStr = arrHtml[1];
+    const headers ={
+        'Content-Type':'application/json',
+        'Acces-Control-Allow-Origin':'*'
+    };
     
-      axios.post("http://ligafalm.eu:28100/products/", {
+      axios.post("http://ligafalm.eu:28100/products/", {headers}, {
             name:document.getElementById("inNombre").value,
             description:document.getElementById("inDescription").value,
             code:document.getElementById("inCodigo").value
-        })
-    .then((respuesta)=>{
-    console.log(respuesta.data);
+        });
     window.location.href = "index.html" 
-    })
-    .catch((error)=>{
-        console.log(error);
-    });
 }
