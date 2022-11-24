@@ -152,10 +152,10 @@ function selectProductCode(){
         
          productos.forEach(producto => {
            
-            optionsProduct=options + `<option style="background-color: #F1F1F1;" value="${producto.code}">${producto.code}</option>`;
+            options=options + `<option style="background-color: #F1F1F1;" value="${producto.code}">${producto.code}</option>`;
          });
            
-         document.getElementById("selectProductCode").innerHTML=optionsProduct;
+         document.getElementById("selectProductCode").innerHTML=options;
         });
 }
 
