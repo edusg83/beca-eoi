@@ -51,8 +51,8 @@ function tablaObjetivos(){
                 <td class="tg-0lax">${item.name}</td>
                 <td class="tg-0lax"> ${item.description}</td>
                 <td class="opciones"> 
-                    <a href="producto.html?id=${item.id}")"><img src="editar.png", width=20px></a>
-                    <a onclick="borrarProducto(${item.id})"><img src="borrar.png", width=20px></a>
+                    <a href="objetivo.html?id=${item.id}")"><img src="editar.png", width=20px></a>
+                    <a onclick="borrarObjetivo(${item.id})"><img src="borrar.png", width=20px></a>
                 </td>
             </tr>`;
         });
