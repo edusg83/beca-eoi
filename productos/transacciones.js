@@ -136,3 +136,7 @@ function borrarTransaccion(id){
 function volver(){
     url = window.location.assign("inicio.html");
 }
+
+function goToProductos(){
+    url = window.location.assign("productos.html");
+}

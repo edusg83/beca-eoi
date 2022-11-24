@@ -12,26 +12,47 @@
 </head>
  
 <body>
-    <div id = "resultados", style = "padding: 30px"></div>  
-    <form name="formulari5", id = "formulario6", class="formularioTipo1">
-        <fieldset id = "info">
-            <legend>Crear transacción</legend>
-                <p>
-                    <label for="listaCodigos">Código producto</label>
-                    <div id="listaCodigosProductos"></div>
-                </p>       
-                <p>
-                    <label for = "nombre">Cantidad de existencias</label>
-                    <input type="text", name="total", id="tot", placeholder="Cantidad de existencias" />
-                </p>    
-                <p>
-                    <label for="listaObjetivos">Objetivo</label>
-                    <div id="listaObjetivos"></div>
-                </p>       
-                <button type="submit">Crear</button>
-                <button type="button", onclick="volver()">Volver</button>
-         </fieldset>
-    </form>
+  <header>TRANSACCIONES</header>
+  <nav class="row">
+    <section class="col-1"></section>
+    <section class="col-1">
+      <a href="inicio.html", class="botonNavegacion">Inicio</a>
+    </section>
+    <section class="col-1">
+      <a href="productos.html", class="botonNavegacion">Productos</a>
+    </section>
+    <section class="col-1">
+      <a href="transacciones.html", class="botonNavegacion">Transacciones</a>
+    </section>
+  </nav>
+
+  <div id = "resultados", style = "padding: 30px"></div>  
+  
+  <form name="formulari5", id = "formulario6", class="formularioTipo1">
+    <fieldset id = "info">
+      <legend>Crear transacción</legend>
+      <p>
+        <label for="listaCodigos">Código producto</label>
+        <div id="listaCodigosProductos"></div>
+      </p>       
+      <p>
+        <label for = "nombre">Cantidad de existencias</label>
+        <input type="text", name="total", id="tot", placeholder="Cantidad de existencias" />
+      </p>    
+      <p>
+        <label for="listaObjetivos">Objetivo</label>
+        <div id="listaObjetivos"></div>
+      </p>   
+
+      <button type="submit">Crear</button>
+      <button type="button", onclick="volver()">Volver</button>
+      </fieldset>
+  </form>
+  
+  <footer>
+    <button type="button", onclick="volver()"> Volver </button>
+  </footer>
+    
 </body>
 
 <script type="text/javascript" src="crearTransaccion.js"></script>

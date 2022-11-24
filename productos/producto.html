@@ -12,27 +12,47 @@
 </head>
  
 <body>
+    <header>PRODUCTOS</header>
+    <nav class="row">
+        <section class="col-1"></section>
+        <section class="col-1">
+          <a href="inicio.html", class="botonNavegacion">Inicio</a>
+        </section>
+        <section class="col-1">
+          <a href="productos.html", class="botonNavegacion">Productos</a>
+        </section>
+        <section class="col-1">
+          <a href="transacciones.html", class="botonNavegacion">Transacciones</a>
+        </section>
+    </nav>
+
     <div id = "resultados", style = "padding: 30px"></div>  
     <form name="formulari1", id = "formulario1", class="formularioTipo1">
         <fieldset id = "info">
             <legend>Actualizar producto</legend>     
-                <p>
-                    <label for = "nombre">Nombre</label>
-                    <input type="text", name="nombre", id="nom", max="20", placeholder="Nuevo nombre" />
-                </p>    
-                <p>
-                    <label for = "nombre">Descripción</label>
-                    <input type="text", name="descripcion", id="desc", placeholder="Nueva descripción" />
-                </p>    
-                <p>
-                    <label for = "nombre">Código</label>
-                    <input type="text", name="codigo", id="cod", placeholder="Nuevo código" />
-                </p>    
-                <button type="submit">Actualizar</button>
-                <button type = "button", onclick="borrarProducto()">Borrar</button>
-                <button type="button", onclick="volver()">Volver</button>
+            <p>
+                <label for = "nombre">Nombre</label>
+                <input type="text", name="nombre", id="nom", max="20", placeholder="Nuevo nombre" />
+            </p>    
+            <p>
+                <label for = "nombre">Descripción</label>
+                <input type="text", name="descripcion", id="desc", placeholder="Nueva descripción" />
+            </p>    
+            <p>
+                <label for = "nombre">Código</label>
+                <input type="text", name="codigo", id="cod", placeholder="Nuevo código" />
+            </p>   
+
+            <button type="submit">Actualizar</button>
+            <button type = "button", onclick="borrarProducto()">Borrar</button>
+            <button type="button", onclick="volver()">Volver</button>
          </fieldset>
     </form>
+    
+    <footer>
+        <button type="button", onclick="volver()"> Volver </button>
+      </footer>
+    
 </body>
 
 <script type="text/javascript" src="producto.js"></script>

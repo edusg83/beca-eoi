@@ -14,6 +14,19 @@
 <body>
   <header>PRODUCTOS</header>
 
+  <nav class="row">
+    <section class="col-1"></section>
+    <section class="col-1">
+      <a href="inicio.html", class="botonNavegacion">Inicio</a>
+    </section>
+    <section class="col-1">
+      <a href="productos.html", class="botonNavegacion">Productos</a>
+    </section>
+    <section class="col-1">
+      <a href="transacciones.html", class="botonNavegacion">Transacciones</a>
+    </section>
+  </nav>
+
   <main class="row">
 
     <!--Parte izqueirda del main-->
@@ -23,7 +36,6 @@
 
     <!--Parte derecha del main-->
     <section class="col-6 col-sm-6", style = "padding-left: 60px; padding-bottom: 60px; padding-right: 60px">
-      
       <!--Crear producto-->
       <article class="row">
         <h1>Crear nuevo producto</h1>
@@ -40,11 +52,12 @@
         <form name="formulari3", id = "formulario3", class="formularioTipo1">
           <fieldset id = "info">
               <legend>Buscar producto</legend>  
-                  <p>
-                    <label for = "ID">ID</label>
-                    <input type="text", name="ID", id="Id", placeholder="ID" />
-                  </p>       
-                  <button type="submit">Buscar</button>
+              <p>
+                <label for = "ID">ID</label>
+                <input type="text", name="ID", id="Id", placeholder="ID" />
+              </p>     
+                
+              <button type="submit">Buscar</button>
             </fieldset>
         </form>
         <div id="articuloEncontrado", style = "padding-top: 30px; padding-bottom: 60px; padding-left: 15px;"></div>

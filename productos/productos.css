@@ -2,46 +2,48 @@
     border-width: 3px; 
     border-color: black; 
     align-items: center;
-    box-shadow: 10px 10px 15px; }
+    box-shadow: 10px 10px 15px; 
+    background-color: white;
+    color:black}
 
 .tg td{border-color:black;
     border-style:solid;
     border-width:3px;
     overflow:hidden;
     padding:10px 5px;
-    word-break:normal;}
+    word-break:normal;
+    background-color: white;
+    color:black}
 
 .tg th{border-color:black;
     border-style:solid;
     border-width:3px;
     font-weight:normal; 
     text-align: center; 
-    font-weight: bold;}
+    font-weight: bold;
+    background-color: white;
+    color:black}
 
 .tg .tg-0lax{text-align:left;
     vertical-align:top; 
-    font-weight: 300;}
+    font-weight: 300;
+    background-color: white;
+    color:black}
 
 .opciones{text-align:center;
     vertical-align:top; 
     font-weight: 300;}
 
 .formularioTipo1{
-    
     padding:10px; 
-    border-style: solid; 
+    border-style: solid;
+    border-color: black; 
     border-width: 3px; 
     margin-right: 800px;
     margin-left: 15px;
-}
-
-
-header{
-    text-align:center;
-    vertical-align:top;
-    padding: 0px;
-    font-weight: 500;
-    font-size: 5em;
+    margin-bottom: 50px;
+    background-color: white;
+    color:black
 }
 
 .tituloTabla{
@@ -53,6 +55,22 @@ header{
     font-size: 3em;
 }
 
+.botonNavegacion{
+    color:white; 
+    text-decoration: none;
+}
+
+
+
+header{
+    text-align:center;
+    vertical-align:top;
+    padding: 0px;
+    font-weight: 500;
+    font-size: 5em;
+    color: rgb(32, 26, 79);
+    background-color: white;
+}
 
 legend{
     text-decoration: underline;
@@ -63,4 +81,16 @@ footer{
     background-color: rgb(42, 39, 39);
     padding: 30px;
     text-align: right;
+    align-content:bottom;
+}
+
+nav{
+    background-color: rgb(32, 26, 79);
+    color:white;
+    padding: 5px;
+}
+
+body{
+    background-color: aqua;
+    color: rgb(32, 26, 79);
 }
