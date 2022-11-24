@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Crear producto</title>
+</head>
+
+<body>
+  <div class="row container-fluid">
+    <!--Barra Lateral-->
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-dark col-2 text-white" style="width: 280px;">
+      <span class="fs-4">Productos</span>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="ProductosGET.html" class="nav-link text-white" aria-current="page">
+            Ver todos
+          </a>
+        </li>
+        <li>
+          <a href="ProductosCREATE.html" class="nav-link active">
+            Crear
+          </a>
+        </li>
+        <span class="fs-4">Transactions</span>
+        <hr>
+        <li class="nav-item">
+          <a href="TransaccionesGET.html" class="nav-link text-white" aria-current="page">
+            Ver todos
+          </a>
+        </li>
+        <li>
+          <a href="TransaccionesCREATE.html" class="nav-link text-white">
+            Crear
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!--Formulario-->
+    <div class="col-3 col-sm-5 col-lg-7 bg-light mb-auto align-items-center">
+      <div><h1>NUEVO PRODUCTO:</h1></div>
+      <form id="formularioC">
+        <div class="form-group">
+            <div class="form-group row mb-2">
+              <label class="col-4 col-form-label">Nombre de producto:</label>
+              <div class="col-8">
+                <input id="producto" name="producto" type="text" class="form-control" placeholder="Producto">
+              </div>
+            </div>
+            <div class="form-group row mb-2">
+              <label class="col-4 col-form-label">Descripcion del producto:</label>
+              <div class="col-8">
+                <input id="descripcion" name="descripcion" type="text" class="form-control" placeholder="Descripción">
+              </div>
+            </div>
+            <div class="form-group row mb-2">
+              <label class="col-4 col-form-label">Codigo de producto:</label>
+              <div class="col-8">
+                <input id="codigo" name="codigo" type="text" class="form-control" placeholder="Codigo">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="ProductosCREATE.js"></script>
+</body>
+</html>

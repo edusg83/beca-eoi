@@ -3,12 +3,15 @@ const headers = {
   'Access-Control-Allow-Origin': '*'
 };
 
-const request = "http://ligafalm.eu:28100/products";
+const requestMod = "http://ligafalm.eu:28100/products";
+  var requestVer = "http://ligafalm.eu:28100/products?page=0&size=10";
+  var numPaginas = 0;
 
-axios.get(request,{headers})
+function tabla(param1){
+axios.get(param1,{headers})
 .then((data)=> {
 
-  var user = data.data
+  var prod = data.data
 
     let nom = `
     <table class="bg-personal0 text-center border border-2 text-white shadow">
@@ -24,15 +27,15 @@ axios.get(request,{headers})
 
     let dir = ``;
  
-    user.forEach(item => {
+    prod.forEach(item => {
     dir +=`
     <tr class="border-personal">
       <td>${item.name}</td>
       <td>${item.description}</td>
       <td>${item.code}</td>
-      <td><button type="button" class="btn btn-secondary" onclick="verProducto(${item.id})" data-toggle="modal" data-target="#ModalUp">Update</button>
+      <td><button type="button" class="btn btn-secondary" onclick="verProducto(${item.id})" data-toggle="modal" data-target="#ModalUp"><i class="fa-solid fa-pen-to-square"></i></button>
 
-      <button type="button" class="btn btn-secondary" onclick="delProducto(${item.id})" data-toggle="modal" data-target="#ModalDel">Delete</button>
+      <button type="button" class="btn btn-secondary" onclick="delProducto(${item.id})" data-toggle="modal" data-target="#ModalDel"><i class="fa-solid fa-trash"></i></button>
     </tr>`
     });
 
@@ -44,11 +47,14 @@ axios.get(request,{headers})
     document.getElementById("resultados").innerHTML = result;
     
 });
+};
 
+tabla(requestVer);
 
+console.log(numPaginas);
 
 function verProducto(param1) {
-  var url = request+"/"+param1
+  var url = requestMod+"/"+param1
 
   axios.get(url,{headers})
 .then((data) => {
@@ -68,19 +74,23 @@ function verProducto(param1) {
       "description":document.getElementById("descripcion-container").value,
       "code":document.getElementById("codigo-container").value
     };
+
     axios.put(url,envio,{headers})
     .then(()=> {
-      window.location.assign("EjendpointGET.html")
+      tabla(requestVer);
+    })
+    .catch((error)=>{
+      console.log(error);
     });
 
   });
 
 });
-}
+};
 
 
 function delProducto(param1) {
-  var url = request+"/"+param1
+  var url = requestMod+"/"+param1
 
   axios.get(url,{headers})
   .then((data)=> {
@@ -91,14 +101,51 @@ function delProducto(param1) {
   form.addEventListener("submit",function(element) {
     element.preventDefault();
     const envio = {
-      "id":data.data.id,
+      "id":data.data.id
     };
+
     axios.delete(url,envio,{headers})
-    .then(()=> {
-      window.location.assign("EjendpointGET.html")
+    .then((url)=> {
+      tabla(requestVer);
+    })
+    .catch((error)=>{
+      console.log(error);
     });
 
   });
 });
 
-}
+};
+
+(function paginacion() {
+  
+  var pagina = requestVer.substring(39,40);
+  var boton1 = document.getElementById("ant");
+  var boton2 = document.getElementById("sig");
+  pagActual = pagina+"&";
+
+    boton1.onclick = function () {
+      if (pagina == 0) {
+        console.log("No hay mas paginas")
+      } else {
+        pagina--;
+        requestVer = requestVer.replace(pagActual,pagina+'&');
+        pagActual = pagina+"&";
+        tabla(requestVer);
+        
+        console.log(requestVer);
+        console.log(pagina);
+
+      }
+    };
+
+    boton2.onclick = function () {
+      pagina++
+      requestVer = requestVer.replace(pagActual,pagina+'&');
+      pagActual = pagina+"&";
+      tabla(requestVer);
+      console.log(requestVer);
+      console.log(pagina);
+    };
+
+}());

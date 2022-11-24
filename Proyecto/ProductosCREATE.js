@@ -11,14 +11,14 @@ form.addEventListener("submit",function(elem) {
     const formData = new FormData(form);
 
     var newProducto = {
-        "name":formData.get("producto"),
-        "description":formData.get("descripcion"),
-        "code":formData.get("codigo")
+        name:formData.get("producto"),
+        description:formData.get("descripcion"),
+        code:formData.get("codigo")
     };
     axios.post(url,newProducto,{headers})
     .then(()=> {
-        window.location.assign("EjendpointGET.html")
-      });
+        window.location.assign("ProductosGET.html");
+      })
     .catch((error)=>{
       console.log(error);
     });
