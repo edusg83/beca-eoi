@@ -1,10 +1,14 @@
 if(window.location.href.indexOf("index")>0){
-    mostrar();
+    mostrarTransaccion();
 }else{
     transaccion();
 }
+if(window.location.href.indexOf("transaccionNueva")){
+    selectProductCode();
+    selectGoal();
+}
 
-function mostrar(){
+function mostrarTransaccion(){
     const headers ={
         'Content-Type':'application/json',
         'Acces-Control-Allow-Origin':'*'
@@ -131,6 +135,52 @@ function transaccion(){
     }
 }
 
+
+function selectProductCode(){
+    const headers ={
+        'Content-Type':'application/json',
+        'Acces-Control-Allow-Origin':'*'
+    };
+    
+    const urlUsers = "http://ligafalm.eu:28100/products/?page=0&size=100";
+
+    var options='';
+    
+    axios.get(urlUsers,{headers})
+    .then((respuestaProductos) => {
+         let productos=respuestaProductos.data;
+        
+         productos.forEach(producto => {
+           
+            optionsProduct=options + `<option style="background-color: #F1F1F1;" value="${producto.code}">${producto.code}</option>`;
+         });
+           
+         document.getElementById("selectProductCode").innerHTML=optionsProduct;
+        });
+}
+
+
+function selectGoal(){
+    const headers ={
+        'Content-Type':'application/json',
+        'Acces-Control-Allow-Origin':'*'
+    };
+    const urlUsers = "http://ligafalm.eu:28100/goals/?page=0&size=100";
+
+    var optionsGoal='';
+
+    axios.get(urlUsers,{headers})
+    .then((respuestaGoals)=>{
+        let goals=respuestaGoals.data;
+
+        goals.forEach(goal =>{
+            optionsGoal=optionsGoal+`<option style="background-color: #F1F1F1;" value="${goal.id}">${goal.name}</option>`;
+    });
+    document.getElementById("selectGoal").innerHTML=optionsGoal;
+    });
+}
+
+
 function POSTtransaccion() {
     const headers ={
         'Content-Type':'application/json',
@@ -138,10 +188,10 @@ function POSTtransaccion() {
     };
 
     const dataRequest={
-                productCode:document.getElementById("inProductCode").value ,
+                productCode:document.getElementById("inProductCode").value,
                 total:document.getElementById("inTotal").value,
-                type:document.getElementById("inType").value,
-                done:document.getElementById("inDone").value,
+                type:"SELL",
+                done: 1,
                 goal:document.getElementById("inGoal").value
     }
     console.log("Id: " + transaccion.id, + " productCode: " + transaccion.total + " type: " + transaccion.type + " done: "+ transaccion.done + " goal: " + transaccion.goal);

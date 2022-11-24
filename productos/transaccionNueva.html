@@ -41,18 +41,22 @@
             </div>
           </nav>
 
-        <div class="row">
-            <div class="col-2"></div>
-        </div>
+    <form name="formTransaccion">
 
-        <p class="col-3">ProductCode: <input id="inProductCode">
-        <p class="col-3">Type: <input id="inType">
+        
+        <p><label id="labelProductCode" for="productCode">Product Code </label>
+            <select name="select" id="selectProductCode">
+            </select>
+    
         <p class="col-3">Total: <input id="inTotal">
-        <p class="col-3">Done: <input id="inDone">  
-        <p class="col-3">Goal: <input id="inGoal">  
+    
+        <p><label id="labelGoal" for="Goal">Goal </label>
+            <select name="select" id="selectGoal">
+            </select>
+    </form> 
         <p class="col-3">
-        <input onclick="POSTtransaccion()" type="submit" value="Crear" />     
-        <input onclick="paginaPrincipal()" type="submit" value="Volver" /> 
+        <input onclick="POSTtransaccion()" type="submit" value="Crear" >     
+        <input onclick="paginaPrincipal()" type="submit" value="Volver" > 
         <div id="resultadosTransaccion">
         </div>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
