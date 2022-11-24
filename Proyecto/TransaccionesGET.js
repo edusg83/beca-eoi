@@ -29,6 +29,7 @@ axios.get(param1,{headers})
         <th class="col-2">type</th>
         <th class="col-2">done</th>
         <th class="col-2">goal</th>
+        <th class="col-2">options</th>
       </tr>
     </thead>
     <tbody>`
