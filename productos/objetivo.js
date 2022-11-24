@@ -9,7 +9,7 @@ let id = url.split("=")[1];
 
 
 // ############# LLAMADAS ########################3
-actualizarObjetivo(id);
+actualizarObjetivo();
 listaUsuarios();
 tablaTransaccionesObjetivo(id);
 
@@ -23,7 +23,7 @@ function listaUsuarios(){
     .then((respuesta) => { 
         let objetivos = respuesta.data;
 
-        let lista = `<select name="users", id="us">`;         
+        let lista = `<select name="users", id="us", type="text">`;         
         let options=``;
         let finLista=`</select>`;
 
@@ -106,7 +106,11 @@ function borrarObjetivo(){
 };
 
 // PUT ONE
-function actualizarObjetivo(id){
+function actualizarObjetivo(){
+    // Recuperamos el id
+    let url = window.location.href;
+    let id = url.split("=")[1];
+
     axios.get('http://ligafalm.eu:28100/goals/'+id, {headers})
     .then((objetivo) => { 
         // Recuperamos los datos del objetivo y los metemos en el formulario
@@ -123,15 +127,16 @@ function actualizarObjetivo(id){
             let nombre = formData.get("nombre");
             let descripcion = formData.get("descripcion");
             let user = formData.get("users");
-
+    //        let transactions = objetivo.data.transactions;
             const dataRequest = {
                 "id":id,
                 "name":nombre,
                 "description": descripcion,
                 "assignedTo": user,
                 "progress": 0.0
+            //    "transactions": transactions
             };
-            console.log(dataRequest)
+            console.log( user)
         
             axios.put('http://ligafalm.eu:28100/goals/'+id, dataRequest, {headers})
                 .then((url)=>{
