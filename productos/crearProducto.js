@@ -12,7 +12,6 @@ crearProducto();
 
 // ############# CRUD ########################################################################################3333
 // POST ONE PRODUCT
-
 function crearProducto(){
     const formulario = document.getElementById("formulario2");
     formulario.addEventListener("submit", function(element){
