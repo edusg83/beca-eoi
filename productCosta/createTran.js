@@ -35,5 +35,18 @@ function mostrarCode() {
         'Acces-Control-Allow-Origin':'*'
     };
 
-    const urlResponse = "http://ligafalm.eu:28100/transactions/"
+    const urlResponse = "http://ligafalm.eu:28100/products?page=0&size=100";
+
+    axios.get(urlResponse,{headers})
+    .then((respuesta)=> {
+        let codePro = respuesta.data;
+        let selectIn=`<select id="codigo" class="form-control" placeholder="Código Producto">`;
+        let selectClose = `</select>`;
+        let options = ``;
+        codePro.forEach(codePro=> {
+            options += `<option value="${codePro.code}">${codePro.name}</option>`;
+        });
+        selectIn += options + selectClose;
+        document.getElementById("code").innerHTML = selectIn;
+    });
 }
