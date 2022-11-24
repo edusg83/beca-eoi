@@ -10,6 +10,7 @@ const headers = {
 // ############# LLAMADAS ########################3
 actualizarObjetivo();
 listaUsuarios();
+tablaTransacciones();
 
 
 // ############## CRUD #####################################
@@ -34,6 +35,54 @@ function listaUsuarios(){
     });
 }
 
+
+// GET ALL TRANSACTIONS
+// Recuperamos 10 TRANSACCIONES y las mostramos en una tabla
+ function tablaTransacciones(){
+    axios.get('http://ligafalm.eu:28100/transactions')
+        .then((respuesta) => { 
+            let transacciones = respuesta.data;
+            let tabla = `
+                <h1>Lista de transacciones</h1>
+                <table id="dataTable", class="tg">
+                    <thead>
+                        <tr>
+                            <th class="th">Id</th>
+                            <th class="th">Código del producto</th>
+                            <th class="th">Total</th>
+                            <th class="th">Tipo</th>
+                            <th class="th">Objetivo</th> 
+                            <th class="th">Opciones</th>  
+                        </tr>
+                    </thead>
+                    <tbody>`;         
+            let filas=``;
+            let finTabla=`
+                        </tbody>
+                    </table>`;
+
+            transacciones.forEach(item => {
+            filas+=`
+                <tr>
+                    <td class="tg-0lax">
+                        ${item.id}
+                    </td>
+                    <td class="tg-0lax">${item.productCode}</td>
+                    <td class="tg-0lax", style="text-align:center;"> ${item.total}</td>
+                    <td class="tg-0lax", style="text-align:center;">${item.type}</td>
+                    <td class="tg-0lax", style="text-align:center;">${item.goal}</td>
+                    <td class="opciones"> 
+                        <a href="transaccion.html?id=${item.id}")"><img src="editar.png", width=20px></a>
+                        <a onclick="borrarTransaccion(${item.id})"><img src="borrar.png", width=20px></a>
+                    </td>
+                </tr>`;
+            });
+
+            tabla += filas+finTabla;
+            document.getElementById("tablaTransacciones").innerHTML = tabla;
+            console.log(transacciones)
+        });
+ }
 
 
 // DELETE ONE
@@ -73,18 +122,20 @@ function actualizarObjetivo(){
             
             let nombre = formData.get("nombre");
             let descripcion = formData.get("descripcion");
-            let assignedTo = formData.get("assignedTo");
+            let user = formData.get("users");
 
             const dataRequest = {
                 "id":id,
                 "name":nombre,
                 "description": descripcion,
-                "assignedTo": assignedTo
+                "assignedTo": user,
+                "progress": 0
             };
+            console.log(dataRequest)
         
             axios.put('http://ligafalm.eu:28100/goals/'+id, dataRequest, {headers})
                 .then((url)=>{
-                    window.location.assign("objetivos.html");
+                    
                 })
         });
     });
@@ -95,6 +146,6 @@ function actualizarObjetivo(){
 
 // ########### MOVIMIENTOS ##########################################################################################
 function volver(){
-    url = window.location.assign("productos.html");
+    url = window.location.assign("objetivos.html");
 }
 

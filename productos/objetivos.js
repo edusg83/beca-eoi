@@ -33,6 +33,7 @@ function tablaObjetivos(){
                     <th class="th">Id</th>
                     <th class="th">Nombre</th>
                     <th class="th">Descripción</th>
+                    <th class="th">Asignado a</th>
                     <th class="th">Opciones</th>  
                 </tr>
             </thead>
@@ -50,6 +51,7 @@ function tablaObjetivos(){
                 </td>
                 <td class="tg-0lax">${item.name}</td>
                 <td class="tg-0lax"> ${item.description}</td>
+                <td class="tg-0lax"> ${item.assignedTo}</td>
                 <td class="opciones"> 
                     <a href="objetivo.html?id=${item.id}")"><img src="editar.png", width=20px></a>
                     <a onclick="borrarObjetivo(${item.id})"><img src="borrar.png", width=20px></a>
