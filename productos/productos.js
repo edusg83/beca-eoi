@@ -5,11 +5,23 @@ const headers = {
 
 
 
+
+
+
+
+// ########### LLAMADAS #################################################################################################
+
+tablaProductos();
+listaProductosFormulario();
+recuperarUnElemento();
+
+
 // ########### CRUD ##############################################################################################
 
 // GET ALL PRODUCTS
 // Recuperamos 10 PRODUCTOS y la mostramos en una tabla
-axios.get('http://ligafalm.eu:28100/products')
+function tablaProductos(){
+    axios.get('http://ligafalm.eu:28100/products')
     .then((productosLista) => { 
         let productos = productosLista.data;
         
@@ -50,51 +62,57 @@ axios.get('http://ligafalm.eu:28100/products')
         tabla += filas+finTabla;
         document.getElementById("tablaProductos").innerHTML = tabla;
     });
-
+}
 
 // Recuperamos TODOS LOS PRODUCTOS y los mostramos en el formulario
-axios.get('http://ligafalm.eu:28100/products?page=0&size=100')
-.then((respuesta) => { 
-    let productos = respuesta.data;
+function listaProductosFormulario(){
+    axios.get('http://ligafalm.eu:28100/products?page=0&size=100')
+        .then((respuesta) => { 
+            let productos = respuesta.data;
 
-    let lista = `<select name="productosBusqueda", id="prodBusq">`;         
-    let options=``;
-    let finLista=`</select>`;
+            let lista = `<select name="productosBusqueda", id="prodBusq">`;         
+            let options=``;
+            let finLista=`</select>`;
 
-    productos.forEach(item => {
-    options+=`<option value="${item.id}">${item.id}</option> `;
-    });
+            productos.forEach(item => {
+            options+=`<option value="${item.id}">${item.id}</option> `;
+            });
 
-    lista += options+finLista;
-    document.getElementById("listaProductos").innerHTML = lista;
+            lista += options+finLista;
+            document.getElementById("listaProductos").innerHTML = lista;
 });
-    
+}
+
+
 
 // GET ONE PRODUCT
-const formulario = document.getElementById("formulario3");
-formulario.addEventListener("submit", function(element){
-    element.preventDefault();
-    const formData = new FormData(formulario);
-    
-    let ID = formData.get("productosBusqueda");
+// Cuando le damos al botón de buscar, muestra el producto cuya id se ha seleccionado
+function recuperarUnElemento(){
+    const formulario = document.getElementById("formulario3");
+    formulario.addEventListener("submit", function(element){
+        element.preventDefault();
+        const formData = new FormData(formulario);
+        
+        let ID = formData.get("productosBusqueda");
 
-    axios.get('http://ligafalm.eu:28100/products/'+ID, {headers})
-        .then((respuesta)=>{
-            let producto = respuesta.data;
-            
-            if(producto.id===undefined){
-               document.getElementById("articuloEncontrado").innerHTML = "Introduzca un ID";
-            } else {
-                encuentraProducto(producto);
-            }
-        })
-        .catch((error)=>{
-            document.getElementById("articuloEncontrado").innerHTML = "Producto no existente",
-            console.log(error)
-    });    
-});
+        axios.get('http://ligafalm.eu:28100/products/'+ID, {headers})
+            .then((respuesta)=>{
+                let producto = respuesta.data;
+                
+                if(producto.id===undefined){
+                document.getElementById("articuloEncontrado").innerHTML = "Introduzca un ID";
+                } else {
+                    pintaProducto(producto);
+                }
+            })
+            .catch((error)=>{
+                document.getElementById("articuloEncontrado").innerHTML = "Producto no existente",
+                console.log(error)
+        });    
+    });
+}
 // Funcion que muestra un producto
-function encuentraProducto(producto){
+function pintaProducto(producto){
     let tabla = `
     <table id="dataTable", class="tg">
         <thead>
@@ -123,6 +141,8 @@ function encuentraProducto(producto){
     </table>`;
     document.getElementById("articuloEncontrado").innerHTML = tabla;
 }
+
+
 
 // DELETE ONE PRODUCT
 function borrarProducto(id){
