@@ -3,16 +3,13 @@ const headers = {
     'Access-Control-Allow-Origin':'*'
 };
 
-// URL de la api
-const url = 'http://ligafalm.eu:28100/products';
-
 
 
 // ########### CRUD ##############################################################################################
 
 // GET ALL PRODUCTS
-// Recuperamos la lista de productos y la mostramos
-axios.get(url)
+// Recuperamos 10 PRODUCTOS y la mostramos en una tabla
+axios.get('http://ligafalm.eu:28100/products')
     .then((productosLista) => { 
         let productos = productosLista.data;
         
@@ -55,13 +52,31 @@ axios.get(url)
     });
 
 
+// Recuperamos TODOS LOS PRODUCTOS y los mostramos en el formulario
+axios.get('http://ligafalm.eu:28100/products?page=0&size=100')
+.then((respuesta) => { 
+    let productos = respuesta.data;
+
+    let lista = `<select name="productosBusqueda", id="prodBusq">`;         
+    let options=``;
+    let finLista=`</select>`;
+
+    productos.forEach(item => {
+    options+=`<option value="${item.id}">${item.id}</option> `;
+    });
+
+    lista += options+finLista;
+    document.getElementById("listaProductos").innerHTML = lista;
+});
+    
+
 // GET ONE PRODUCT
 const formulario = document.getElementById("formulario3");
 formulario.addEventListener("submit", function(element){
     element.preventDefault();
     const formData = new FormData(formulario);
     
-    let ID = formData.get("ID");
+    let ID = formData.get("productosBusqueda");
 
     axios.get('http://ligafalm.eu:28100/products/'+ID, {headers})
         .then((respuesta)=>{

@@ -11,7 +11,7 @@ const headers = {
 
 // GET ALL PRODUCTS
 // Recuperamos la lista de productos y la mostramos en el formulario
-axios.get('http://ligafalm.eu:28100/products')
+axios.get('http://ligafalm.eu:28100/products/?page=0&size=100')
     .then((respuesta) => { 
         let productos = respuesta.data;
 
@@ -29,7 +29,7 @@ axios.get('http://ligafalm.eu:28100/products')
 
 
 // GET ALL GOALS
-axios.get('http://ligafalm.eu:28100/goals')
+axios.get('http://ligafalm.eu:28100/goals/?page=0&size=100')
     .then((respuesta) => { 
         let objetivos = respuesta.data;
 

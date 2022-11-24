@@ -4,13 +4,13 @@ const headers = {
 };
 
 // URL de la api
-const url = 'http://ligafalm.eu:28100/transactions';
+const url = 'http://ligafalm.eu:28100/transactions/?page=0&size=100';
 
 
 
 // ########### CRUD ##############################################################################################
 
-// GET ALL
+// GET ALL PRODUCTS
 // Recuperamos la lista de productos y la mostramos
 axios.get(url)
     .then((respuesta) => { 
@@ -55,7 +55,23 @@ axios.get(url)
     document.getElementById("tablaTransacciones").innerHTML = tabla;
     });
 
+// GET ALL TRANSACTIONS
+// Recuperamos la lista de productos y la mostramos en el formulario
+axios.get('http://ligafalm.eu:28100/transactions/?page=0&size=100')
+    .then((respuesta) => { 
+        let transaccion = respuesta.data;
 
+        let lista = `<select name="transaccionesBusqueda", id="transBusq">`;         
+        let options=``;
+        let finLista=`</select>`;
+
+        transaccion.forEach(item => {
+        options+=`<option value="${item.id}">${item.id}</option> `;
+        });
+
+        lista += options+finLista;
+        document.getElementById("listaTransacciones").innerHTML = lista;
+    });
 
 // GET ONE TRANSACTION
 const formulario = document.getElementById("formulario4");
@@ -63,7 +79,8 @@ formulario.addEventListener("submit", function(element){
     element.preventDefault();
     const formData = new FormData(formulario);
     
-    let ID = formData.get("ID");
+    let ID = formData.get("transaccionesBusqueda");
+    console.log(ID)
 
     axios.get('http://ligafalm.eu:28100/transactions/'+ID, {headers})
         .then((respuesta)=>{
@@ -83,20 +100,19 @@ formulario.addEventListener("submit", function(element){
 // Funcion que muestra una transaccion
 function encuentraTransaccion(transaccion){
     let tabla = `
-    <h1>Lista de transacciones</h1>
-            <table id="dataTable", class="tg">
-                <thead>
-                    <tr>
-                        <th class="th">Id</th>
-                        <th class="th">Código del producto</th>
-                        <th class="th">Total</th>
-                        <th class="th">Tipo</th>
-                        <th class="th">Objetivo</th> 
-                        <th class="th">Opciones</th>  
-                    </tr>
-                </thead>
-                <tbody>      
-                <tr>
+    <table id="dataTable", class="tg">
+        <thead>
+            <tr>
+                <th class="th">Id</th>
+                <th class="th">Código del producto</th>
+                <th class="th">Total</th>
+                <th class="th">Tipo</th>
+                <th class="th">Objetivo</th> 
+                <th class="th">Opciones</th>  
+            </tr>
+        </thead>
+        <tbody>      
+            <tr>
                 <td class="tg-0lax">
                     ${transaccion.id}
                 </td>
