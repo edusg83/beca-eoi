@@ -129,7 +129,7 @@ function actualizarObjetivo(id){
                 "name":nombre,
                 "description": descripcion,
                 "assignedTo": user,
-                "progress": 0
+                "progress": 0.0
             };
             console.log(dataRequest)
         

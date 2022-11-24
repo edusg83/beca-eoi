@@ -142,13 +142,13 @@ function pintaObjetivo(objetivo){
 
 
 // DELETE ONE PRODUCT
-function borrarProducto(id){
-    let borrar = confirm("¿Desea borrar este producto?");
+function borrarObjetivo(id){
+    let borrar = confirm("¿Desea borrar este objetivo?");
 
     if (borrar === true){
-        axios.delete('http://ligafalm.eu:28100/products/'+id, {headers})
+        axios.delete('http://ligafalm.eu:28100/goals/'+id, {headers})
             .then((url)=>{
-                window.location.assign("productos.html");
+                window.location.assign("objetivos.html");
             })
             .catch((error)=>
             console.log(error)
