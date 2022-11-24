@@ -3,16 +3,17 @@ const headers = {
     'Access-Control-Allow-Origin': '*'
   };
 const url = "http://ligafalm.eu:28100/transactions/",
-      form = document.getElementById("formularioT");
+
+form = document.getElementById("formularioT");
 
 form.addEventListener("submit",function(elem) {
     elem.preventDefault();
 
-    const formData = new FormData(form);
+    //const formData = new FormData(form);
 
-    var prod = formData.get("producto"),
+    /*var prod = formData.get("producto"),
         desc = formData.get("descripcion"),
-        cod = formData.get("codigo");
+        cod = formData.get("codigo");*/
 
     var newTransaction = {
         "code":document.getElementById("codigo").value,
@@ -30,10 +31,6 @@ form.addEventListener("submit",function(elem) {
 },false);
 
 function mostrarCode() {
-    const headers ={
-        'Content-Type':'application/json',
-        'Acces-Control-Allow-Origin':'*'
-    };
 
     const urlResponse = "http://ligafalm.eu:28100/products?page=0&size=100";
 
@@ -43,10 +40,12 @@ function mostrarCode() {
         let selectIn=`<select id="codigo" class="form-control" placeholder="Código Producto">`;
         let selectClose = `</select>`;
         let options = ``;
-        codePro.forEach(codePro=> {
-            options += `<option value="${codePro.code}">${codePro.name}</option>`;
+        codePro.forEach(item=> {
+            options += `<option value="${item.code}">${item.name}</option>`;
         });
         selectIn += options + selectClose;
         document.getElementById("code").innerHTML = selectIn;
     });
 }
+
+//mostrarCode();
