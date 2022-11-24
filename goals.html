@@ -54,19 +54,17 @@
             </div>
         </nav>
     </div>
-    
-    <div class="container" style="margin-left: 15px">
 
-    
-      
+
     <table class="table table-dark table-striped">
         <thead>
             <tr>
                 
-                <th scope="col">Código producto</th>
-                <th scope="col">Total vendidos</th>
-                <th scope="col">Completado</th>
-                <th scope="col">Tipo</th>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Asignado a</th>
+                <th scope="col">Progreso</th>
                 
                 
             </tr>
@@ -80,57 +78,31 @@
     
 </body>
 
-<!-- modal Crear -->
 
-<div class="modal fade" id="modalCreate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- modal show transacciones -->
+<div class="modal fade" id="modalShowTransactions" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Transaccion</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Transacciones</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-            <form id="formCrearTrans" onsubmit="">
-                
-                <div class="form-group">
-                  <label for="productoSelect">Producto</label>
-                  <select class="custom-select" id="productoSelect"></select>
-                  <div class="form-divider"></div>
-                  <label for="objetivoSelect">Objetivo</label>
-                  <select class="custom-select" id="objetivoSelect"></select>
-                  <div class="form-divider"></div>
-                  <label for="total">Total</label>
-                  <input type="text" class="form-control" id="total" placeholder="Cantidad">
-                  <label for="done">Completado</label>
-                  <input type="text" class="form-control" id="done" value="1">
-                  <label for="tipo">Tipo</label>
-                  <input type="text" class="form-control" id="tipo" value="SELL">
-                </div>
-                <button type="button" onclick="createTransaction()" class="btn btn-primary">Crear</button>
-              </form>
+        <div class="modal-body" id="bodyTransactions">
+          <!-- <label for="nombre">Name:</label>
+          <p id="nombre"></p>
+          <label for="descripcion">Description:</label>
+          <p id="descripcion"></p>
+          <label for="codigo">Code:</label>
+          <p id="codigo"></p> -->
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="js/transactions.js"></script>
+<script src="js/goals.js"></script>
 </html>
