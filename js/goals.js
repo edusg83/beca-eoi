@@ -22,7 +22,7 @@ function showAllGoals(){
             <td>${element.description}</td>
             <td>${element.assignedTo}</td>
             <td>${element.progress}</td>
-            <td><button type="button" class="btn btn-primary" data-toggle="modal" onclick="insertTransactionsModal(${element.transactions[0]})" data-target="#modalShowTransactions" 
+            <td><button type="button" class="btn btn-primary" data-toggle="modal" onclick='insertTransactionsModal(${JSON.stringify(element.transactions)})' data-target="#modalShowTransactions" 
             >TRANSACCIONES</td>
             
             </tr>
