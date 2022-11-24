@@ -12,8 +12,8 @@ const headers = {
 // ########### LLAMADAS #################################################################################################
 
 tablaObjetivos();
-listaProductosFormulario();
-recuperarUnElemento();
+listaObjetivosFormulario();
+recuperarUnObjetivo();
 
 
 // ########### CRUD ##############################################################################################
@@ -64,82 +64,79 @@ function tablaObjetivos(){
     });
 }
 
-// Recuperamos TODOS LOS PRODUCTOS y los mostramos en el formulario
-function listaProductosFormulario(){
-    axios.get('http://ligafalm.eu:28100/products?page=0&size=100')
+// Recuperamos TODOS LOS OBJETIVOS y los mostramos en el formulario
+function listaObjetivosFormulario(){
+    axios.get('http://ligafalm.eu:28100/goals?page=0&size=100')
         .then((respuesta) => { 
             let productos = respuesta.data;
 
-            let lista = `<select name="productosBusqueda", id="prodBusq">`;         
+            let lista = `<select name="objetivosBusqueda", id="objBusq">`;         
             let options=``;
             let finLista=`</select>`;
 
             productos.forEach(item => {
-            options+=`<option value="${item.id}">${item.id}</option> `;
+            options+=`<option value="${item.id}">${item.name}</option> `;
             });
 
             lista += options+finLista;
-            document.getElementById("listaProductos").innerHTML = lista;
+            document.getElementById("listaObjetivos").innerHTML = lista;
 });
 }
 
 
 
-// GET ONE PRODUCT
-// Cuando le damos al botón de buscar, muestra el producto cuya id se ha seleccionado
-function recuperarUnElemento(){
-    const formulario = document.getElementById("formulario3");
+// GET ONE GOAL
+// Cuando le damos al botón de buscar, muestra el objetivo cuya id se ha seleccionado
+function recuperarUnObjetivo(){
+    const formulario = document.getElementById("formulario7");
     formulario.addEventListener("submit", function(element){
         element.preventDefault();
         const formData = new FormData(formulario);
         
-        let ID = formData.get("productosBusqueda");
+        let ID = formData.get("objetivosBusqueda");
 
-        axios.get('http://ligafalm.eu:28100/products/'+ID, {headers})
+        axios.get('http://ligafalm.eu:28100/goals/'+ID, {headers})
             .then((respuesta)=>{
-                let producto = respuesta.data;
+                let objetivo = respuesta.data;
                 
-                if(producto.id===undefined){
-                document.getElementById("articuloEncontrado").innerHTML = "Introduzca un ID";
+                if(objetivo.id===undefined){
+                document.getElementById("objetivoEncontrado").innerHTML = "Introduzca un ID";
                 } else {
-                    pintaProducto(producto);
+                    pintaObjetivo(objetivo);
                 }
             })
             .catch((error)=>{
-                document.getElementById("articuloEncontrado").innerHTML = "Producto no existente",
+                document.getElementById("objetivoEncontrado").innerHTML = "Objetivo no existente",
                 console.log(error)
         });    
     });
 }
 // Funcion que muestra un producto
-function pintaProducto(producto){
+function pintaObjetivo(objetivo){
     let tabla = `
-    <table id="dataTable", class="tg">
-        <thead>
-            <tr>
-                <th class="th">Id</th>
-                <th class="th">Nombre</th>
-                <th class="th">Descripción</th>
-                <th class="th">Código</th>
-                <th class="th">Opciones</th>  
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="tg-0lax">
-                    ${producto.id}
-                </td>
-                <td class="tg-0lax">${producto.name}</td>
-                <td class="tg-0lax"> ${producto.description}</td>
-                <td class="tg-0lax">${producto.code}</td>
-                <td class="opciones"> 
-                    <a href="producto.html?id=${producto.id}")"><img src="editar.png", width=20px></a>
-                    <a onclick="borrarProducto(${producto.id})"><img src="borrar.png", width=20px></a>
-                </td>
-            </tr>        
+        <table id="dataTable", class="tg">
+            <thead>
+                <tr>
+                    <th class="th">Id</th>
+                    <th class="th">Nombre</th>
+                    <th class="th">Descripción</th>
+                    <th class="th">Asignado a</th>
+                    <th class="th">Opciones</th>  
+                <tr>
+                    <td class="tg-0lax">
+                        ${objetivo.id}
+                    </td>
+                    <td class="tg-0lax">${objetivo.name}</td>
+                    <td class="tg-0lax"> ${objetivo.description}</td>
+                    <td class="tg-0lax"> ${objetivo.assignedTo}</td>
+                    <td class="opciones"> 
+                        <a href="objetivo.html?id=${objetivo.id}")"><img src="editar.png", width=20px></a>
+                        <a onclick="borrarObjetivo(${objetivo.id})"><img src="borrar.png", width=20px></a>
+                    </td>
+                </tr>        
         </tbody>
     </table>`;
-    document.getElementById("articuloEncontrado").innerHTML = tabla;
+    document.getElementById("objetivoEncontrado").innerHTML = tabla;
 }
 
 

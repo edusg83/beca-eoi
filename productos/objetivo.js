@@ -3,14 +3,15 @@ const headers = {
     'Access-Control-Allow-Origin':'*'
 };
 
-
-
+// Recuperamos el id
+let url = window.location.href;
+let id = url.split("=")[1];
 
 
 // ############# LLAMADAS ########################3
-actualizarObjetivo();
+actualizarObjetivo(id);
 listaUsuarios();
-tablaTransacciones();
+tablaTransaccionesObjetivo(id);
 
 
 // ############## CRUD #####################################
@@ -36,14 +37,15 @@ function listaUsuarios(){
 }
 
 
-// GET ALL TRANSACTIONS
-// Recuperamos 10 TRANSACCIONES y las mostramos en una tabla
- function tablaTransacciones(){
-    axios.get('http://ligafalm.eu:28100/transactions')
-        .then((respuesta) => { 
-            let transacciones = respuesta.data;
-            let tabla = `
-                <h1>Lista de transacciones</h1>
+// GET ALL TRANSACTIONS FROM ONE OBJECTIVE
+// Recuperamos TODAS LAS TRANSACCIONES DE UN OBJETIVO
+ function tablaTransaccionesObjetivo(id){
+    axios.get('http://ligafalm.eu:28100/goals/'+id)
+    .then((respuesta)=>{
+        let transacciones = respuesta.data.transactions;
+
+        let tabla = `
+                <h1>Transacciones del objetivo</h1>
                 <table id="dataTable", class="tg">
                     <thead>
                         <tr>
@@ -51,7 +53,6 @@ function listaUsuarios(){
                             <th class="th">Código del producto</th>
                             <th class="th">Total</th>
                             <th class="th">Tipo</th>
-                            <th class="th">Objetivo</th> 
                             <th class="th">Opciones</th>  
                         </tr>
                     </thead>
@@ -70,7 +71,6 @@ function listaUsuarios(){
                     <td class="tg-0lax">${item.productCode}</td>
                     <td class="tg-0lax", style="text-align:center;"> ${item.total}</td>
                     <td class="tg-0lax", style="text-align:center;">${item.type}</td>
-                    <td class="tg-0lax", style="text-align:center;">${item.goal}</td>
                     <td class="opciones"> 
                         <a href="transaccion.html?id=${item.id}")"><img src="editar.png", width=20px></a>
                         <a onclick="borrarTransaccion(${item.id})"><img src="borrar.png", width=20px></a>
@@ -80,13 +80,17 @@ function listaUsuarios(){
 
             tabla += filas+finTabla;
             document.getElementById("tablaTransacciones").innerHTML = tabla;
-            console.log(transacciones)
-        });
+    })
  }
+
 
 
 // DELETE ONE
 function borrarObjetivo(){
+    // Recuperamos el id
+    let url = window.location.href;
+    let id = url.split("=")[1];
+
     let borrar = confirm("¿Desea borrar este objetivo?");
 
     if (borrar === true){
@@ -102,11 +106,7 @@ function borrarObjetivo(){
 };
 
 // PUT ONE
-function actualizarObjetivo(){
-    // Recuperamos el id
-    let url = window.location.href;
-    let id = url.split("=")[1];
-
+function actualizarObjetivo(id){
     axios.get('http://ligafalm.eu:28100/goals/'+id, {headers})
     .then((objetivo) => { 
         // Recuperamos los datos del objetivo y los metemos en el formulario
@@ -135,7 +135,7 @@ function actualizarObjetivo(){
         
             axios.put('http://ligafalm.eu:28100/goals/'+id, dataRequest, {headers})
                 .then((url)=>{
-                    
+                    url = window.location.assign("objetivos.html");
                 })
         });
     });
