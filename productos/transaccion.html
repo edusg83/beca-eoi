@@ -6,15 +6,52 @@
 <body>
     <script src="bootstrap.bundle.min.js"></script>
     <main id="main" class="main">
+
+        <nav class="navbar navbar-expand-lg bg-dark">
+            <div class="container-fluid">
+              <a href="index.html" class="navbar-brand" style="color: White;">Purchaser</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" style="color: White;" href="productonuevo.html">Crear producto</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" style="color: White;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Transacciones
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="transaccionNueva.html">Crear transaccion</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#"></a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" style="color: White;">Transaccion</a>
+                  </li>
+                </ul>
+                <div class="row; d-flex">
+  
+                  <p style="color:white; padding-top: 10px;">ID: <input id="buscador"> <button type="button" class="btn btn-light" style="background-color:#d6d5d5" onclick="buscar()">Buscar</button></p>
+                 
+              </div>
+            </div>
+          </nav>
+
+
+
         <div class="row">
             <div class="col-2"></div>
-            <h1 class="col-10 fw-semibold">PRODUCTOS</h1>
            
         </div>
-        
-        <p class="col-3">Nombre: <input id="inNombre">
-        <p class="col-3">Description: <input id="inDescription">
-        <p class="col-3">Codigo: <input id="inCodigo">  
+            <p class="col-3">ProductCode: <input id="inProductCode">
+            <p class="col-3">Type: <input id="inType">
+            <p class="col-3">Total: <input id="inTotal">
+            <p class="col-3">Done: <input id="inDone">  
+            <p class="col-3">Goal: <input id="inGoal">
         <p class="col-3">
         <input onclick="PUTproducto()" type="submit" value="Modificar" />     
         <input onclick="DELETEproducto()" type="submit" value="Borrar" /> 
@@ -23,7 +60,7 @@
         <div id="resultados">
         </div>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script  src="api.js"></script>
+        <script  src="apiTransaccion.js"></script>
     </main>
 </body>
 </html>

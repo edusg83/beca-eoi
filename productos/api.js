@@ -18,9 +18,9 @@ function mostrar(){
          let tabla=`
          <div class="container-fluid">
          <div class="row m-10">
-                        <div class="col-4" style="background-color: #F5F2E7;">Nombre</div>
-                        <div class="col-4" style="background-color: #F5F2E7;">Description</div>
-                        <div class="col-4" style="background-color: #F5F2E7;">Codigo</div> `;
+                        <div class="col-4" style="background-color: #ede8d6;">Nombre</div>
+                        <div class="col-4" style="background-color: #ede8d6;">Description</div>
+                        <div class="col-4" style="background-color: #ede8d6;">Codigo</div> `;
         
          let finTabla=`</div>`;
         
@@ -51,11 +51,11 @@ function mostrarID(id){
             .then((respuestaProductos) => {
                 let productos=respuestaProductos.data;
                 let tabla=`
-                <div class="container">
+                <div class="container-fluid">
                 <div class="row m-10">
-                                <div class="col-3" style="background-color: #F1F1F1;">Nombre</div>
-                                <div class="col-3" style="background-color: #F1F1F1;">Description</div>
-                                <div class="col-3" style="background-color: #F1F1F1;">Codigo</div> 
+                                <div class="col-4" style="background-color: #ede8d6;">Nombre</div>
+                                <div class="col-4" style="background-color: #ede8d6;">Description</div>
+                                <div class="col-4" style="background-color: #ede8d6;">Codigo</div> 
                                 `;
                 
                 let finTabla=`</div> </div>`;
@@ -63,9 +63,9 @@ function mostrarID(id){
                 let filastablas=``;
                     /*console.log("ID: "+producto.id+" Name: "+producto.name+" Descrpt: "+producto.description+" Code: "+producto.code);*/
                     filastablas+=`
-                            <div class="col-3" style="background-color: #F1F1F1;">${productos.name}</div>
-                            <div class="col-3" style="background-color: #F1F1F1;">${productos.description}</div>
-                            <div class="col-3" style="background-color: #F1F1F1;">${productos.code}</div>`;
+                            <div class="col-4" style="background-color: #F1F1F1;">${productos.name}</div>
+                            <div class="col-4" style="background-color: #F1F1F1;">${productos.description}</div>
+                            <div class="col-4" style="background-color: #F1F1F1;">${productos.code}</div>`;
                 
                 tabla += filastablas+finTabla;
                 document.getElementById("resultados").innerHTML=tabla;
@@ -73,9 +73,9 @@ function mostrarID(id){
                     let tabla=`
                             <div class="container">
                             <div class="row m-10">
-                                <div class="col-3" style="background-color: #F5F2E7;">Nombre</div>
-                                <div class="col-3" style="background-color: #F5F2E7;">Description</div>
-                                <div class="col-3" style="background-color: #F5F2E7;">Codigo</div> 
+                                <div class="col-4" style="background-color: #ede8d6;">Nombre</div>
+                                <div class="col-4" style="background-color: #ede8d6;">Description</div>
+                                <div class="col-4" style="background-color: #ede8d6;">Codigo</div> 
                             </div>
                             </div>`;
 

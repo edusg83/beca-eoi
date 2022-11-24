@@ -35,10 +35,10 @@
                         <a class="nav-link" style="color: White;">Lista de productos</a>
                       </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                      <input class="form-control me-2" type="search" placeholder="Id" aria-label="Search">
-                      <button class="btn btn-outline-success" style="color: White;" type="submit">Search</button>
-                    </form>
+                    <div class="row; d-flex">
+      
+                      <p style="color:white; padding-top: 10px;">ID: <input id="buscador"> <button type="button" class="btn btn-light" style="background-color:#d6d5d5" onclick="buscar()">Buscar</button></p>
+                     
                   </div>
                 </div>
               </nav>
@@ -53,11 +53,13 @@
                
             </div>
             
+            
             <div id="resultados">
     
             </div>
             <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
             <script  src="api.js"></script>
         </main>
+        
     </body>
 </html>
