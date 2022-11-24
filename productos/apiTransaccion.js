@@ -155,7 +155,7 @@ function selectProductCode(){
             options=options + `<option style="background-color: #F1F1F1;" value="${producto.code}">${producto.name}</option>`;
          });
            
-         document.getElementById("selectProductCode").innerHTML=options;
+         document.getElementById("inProductCode").innerHTML=options;
         });
 }
 
@@ -176,7 +176,7 @@ function selectGoal(){
         goals.forEach(goal =>{
             optionsGoal=optionsGoal+`<option style="background-color: #F1F1F1;" value="${goal.id}">${goal.name}</option>`;
     });
-    document.getElementById("selectGoal").innerHTML=optionsGoal;
+    document.getElementById("inGoal").innerHTML=optionsGoal;
     });
 }
 
