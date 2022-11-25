@@ -19,11 +19,12 @@ axios.get(urlMilestone,{headers})
 
     let nom = `
     <select class="form-select" name="user">
+    <option value="#" selected="true" disabled>Select User</option>
     `
     let dir;
         dir = `
-          <option value="AdminUserTestUsername" selected="true" disabled>Select User</option>
-          <option value="UserTestUsername">AdminUserTestUsername</option>
+
+          <option value="AdminUserTestUsername">AdminUserTestUsername</option>
           <option value="UserTestUsername">UserTestUsername</option>
         `;
 
@@ -35,7 +36,7 @@ axios.get(urlMilestone,{headers})
 
     nom = `
     <select class="form-select" name="milestone">
-      <option value="AdminUserTestUsername" selected="true" disabled>Select Milestone</option>
+      <option value="#" selected="true" disabled>Select Milestone</option>
     `
     dir = ``;
     dataMils.forEach(item => {

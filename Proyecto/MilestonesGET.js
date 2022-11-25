@@ -3,16 +3,16 @@ const headers = {
   'Access-Control-Allow-Origin': '*'
 };
 
-const requestMod = "http://ligafalm.eu:28100/goals",
+const requestMod = "http://ligafalm.eu:28100/milestones",
       requestVerProd = "http://ligafalm.eu:28100/products?page=0&size=100",
-      requestVerGoals = "http://ligafalm.eu:28100/transactions?page=0&size=100";
-  var requestVer = "http://ligafalm.eu:28100/goals?page=0&size=10";
+      requestVerGoals = "http://ligafalm.eu:28100/goals?page=0&size=100";
+  var requestVer = "http://ligafalm.eu:28100/milestones?page=0&size=10";
 
 function tabla(param1){
 axios.get(param1,{headers})
 .then((data)=> {
 
-  var goals = data.data;
+  var miles = data.data;
 
     let nom = `
     <table class="bg-personal0 text-center border border-2 text-white shadow">
@@ -29,8 +29,8 @@ axios.get(param1,{headers})
     <tbody>`
 
     let dir = ``;
-    if(goals.length > 1) {
-    goals.forEach(item => {
+    if(miles.length > 1) {
+      miles.forEach(item => {
     dir +=`
     <tr class="border-personal">
       <td>${item.id}</td>
@@ -48,15 +48,15 @@ axios.get(param1,{headers})
     } else {
       dir +=`
       <tr class="border-personal">
-        <td>${goals.id}</td>
-        <td>${goals.name}</td>
-        <td>${goals.description}</td>
-        <td>${goals.progress}</td>
-        <td>${goals.assignedTo}</td>
+        <td>${miles.id}</td>
+        <td>${miles.name}</td>
+        <td>${miles.description}</td>
+        <td>${miles.progress}</td>
+        <td>${miles.assignedTo}</td>
         <td>
-          <button type="button" class="btn btn-secondary" onclick="verGoal(${goals.id})" data-toggle="modal" data-target="#ModalUp"><i class="fa-solid fa-pen-to-square"></i></button>
-          <button type="button" class="btn btn-secondary" onclick="delGoal(${goals.id})" data-toggle="modal" data-target="#ModalDel"><i class="fa-solid fa-trash"></i></button>
-          <button type="button" class="btn btn-secondary" onclick="showTransaction(${goals.id})" data-toggle="modal" data-target="#ModalTrans"><i class="fa-sharp fa-solid fa-circle-info"></i></button>
+          <button type="button" class="btn btn-secondary" onclick="verGoal(${miles.id})" data-toggle="modal" data-target="#ModalUp"><i class="fa-solid fa-pen-to-square"></i></button>
+          <button type="button" class="btn btn-secondary" onclick="delGoal(${miles.id})" data-toggle="modal" data-target="#ModalDel"><i class="fa-solid fa-trash"></i></button>
+          <button type="button" class="btn btn-secondary" onclick="showTransaction(${miles.id})" data-toggle="modal" data-target="#ModalTrans"><i class="fa-sharp fa-solid fa-circle-info"></i></button>
         </td>
       </tr>`
     }

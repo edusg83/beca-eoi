@@ -7,6 +7,7 @@ const url = "http://ligafalm.eu:28100/goals",
       urlProduct = "http://ligafalm.eu:28100/products?page=0&size=100",
       urlTransaction = "http://ligafalm.eu:28100/transactions",
       urlMilestone = "http://ligafalm.eu:28100/milestones",
+      urlUsers = "http://ligafalm.eu:28100/users";
       form = document.getElementById("formularioGoal");
 
 
@@ -16,17 +17,21 @@ axios.get(url,{headers})
 axios.get(urlMilestone,{headers})
 .then((data1)=> {
   dataMils = data1.data;
+axios.get(urlUsers,{headers})
+.then((data0)=> {
+  dataUsers = data0.data;
 
     let nom = `
     <select class="form-select" name="user">
+    <option value="AdminUserTestUsername" selected="true" disabled>Select User</option>
     `
-    let dir;
-        dir = `
-          <option value="AdminUserTestUsername" selected="true" disabled>Select User</option>
-          <option value="UserTestUsername">AdminUserTestUsername</option>
-          <option value="UserTestUsername">UserTestUsername</option>
+    let dir=``;
+    console.log(dataUsers);
+    dataUsers.forEach(item => {
+        dir += `
+          <option value="${item.username}">${item.username}</option>
         `;
-
+    })
     let finTabla = `</select>`;
     
     var result = nom + dir + finTabla;
@@ -73,18 +78,21 @@ axios.get(urlMilestone,{headers})
           axios.get(urlMil,{headers})
           .then((mils)=> {
             var ArrayIds=[];
+
             var goalsId = mils.data.goals;
               goalsId.forEach( items => {
                 ArrayIds.push(items.id);
               })
+
             ArrayIds.push(idGoal);
-            console.log(ArrayIds)
+
             var addGoal = {
               "idMilestone":idMil,
               "goals":ArrayIds
             };
-            console.log(addGoal);
+
             urlAdd = url + "/milestone/" + idMil;
+
             axios.put(urlAdd,addGoal,{headers})
             .then((data)=>{console.log(data.data);})
             .catch((error)=>{console.log(error);});
@@ -104,4 +112,4 @@ axios.get(urlMilestone,{headers})
     console.log(error);
   });
 
-
+});
