@@ -9,12 +9,6 @@ const requestMod = "http://ligafalm.eu:28100/transactions",
   var requestVer = "http://ligafalm.eu:28100/transactions?page=0&size=10";
 
 function tabla(param1){
-axios.get(requestVerGoals,{headers})
-.then((dataGoals)=> {
-  Goals = dataGoals.data;
-axios.get(requestVerProd,{headers})
-.then((dataProd) => {
-  Prod = dataProd.data;
 axios.get(param1,{headers})
 .then((data)=> {
 
@@ -58,8 +52,6 @@ axios.get(param1,{headers})
 
     document.getElementById("resultados").innerHTML = result;
     
-});
-});
 });
 };
 
@@ -173,6 +165,8 @@ axios.get(requestVerProd,{headers})
         axios.put(url,update,{headers})
         .then(()=> {
           tabla(requestVer);
+          $('#ModalUp').modal('show');
+          $('#ModalUp').modal('hide');
         })
         .catch((error)=>{
           console.log(error);
