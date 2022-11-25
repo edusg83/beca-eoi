@@ -11,8 +11,8 @@
 
 <body>
   <div class="row container-fluid">
-    <!--Barra Lateral-->
-    <div class="d-flex flex-column flex-shrink-0 p-3 bg-dark col-2 text-white" style="width: 280px;">
+     <!--Barra Lateral-->
+     <div class="d-flex flex-column flex-shrink-0 p-3 bg-dark col-2 text-white" style="width: 280px;">
       <span class="fs-4">Productos</span>
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
@@ -22,7 +22,7 @@
           </a>
         </li>
         <li>
-          <a href="ProductosCREATE.html" class="nav-link active">
+          <a href="ProductosCREATE.html" class="nav-link text-white">
             Crear
           </a>
         </li>
@@ -58,7 +58,7 @@
           </a>
         </li>
         <li>
-          <a href="MilestonesCREATE.html" class="nav-link text-white">
+          <a href="MilestonesCREATE.html" class="nav-link active">
             Crear
           </a>
         </li>
@@ -66,25 +66,31 @@
     </div>
     <!--Formulario-->
     <div class="col-3 col-sm-5 col-lg-7 bg-light mb-auto align-items-center">
-      <div><h1>NUEVO PRODUCTO:</h1></div>
-      <form id="formularioC">
+      <div><h1>NEW GOAL:</h1></div>
+      <form id="formularioGoal">
         <div class="form-group">
             <div class="form-group row mb-2">
-              <label class="col-4 col-form-label">Nombre de producto:</label>
+              <label class="col-4 col-form-label">Name:</label>
               <div class="col-8">
-                <input id="producto" name="producto" type="text" class="form-control" placeholder="Producto">
+                <input id="name" name="name" type="text" class="form-control" placeholder="Number of products">
               </div>
             </div>
             <div class="form-group row mb-2">
-              <label class="col-4 col-form-label">Descripcion del producto:</label>
+              <label class="col-4 col-form-label">Description:</label>
               <div class="col-8">
-                <input id="descripcion" name="descripcion" type="text" class="form-control" placeholder="Descripción">
+                <input id="description" name="description" type="text" class="form-control" placeholder="Number of products">
               </div>
             </div>
             <div class="form-group row mb-2">
-              <label class="col-4 col-form-label">Codigo de producto:</label>
-              <div class="col-8">
-                <input id="codigo" name="codigo" type="text" class="form-control" placeholder="Codigo">
+              <label class="col-4 col-form-label">User:</label>
+              <div class="col-8" id="Usuarios">
+                <!--Insertado con JS Select 1-->
+              </div>
+            </div>
+            <div class="form-group row mb-2">
+              <label class="col-4 col-form-label">Milestone:</label>
+              <div class="col-8" id="Milestones">
+                <!--Insertado con JS Select 1-->
               </div>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
@@ -92,6 +98,6 @@
       </form>
     </div>
   </div>
-  <script src="ProductosCREATE.js"></script>
+  <script src="GoalCREATE.js"></script>
 </body>
 </html>
