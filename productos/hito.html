@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <title>Curso HTML5 EOI</title>
+    <!--Caracteres que usa (espanol)-->
+    <meta charset="utf-8">
+    <!--Ajusta el ancho de la pagina segun el dispositivo-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+ 
+</head>
+ 
+<body>
+    <header>OBJETIVOS</header>
+    <nav class="row">
+      <section class="col-1"></section>
+       <section class="col-1">
+           <a href="inicio.html", class="botonNavegacion">Inicio</a>
+       </section>
+       <section class="col-1">
+           <a href="productos.html", class="botonNavegacion">Productos</a>
+       </section>
+       <section class="col-1">
+           <a href="transacciones.html", class="botonNavegacion">Transacciones</a>
+       </section>
+       <section class="col-1">
+           <a href="objetivos.html", class="botonNavegacion">Objetivos</a>
+        </section>
+        <section class="col-1">
+           <a href="hitos.html", class="botonNavegacion">Hitos</a>
+        </section>
+    </nav>
+    
+    
+
+    <main class="row">
+      <!--Parte izquierda del main-->
+      <section class="col-1"></section>
+      <section class="col-5">
+        <h1>Actualizar hito</h1>   
+        <form name="formulari13", id = "formulario13", class="formularioTipo2">
+            <fieldset id = "info">
+                <legend>Crear hito</legend>     
+                <p>
+                    <label for = "nombre">Nombre</label>
+                    <input type="text", name="nombre", id="nom", max="20", placeholder="Nombre" />
+                </p>    
+                <p>
+                    <label for = "inicio">Inicio</label>
+                    <input type="datetime-local", name="inicio", id="ini", placeholder="yyyy-mm-ddT00:00:00" />
+                </p>  
+                <p>
+                    <label for = "final">Final</label>
+                    <input type="datetime-local", name="final", id="fin", placeholder="yyyy-mm-ddT00:00:00" />
+                </p>     
+
+                <button type="submit">Actualizar</button>
+              <button type = "button", onclick="borrarHito()">Borrar</button>
+              <button type="button", onclick="volver()">Volver</button>
+            </fieldset>
+        </form>
+      </section>
+
+
+      <!--Parte derecha del main-->
+      <!--
+      <section class="col-5">
+        <article class="row">
+          <div id="tablaHitos"></div>
+        </article>
+
+        <article class="row">
+          <h1 style="padding-top: 20px;">Añadir transacción</h1>  
+          <form name="formulari10", id = "formulario10", class="formularioTipo1">
+            <fieldset id = "info">
+              <legend>Añadir transacción</legend>     
+              <p>
+                <label for = "ID">ID</label>
+                <div id="listaTransacciones"></div>
+              </p>     
+                
+              <button type="submit">Añadir</button>
+            </fieldset>
+          </form>
+        </article>  
+      </section>
+    -->
+
+
+    </main>
+
+    
+    
+    <footer>
+        <button type="button", onclick="volver()"> Volver </button>
+      </footer>
+    
+</body>
+
+<script type="text/javascript" src="hito.js"></script>
+<script src="bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="bootstrap.min.css">
+<link rel="stylesheet" href="productos.css"> 
+</html>

@@ -111,7 +111,7 @@ function recuperarUnObjetivo(){
         });    
     });
 }
-// Funcion que muestra un producto
+// Funcion que muestra un objetivo
 function pintaObjetivo(objetivo){
     let tabla = `
         <table id="dataTable", class="tg">
