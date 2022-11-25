@@ -208,7 +208,7 @@ axios.get(url,{headers})
       "progress":Number(formData.get("progress-container")),
       "assignedTo":formData.get("assignedTo-container")
     };
-    console.log(envio);
+
     axios.put(url,envio,{headers})
     .then(()=> {
       tabla(requestVer);
