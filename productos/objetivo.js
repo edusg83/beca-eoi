@@ -10,11 +10,11 @@ let id = url.split("=")[1];
 
 // ############# LLAMADAS ########################3
 actualizarObjetivo();
-anadirTransaccion(id)
+
 listaUsuariosFormulario();
 tablaTransaccionesObjetivo(id);
 listaTransaccionesFormulario();
-
+anadirTransaccion(id);
 // ############## CRUD #####################################
 
 // GET ALL USERS
@@ -172,14 +172,14 @@ function actualizarObjetivo(){
 
 
 // PUT ONE TRANSACTION FROM ONE GOAL
-/*
+
 function anadirTransaccion(id){
     axios.get('http://ligafalm.eu:28100/goals/'+id, {headers})
     .then((respuesta) => { 
         let transaccionesObjetivo = respuesta.data.transactions;
         let nombre = respuesta.data.name;
         let descripcion = respuesta.data.description;
-      //  let user = respuesta.data.assignedTo;
+        //let user = respuesta.data.assignedTo;
 
        
 
@@ -198,34 +198,33 @@ function anadirTransaccion(id){
             axios.get('http://ligafalm.eu:28100/transactions/'+idTransaccionFormulario, {headers})
             .then((respuesta) => { 
                 let transaccionFormulario = respuesta.data;
-                console.log(transaccionFormulario);
-                console.log(transaccionFormulario[0])
+                
 
-                transaccionesObjetivo = transaccionesObjetivo.push(transaccionFormulario[0]);
+                transaccionesObjetivo.push(transaccionFormulario);
 
-                console.log(transaccionesObjetivo)
-
-                /*
+            
                 const dataRequest = {
                     "id":id,
                     "name":nombre,
                     "description": descripcion,
-                   // "assignedTo": user,
+                    //"assignedTo": user,
                     "progress": 0.0,
                     "transactions": transaccionesObjetivo
                 };
+                
             
                 axios.put('http://ligafalm.eu:28100/goals/'+id, dataRequest, {headers})
                 .then((url)=>{
                     url = window.location.assign("objetivo.html");
                 })
+
             
             })     
         });
 
     })
 }
-*/
+
 
 
 // ########### MOVIMIENTOS ##########################################################################################
