@@ -52,7 +52,7 @@ function tablaObjetivosHito(id){
                 <td class="tg-0lax"> ${item.assignedTo}</td>
                 <td class="opciones"> 
                     <a href="objetivo.html?id=${item.id}")"><img src="editar.png", width=20px></a>
-                    <a onclick="borrarObjetivo(${item.id})"><img src="borrar.png", width=20px></a>
+                    <a onclick="quitarObjetivo(${item.id})"><img src="borrar.png", width=20px></a>
                 </td>
             </tr>`;
             });
@@ -81,8 +81,6 @@ function listaObjetivosFormulario(){
             document.getElementById("listaObjetivos").innerHTML = lista;
 });
 }
-
- 
 
 
 // DELETE ONE MILESTONE
@@ -142,10 +140,7 @@ function actualizarHito(){
         });
     });
 }
-
-
 // PUT ONE GOAL FROM ONE MILESTONE
-
 function anadirObjetivos(id){
     axios.get('http://ligafalm.eu:28100/milestones/'+id+'/goals', {headers})
     .then((respuesta) => { 
@@ -157,7 +152,6 @@ function anadirObjetivos(id){
             listaObjetivos.push(item.id);
             });
 
-        console.log(listaObjetivos)
    
         // Recuperamos los datos del formulario si, y sólo si, apretamos el boton actualizar
         const formulario = document.getElementById("formulario14");
@@ -168,7 +162,7 @@ function anadirObjetivos(id){
             let idObjetivoFormulario = Number(formData.get("objetivos"));
 
             listaObjetivos.push(idObjetivoFormulario);
-            console.log(listaObjetivos)
+ 
     
                 const dataRequest = {
                     "idMilestone":id,
@@ -185,6 +179,55 @@ function anadirObjetivos(id){
         });
 }
 
+
+function quitarObjetivo(idObjetivo){
+    let url = window.location.href;
+    let idHito = url.split("=")[1];
+
+    let borrar = confirm("¿Desea quitar este objetivo del hito?");
+
+
+    if (borrar === true){
+        axios.get('http://ligafalm.eu:28100/milestones/'+idHito+'/goals', {headers})
+        .then((respuesta) => { 
+            
+            let listaObjetivos = [];
+    
+            let objetivosDelHito = respuesta.data.goals;
+            objetivosDelHito.forEach(item => {
+                listaObjetivos.push(item.id);
+                });
+    
+
+
+
+            for(var i = 0; i < listaObjetivos.length; i++){ 
+                if (listaObjetivos[i] === idObjetivo) { 
+                    listaObjetivos.splice(i, 1); 
+                }
+            
+            }
+
+
+    
+            
+                const dataRequest = {
+                    "idMilestone":idHito,
+                    "goals":listaObjetivos
+                };
+                console.log(dataRequest)
+                
+                axios.put('http://ligafalm.eu:28100/goals/milestone/'+idHito, dataRequest, {headers})
+                .then((url)=>{
+                   // url = window.location.assign("hito.html?id="+id);
+                })
+                console.log(listaObjetivos)
+            
+            })     
+        
+    } 
+
+}
 
 
 // ########### MOVIMIENTOS ##########################################################################################
