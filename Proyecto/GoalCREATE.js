@@ -37,12 +37,12 @@ axios.get(url,{headers})
         "name":formData.get("name"),
         "description":formData.get("description"),
         "assignedTo":formData.get("user"),
-        "progress":0.0
+        /*"progress":0.0*/
       };
   
       axios.post(url,newTransaction,{headers})
       .then(()=> {
-        window.location.assign("TransaccionesGET.html");
+        window.location.assign("GoalGET.html");
       })
       .catch((error)=>{
         console.log(error);
