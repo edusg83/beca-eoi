@@ -2,7 +2,30 @@ const headers = {
     'Content-Type':'application/json',
     'Access-Control-Allow-Origin':'*'
 };
+
+
+
+// ############ LLAMADAS ##########################################################
 tablaObjetivos();
+
+
+
+
+// DELETE ONE MILESTONE
+function borrarHito(id){
+    let borrar = confirm("¿Desea borrar este hito?");
+
+    if (borrar === true){
+        axios.delete('http://ligafalm.eu:28100/milestones/'+id, {headers})
+            .then((url)=>{
+                window.location.assign("hitos.html");
+            })
+            .catch((error)=>
+            console.log(error)
+            );
+            
+    }  
+};
 
 function tablaObjetivos(){
     axios.get('http://ligafalm.eu:28100/milestones?page=0&size=100')
@@ -19,6 +42,7 @@ function tablaObjetivos(){
                     <th class="th">Inicio</th>
                     <th class="th">Fin</th>
                     <th class="th">Progreso</th>
+                    <th class="th">Opciones</th>
                 </tr>
             </thead>
             <tbody>`;  
