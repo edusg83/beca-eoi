@@ -14,54 +14,73 @@
 <body>
     <header>OBJETIVOS</header>
     <nav class="row">
-        <section class="col-1"></section>
-        <section class="col-1">
-          <a href="inicio.html", class="botonNavegacion">Inicio</a>
-        </section>
-        <section class="col-1">
-          <a href="productos.html", class="botonNavegacion">Productos</a>
-        </section>
-        <section class="col-1">
-          <a href="transacciones.html", class="botonNavegacion">Transacciones</a>
-        </section>
-        <section class="col-1">
-            <a href="objetivos.html", class="botonNavegacion">Objetivos</a>
-        </section>
-      </nav>
+      <section class="col-1"></section>
+      <section class="col-1">
+        <a href="inicio.html", class="botonNavegacion">Inicio</a>
+      </section>
+      <section class="col-1">
+        <a href="productos.html", class="botonNavegacion">Productos</a>
+      </section>
+      <section class="col-1">
+        <a href="transacciones.html", class="botonNavegacion">Transacciones</a>
+      </section>
+      <section class="col-1">
+          <a href="objetivos.html", class="botonNavegacion">Objetivos</a>
+      </section>
+    </nav>
     
     
 
     <main class="row">
+      <!--Parte izquierda del main-->
       <section class="col-1"></section>
       <section class="col-5">
+        <h1>Actualizar objetivo</h1>   
         <form name="formulari8", id = "formulario8", class="formularioTipo2">
             <fieldset id = "info">
-                <legend>Actualizar objetivo</legend>     
-                <p>
-                    <label for = "nombre">Nombre</label>
-                    <input type="text", name="nombre", id="nom", max="20", placeholder="Nuevo nombre" />
-                </p>    
-                <p>
-                    <label for = "descripcion">Descripción</label>
-                    <input type="text", name="descripcion", id="desc", placeholder="Nueva descripción" />
-                </p>    
-                <p>
-                  <label for = "assignedTo">Asignado a</label>
-                  <div id="listaUsuarios"></div>
-                </p>     
+              <legend>Actualizar objetivo</legend>     
+              <p>
+                  <label for = "nombre">Nombre</label>
+                  <input type="text", name="nombre", id="nom", max="20", placeholder="Nuevo nombre" />
+              </p>    
+              <p>
+                  <label for = "descripcion">Descripción</label>
+                  <input type="text", name="descripcion", id="desc", placeholder="Nueva descripción" />
+              </p>    
+              <p>
+                <label for = "assignedTo">Asignado a</label>
+                <div id="listaUsuarios"></div>
+              </p>     
 
-                <button type="submit">Actualizar</button>
-                <button type = "button", onclick="borrarObjetivo()">Borrar</button>
-                <button type="button", onclick="volver()">Volver</button>
+              <button type="submit">Actualizar</button>
+              <button type = "button", onclick="borrarObjetivo()">Borrar</button>
+              <button type="button", onclick="volver()">Volver</button>
             </fieldset>
         </form>
       </section>
 
+      <!--Parte derecha del main-->
       <section class="col-5">
-        <div id="tablaTransacciones"></div>
-        
+        <article class="row">
+          <div id="tablaTransacciones"></div>
+        </article>
 
+        <article class="row">
+          <h1 style="padding-top: 20px;">Añadir transacción</h1>  
+          <form name="formulari10", id = "formulario10", class="formularioTipo1">
+            <fieldset id = "info">
+              <legend>Añadir transacción</legend>     
+              <p>
+                <label for = "ID">ID</label>
+                <div id="listaObjetivos"></div>
+              </p>     
+                
+              <button type="submit">Añadir</button>
+            </fieldset>
+          </form>
+        </article>  
       </section>
+
 
 
     </main>

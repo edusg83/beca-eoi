@@ -24,30 +24,39 @@
     <section class="col-1">
       <a href="transacciones.html", class="botonNavegacion">Transacciones</a>
     </section>
+    <section class="col-1">
+        <a href="objetivos.html", class="botonNavegacion">Objetivos</a>
+    </section>
   </nav>
 
-  <div id = "resultados", style = "padding: 30px"></div>  
+  <main class="row">
+    <!--Parte izquierda del main-->
+    <section class="col-1"></section>
+    <section class="col-5">
+      <h1>Crear transacción</h1> 
   
-  <form name="formulari5", id = "formulario6", class="formularioTipo1">
-    <fieldset id = "info">
-      <legend>Crear transacción</legend>
-      <p>
-        <label for="listaCodigos">Código producto</label>
-        <div id="listaCodigosProductos"></div>
-      </p>       
-      <p>
-        <label for = "nombre">Cantidad de existencias</label>
-        <input type="number", name="total", id="tot", placeholder="Cantidad de existencias" />
-      </p>    
-      <p>
-        <label for="listaObjetivos">Objetivo</label>
-        <div id="listaObjetivos"></div>
-      </p>   
+      <form name="formulari5", id = "formulario6", class="formularioTipo2">
+        <fieldset id = "info">
+          <legend>Crear transacción</legend>
+          <p>
+            <label for="listaCodigos">Código producto</label>
+            <div id="listaCodigosProductos"></div>
+          </p>       
+          <p>
+            <label for = "nombre">Cantidad de existencias</label>
+            <input type="number", name="total", id="tot", placeholder="Cantidad de existencias" />
+          </p>    
+          <p>
+            <label for="listaObjetivos">Objetivo</label>
+            <div id="listaObjetivos"></div>
+          </p>   
 
-      <button type="submit">Crear</button>
-      <button type="button", onclick="volver()">Volver</button>
-      </fieldset>
-  </form>
+          <button type="submit">Crear</button>
+          <button type="button", onclick="volver()">Volver</button>
+          </fieldset>
+      </form>
+    </section>
+  </main>    
   
   <footer>
     <button type="button", onclick="volver()"> Volver </button>

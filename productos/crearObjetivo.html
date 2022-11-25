@@ -28,28 +28,35 @@
             <a href="objetivos.html", class="botonNavegacion">Objetivos</a>
         </section>
     </nav>
-    <div id = "resultados", style = "padding: 30px"></div>  
 
-    <form name="formulari9", id = "formulario9", class="formularioTipo1">
-        <fieldset id = "info">
-            <legend>Crear objetivo</legend>     
-            <p>
-                <label for = "nombre">Nombre</label>
-                <input type="text", name="nombre", id="nom", max="20", placeholder="Nuevo nombre" />
-            </p>    
-            <p>
-                <label for = "descripcion">Descripción</label>
-                <input type="text", name="descripcion", id="desc", placeholder="Nueva descripción" />
-            </p>  
-            <p>
-              <label for = "assignedTo">Asignado a</label>
-              <div id="listaUsuarios"></div>
-            </p>       
 
-            <button type="submit">Crear</button>
-            <button type="button", onclick="volver()">Volver</button>
-         </fieldset>
-    </form>
+    <main class="row">
+      <!--Parte izquierda del main-->
+      <section class="col-1"></section>
+      <section class="col-5">
+        <h1>Crear objetivo</h1>
+        <form name="formulari9", id = "formulario9", class="formularioTipo2">
+            <fieldset id = "info">
+                <legend>Crear objetivo</legend>     
+                <p>
+                    <label for = "nombre">Nombre</label>
+                    <input type="text", name="nombre", id="nom", max="20", placeholder="Nuevo nombre" />
+                </p>    
+                <p>
+                    <label for = "descripcion">Descripción</label>
+                    <input type="text", name="descripcion", id="desc", placeholder="Nueva descripción" />
+                </p>  
+                <p>
+                  <label for = "assignedTo">Asignado a</label>
+                  <div id="listaUsuarios"></div>
+                </p>       
+
+                <button type="submit">Crear</button>
+                <button type="button", onclick="volver()">Volver</button>
+            </fieldset>
+        </form>
+      </section>  
+    </main>
     
     <footer>
         <button type="button", onclick="volver()"> Volver </button>
