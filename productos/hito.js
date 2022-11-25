@@ -10,11 +10,57 @@ let id = url.split("=")[1];
 
 // ############# LLAMADAS ########################3
 actualizarHito();
-
+tablaObjetivosHito(id);
 
 
 
 // ############## CRUD #####################################
+
+// GET ALL MILESTONES FROM ONE GOAL
+// Recuperamos TODAS LOS OBJETIVOS DE UN HITO
+function tablaObjetivosHito(id){
+    axios.get('http://ligafalm.eu:28100/milestones/'+id+'/goals')
+    .then((respuesta)=>{
+        let objetivos = respuesta.data.goals;
+        let tabla = `
+                <h1>Objetivos del hito</h1>
+                <table id="dataTable", class="tg">
+                <thead>
+                    <tr>
+                        <th class="th">Id</th>
+                        <th class="th">Nombre</th>
+                        <th class="th">Descripción</th>
+                        <th class="th">Asignado a</th>
+                        <th class="th">Opciones</th>  
+                    </tr>
+                </thead>
+                <tbody>`;         
+            let filas=``;
+            let finTabla=`
+                        </tbody>
+                    </table>`;
+
+            objetivos.forEach(item => {
+            filas+=`
+            <tr>
+                <td class="tg-0lax">
+                    ${item.id}
+                </td>
+                <td class="tg-0lax">${item.name}</td>
+                <td class="tg-0lax"> ${item.description}</td>
+                <td class="tg-0lax"> ${item.assignedTo}</td>
+                <td class="opciones"> 
+                    <a href="objetivo.html?id=${item.id}")"><img src="editar.png", width=20px></a>
+                    <a onclick="borrarObjetivo(${item.id})"><img src="borrar.png", width=20px></a>
+                </td>
+            </tr>`;
+            });
+
+            tabla += filas+finTabla;
+            document.getElementById("tablaHitos").innerHTML = tabla;
+    })
+ }
+
 
 
  
