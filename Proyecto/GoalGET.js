@@ -6,6 +6,7 @@ const headers = {
 const requestMod = "http://ligafalm.eu:28100/goals",
       requestVerProd = "http://ligafalm.eu:28100/products?page=0&size=100",
       requestVerGoals = "http://ligafalm.eu:28100/transactions?page=0&size=100";
+      requestVerUsers= "http://ligafalm.eu:28100/users?page=0&size=100";
   var requestVer = "http://ligafalm.eu:28100/goals?page=0&size=10";
 
 function tabla(param1){
@@ -168,22 +169,23 @@ function verGoal(param1) {
 
 axios.get(url,{headers})
 .then((data) => {
-
+axios.get(requestVerUsers,{headers})
+.then((users)=> {
   let nom = `
   <select class="form-select" name="assignedTo-container" id="assignedTo-container">
   `
-  let dir;
-    if (data.data.assignedTo == "AdminUserTestUsername") {
-      dir = `
-        <option value="AdminUserTestUsername" selected="true">AdminUserTestUsername</option>
-        <option value="UserTestUsername">UserTestUsername</option>
-      `;
-    } else {
-      dir = `
-        <option value="AdminUserTestUsername">AdminUserTestUsername</option>
-        <option value="UserTestUsername" selected="true">UserTestUsername</option>
-      `;
-  }
+  dir = ``;
+  users.data.forEach(item => {
+    if (data.data.assignedTo==item.username)
+      dir += `
+      <option value="${item.username}" selected="true">${item.username}</option>
+    `;
+    else {
+      dir += `
+      <option value="${item.username}">${item.username}</option>
+    `;
+    }
+  });
 
   let finTabla = `</select>`;
   var result = nom + dir + finTabla;
@@ -220,6 +222,7 @@ axios.get(url,{headers})
   });
 
 });
+})
 };
 
 //modal ELIMINAR GOALS:

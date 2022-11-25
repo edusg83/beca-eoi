@@ -20,9 +20,9 @@ axios.get(param1,{headers})
       <tr>
         <th class="col-2">id</th>
         <th class="col-2">name</th>
-        <th class="col-2">description</th>
+        <th class="col-2">start</th>
+        <th class="col-2">end</th>
         <th class="col-2">progress</th>
-        <th class="col-2">assignedTo</th>
         <th class="col-2">options</th>
       </tr>
     </thead>
@@ -35,13 +35,13 @@ axios.get(param1,{headers})
     <tr class="border-personal">
       <td>${item.id}</td>
       <td>${item.name}</td>
-      <td>${item.description}</td>
+      <td>${item.start}</td>
+      <td>${item.end}</td>
       <td>${item.progress}</td>
-      <td>${item.assignedTo}</td>
       <td>
         <button type="button" class="btn btn-secondary" onclick="verGoal(${item.id})" data-toggle="modal" data-target="#ModalUp"><i class="fa-solid fa-pen-to-square"></i></button>
         <button type="button" class="btn btn-secondary" onclick="delGoal(${item.id})" data-toggle="modal" data-target="#ModalDel"><i class="fa-solid fa-trash"></i></button>
-        <button type="button" class="btn btn-secondary" onclick="showTransaction(${item.id})" data-toggle="modal" data-target="#ModalTrans"><i class="fa-sharp fa-solid fa-circle-info"></i></button>
+        <button type="button" class="btn btn-secondary" onclick="showGoals(${item.id})" data-toggle="modal" data-target="#ModalGoal"><i class="fa-sharp fa-solid fa-circle-info"></i></button>
       </td>
     </tr>`
     });
@@ -56,7 +56,7 @@ axios.get(param1,{headers})
         <td>
           <button type="button" class="btn btn-secondary" onclick="verGoal(${miles.id})" data-toggle="modal" data-target="#ModalUp"><i class="fa-solid fa-pen-to-square"></i></button>
           <button type="button" class="btn btn-secondary" onclick="delGoal(${miles.id})" data-toggle="modal" data-target="#ModalDel"><i class="fa-solid fa-trash"></i></button>
-          <button type="button" class="btn btn-secondary" onclick="showTransaction(${miles.id})" data-toggle="modal" data-target="#ModalTrans"><i class="fa-sharp fa-solid fa-circle-info"></i></button>
+          <button type="button" class="btn btn-secondary" onclick="showGoals(${miles.id})" data-toggle="modal" data-target="#ModalGoal"><i class="fa-sharp fa-solid fa-circle-info"></i></button>
         </td>
       </tr>`
     }
@@ -130,23 +130,23 @@ tabla(requestVer);
 
 
 //MODALES:
-//modal de ver transacciones:
-function showTransaction(param1) {
-  var url = requestMod+"/"+param1
+//modal de ver goals:
+function showGoals(param1) {
+  var url = requestMod+"/"+param1+"/goals"
 
   axios.get(url,{headers})
   .then((data)=> {
-    Transac= data.data;
+    mail= data.data;
 
     let nom = `
-      <span>Transacciones</span>
+      <span>Objetivos:</span>
       <ul>
       <hr/>`
     let dir = ``;
-
-    Transac.transactions.forEach(item => {
+    console.log(mail);
+    mail.goals.forEach(item => {
     dir +=`
-    <li>${item.productCode}</li>
+    <li>${item.name}</li>
     `
     });
 
@@ -155,14 +155,14 @@ function showTransaction(param1) {
 
     var result = nom + dir + finTabla;
 
-    document.getElementById("showTransaction").innerHTML = result;
+    document.getElementById("showGoals").innerHTML = result;
 
   });
 };
 
 
 
-//modal MODIFICAR GOALS:
+//modal MODIFICAR MILESTONES:
 function verGoal(param1) {
   var url = requestMod+"/"+param1
 
@@ -222,7 +222,7 @@ axios.get(url,{headers})
 });
 };
 
-//modal ELIMINAR GOALS:
+//modal ELIMINAR MILESTONES:
 function delGoal(param1) {
   var url = requestMod+"/"+param1
 
@@ -250,6 +250,3 @@ function delGoal(param1) {
 });
 
 };
-
-
-//buscar por ID:
