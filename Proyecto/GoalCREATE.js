@@ -3,12 +3,12 @@ const headers = {
     'Access-Control-Allow-Origin': '*'
   };
 
-const url = "http://ligafalm.eu:28100/transactions",
+const url = "http://ligafalm.eu:28100/goals",
       urlProduct = "http://ligafalm.eu:28100/products?page=0&size=100",
-      urlGoal = "http://ligafalm.eu:28100/goals",
+      urlTransaction = "http://ligafalm.eu:28100/transactions",
       form = document.getElementById("formularioGoal");
 
-axios.get(urlGoal,{headers})
+axios.get(url,{headers})
 .then((data2)=>{
   dataGoals = data2.data;
 
