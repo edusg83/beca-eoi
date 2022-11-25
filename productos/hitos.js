@@ -6,7 +6,7 @@ const headers = {
 
 
 // ############ LLAMADAS ##########################################################
-tablaObjetivos();
+tablaHitos();
 
 
 
@@ -27,7 +27,7 @@ function borrarHito(id){
     }  
 };
 
-function tablaObjetivos(){
+function tablaHitos(){
     axios.get('http://ligafalm.eu:28100/milestones?page=0&size=100')
     .then((respuesta) => { 
         let objetivos = respuesta.data;
