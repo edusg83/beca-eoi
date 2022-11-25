@@ -10,15 +10,16 @@ let id = url.split("=")[1];
 
 // ############# LLAMADAS ########################3
 actualizarObjetivo();
-listaUsuarios();
+anadirTransaccion(id)
+listaUsuariosFormulario();
 tablaTransaccionesObjetivo(id);
-
+listaTransaccionesFormulario();
 
 // ############## CRUD #####################################
 
 // GET ALL USERS
 // Recuperamos TODOS LOS OBJETIVOS y mostramos su codigo en el formulario
-function listaUsuarios(){
+function listaUsuariosFormulario(){
     axios.get('http://ligafalm.eu:28100/users/?page=0&size=100')
     .then((respuesta) => { 
         let objetivos = respuesta.data;
@@ -37,7 +38,31 @@ function listaUsuarios(){
 }
 
 
-// GET ALL TRANSACTIONS FROM ONE OBJECTIVE
+
+// GET ALL TRANSACTIONS
+// Recuperamos TODAS LAS TRANSACCIONES y las metemos en un formulario
+function listaTransaccionesFormulario(){
+    axios.get('http://ligafalm.eu:28100/transactions/?page=0&size=100')
+    .then((respuesta) => { 
+        let transacciones = respuesta.data;
+
+        let lista = `<select name="transacciones", id="trans", type="text">`;         
+        let options=``;
+        let finLista=`</select>`;
+
+        transacciones.forEach(item => {
+        options+=`<option value="${item.id}">${item.id}</option> `;
+        });
+
+        lista += options+finLista;
+        document.getElementById("listaTransacciones").innerHTML = lista;
+    });
+}
+ 
+
+
+
+// GET ALL TRANSACTIONS FROM ONE GOAL
 // Recuperamos TODAS LAS TRANSACCIONES DE UN OBJETIVO
  function tablaTransaccionesObjetivo(id){
     axios.get('http://ligafalm.eu:28100/goals/'+id)
@@ -85,7 +110,7 @@ function listaUsuarios(){
 
 
 
-// DELETE ONE
+// DELETE ONE OBJECTIVE
 function borrarObjetivo(){
     // Recuperamos el id
     let url = window.location.href;
@@ -105,7 +130,7 @@ function borrarObjetivo(){
     }  
 };
 
-// PUT ONE
+// PUT ONE OBJECTIVE
 function actualizarObjetivo(){
     // Recuperamos el id
     let url = window.location.href;
@@ -116,7 +141,7 @@ function actualizarObjetivo(){
         // Recuperamos los datos del objetivo y los metemos en el formulario
         document.getElementById("nom").value = objetivo.data.name;
         document.getElementById("desc").value = objetivo.data.description;
-        document.getElementById("us").value = objetivo.data.assignedTo;
+       // document.getElementById("us").value = objetivo.data.assignedTo;
 
         // Recuperamos los datos del formulario si, y sólo si, apretamos el boton actualizar
         const formulario = document.getElementById("formulario8");
@@ -126,17 +151,16 @@ function actualizarObjetivo(){
             
             let nombre = formData.get("nombre");
             let descripcion = formData.get("descripcion");
-            let user = formData.get("users");
+    //        let user = formData.get("users");
     //        let transactions = objetivo.data.transactions;
             const dataRequest = {
                 "id":id,
                 "name":nombre,
                 "description": descripcion,
-                "assignedTo": user,
+            //    "assignedTo": user,
                 "progress": 0.0
             //    "transactions": transactions
             };
-            console.log( user)
         
             axios.put('http://ligafalm.eu:28100/goals/'+id, dataRequest, {headers})
                 .then((url)=>{
@@ -147,6 +171,61 @@ function actualizarObjetivo(){
 }
 
 
+// PUT ONE TRANSACTION FROM ONE GOAL
+/*
+function anadirTransaccion(id){
+    axios.get('http://ligafalm.eu:28100/goals/'+id, {headers})
+    .then((respuesta) => { 
+        let transaccionesObjetivo = respuesta.data.transactions;
+        let nombre = respuesta.data.name;
+        let descripcion = respuesta.data.description;
+      //  let user = respuesta.data.assignedTo;
+
+       
+
+        // Recuperamos los datos del formulario si, y sólo si, apretamos el boton actualizar
+        const formulario = document.getElementById("formulario10");
+        formulario.addEventListener("submit", function(element){
+            element.preventDefault();
+            const formData = new FormData(formulario);
+            
+        
+
+            let idTransaccionFormulario = formData.get("transacciones");
+
+      
+            
+            axios.get('http://ligafalm.eu:28100/transactions/'+idTransaccionFormulario, {headers})
+            .then((respuesta) => { 
+                let transaccionFormulario = respuesta.data;
+                console.log(transaccionFormulario);
+                console.log(transaccionFormulario[0])
+
+                transaccionesObjetivo = transaccionesObjetivo.push(transaccionFormulario[0]);
+
+                console.log(transaccionesObjetivo)
+
+                /*
+                const dataRequest = {
+                    "id":id,
+                    "name":nombre,
+                    "description": descripcion,
+                   // "assignedTo": user,
+                    "progress": 0.0,
+                    "transactions": transaccionesObjetivo
+                };
+            
+                axios.put('http://ligafalm.eu:28100/goals/'+id, dataRequest, {headers})
+                .then((url)=>{
+                    url = window.location.assign("objetivo.html");
+                })
+            
+            })     
+        });
+
+    })
+}
+*/
 
 
 // ########### MOVIMIENTOS ##########################################################################################

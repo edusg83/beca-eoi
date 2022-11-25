@@ -13,3 +13,7 @@ function goToTransacciones(){
 function goToObjetivos(){
     url = window.location.assign("objetivos.html");
 }
+
+function goToHitos(){
+    url = window.location.assign("hitos.html");
+}

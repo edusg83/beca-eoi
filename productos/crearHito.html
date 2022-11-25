@@ -12,7 +12,7 @@
 </head>
  
 <body>
-    <header>PRODUCTOS</header>
+    <header>OBJETIVOS</header>
     <nav class="row">
       <section class="col-1"></section>
        <section class="col-1">
@@ -30,43 +30,44 @@
         <section class="col-1">
            <a href="hitos.html", class="botonNavegacion">Hitos</a>
         </section>
-   </nav> 
+   </nav>
+
 
     <main class="row">
       <!--Parte izquierda del main-->
       <section class="col-1"></section>
       <section class="col-5">
-        <h1>Crear producto</h1> 
-        <form name="formulari2", id = "formulario2", class="formularioTipo2">
+        <h1>Crear hito</h1>
+        <form name="formulari12", id = "formulario12", class="formularioTipo2">
             <fieldset id = "info">
-                <legend>Crear producto</legend>     
+                <legend>Crear hito</legend>     
                 <p>
                     <label for = "nombre">Nombre</label>
-                    <input type="text", name="nombre", id="nom", max="20", placeholder="Nuevo nombre" />
+                    <input type="text", name="nombre", id="nom", max="20", placeholder="Nombre" />
                 </p>    
                 <p>
-                    <label for = "nombre">Descripción</label>
-                    <input type="text", name="descripcion", id="desc", placeholder="Nueva descripción" />
-                </p>    
+                    <label for = "inicio">Inicio</label>
+                    <input type="text", name="inicio", id="ini", placeholder="yyyy-mm-ddT00:00:00" />
+                </p>  
                 <p>
-                    <label for = "nombre">Código</label>
-                    <input type="text", name="codigo", id="cod", placeholder="Nuevo código" />
-                </p>    
+                    <label for = "final">Final</label>
+                    <input type="text", name="final", id="fin", placeholder="yyyy-mm-ddT00:00:00" />
+                </p>     
 
                 <button type="submit">Crear</button>
                 <button type="button", onclick="volver()">Volver</button>
             </fieldset>
         </form>
-      </section>
+      </section>  
     </main>
-
+    
     <footer>
         <button type="button", onclick="volver()"> Volver </button>
       </footer>
     
 </body>
 
-<script type="text/javascript" src="crearProducto.js"></script>
+<script type="text/javascript" src="crearHito.js"></script>
 <script src="bootstrap.bundle.min.js"></script>
 
 <link rel="stylesheet" href="bootstrap.min.css"> 

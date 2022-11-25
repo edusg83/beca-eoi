@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="es" dir="ltr">
+
+<head>
+
+    <title>Curso HTML5 EOI</title>
+
+    <!--Caracteres que usa (espanol)-->
+
+    <meta charset="utf-8">
+
+    <!--Ajusta el ancho de la pagina segun el dispositivo-->
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+   
+
+    <script src="cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+ 
+
+</head>
+<body>
+
+    <header>HITOS</header>
+    <nav class="row">
+       <section class="col-1"></section>
+        <section class="col-1">
+            <a href="inicio.html", class="botonNavegacion">Inicio</a>
+        </section>
+        <section class="col-1">
+            <a href="productos.html", class="botonNavegacion">Productos</a>
+        </section>
+        <section class="col-1">
+            <a href="transacciones.html", class="botonNavegacion">Transacciones</a>
+        </section>
+        <section class="col-1">
+            <a href="objetivos.html", class="botonNavegacion">Objetivos</a>
+         </section>
+         <section class="col-1">
+            <a href="hitos.html", class="botonNavegacion">Hitos</a>
+         </section>
+    </nav>
+
+    <main class="row">
+
+        <!--Parte izqueirda del main-->
+        <section class="col-6 col-sm-6", style = "padding-left: 60px; padding-bottom: 60px"> 
+          <div id = "tablaHitos"></div>  
+        </section>
+    
+        <!--Parte derecha del main-->
+        <section class="col-6 col-sm-6", style = "padding-left: 60px; padding-bottom: 60px; padding-right: 60px">
+          <!--Crear objetivo-->
+          <article class="row">
+            <h1>Crear nuevo hito</h1>
+            <div class="col-6 col-sm-6">
+              <button type="button",  style = "margin-top: 0"> 
+                <a  href = "crearhito.html">Crear un hito</a> 
+              </button> 
+            </div>
+          </article>
+    
+          <!--Buscar objetivo-->
+          <article class="row">
+            <h1>Buscar hito</h1>
+            <form name="formulari11", id = "formulario11", class="formularioTipo1">
+              <fieldset id = "info">
+                  <legend>Buscar hito</legend>  
+                  <p>
+                    <label for = "ID">ID</label>
+                    <div id="listaHitos"></div>
+                  </p>     
+                    
+                  <button type="submit">Buscar</button>
+                </fieldset>
+            </form>
+            <div id="hitoEncontrado", style = "padding-top: 30px; padding-bottom: 60px; padding-left: 15px;"></div>
+          </article>
+          
+        </section>
+      
+      </main>
+    
+    
+      <footer>
+        <button type="button", onclick="volver()"> Volver </button>
+      </footer>
+
+</body>
+
+<script type="text/javascript" src="hitos.js"></script>
+<script src="bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="bootstrap.min.css">
+<link rel="stylesheet" href="productos.css"> 
+</html>
