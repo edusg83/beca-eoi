@@ -2,12 +2,11 @@
 <html>
     <head>
         <link rel="stylesheet" href="bootstrap.min.css">
-        
+      
     </head>
     <body>
         <script src="bootstrap.bundle.min.js"></script>
         <main id="main" class="main">
-            
             
             <nav class="navbar navbar-expand-lg bg-dark">
                 <div class="container-fluid">
@@ -19,14 +18,26 @@
                     <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                       
                       <li class="nav-item">
-                        <a class="nav-link" style="color: White;" href="productonuevo.html">Crear producto</a>
+                        <a class="nav-link" style="color: White;" href="">Crear producto</a>
                       </li>
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" style="color: White;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Transacciones
                         </a>
                         <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="index.html">Lista de Transaccion</a></li>
                           <li><a class="dropdown-item" href="transaccionNueva.html">Crear transaccion</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#"></a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" style="color: White;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Goals
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="">Lista de Goals</a></li>
+                          <li><a class="dropdown-item" href="">Crear Goal</a></li>
                           <li><hr class="dropdown-divider"></li>
                           <li><a class="dropdown-item" href="#"></a></li>
                         </ul>
@@ -36,9 +47,8 @@
                       </li>
                     </ul>
                     <div class="row; d-flex">
-      
                       <p style="color:white; padding-top: 10px;">ID: <input id="buscador"> <button type="button" class="btn btn-light" style="background-color:#d6d5d5" onclick="buscar()">Buscar</button></p>
-                     
+
                   </div>
                 </div>
               </nav>

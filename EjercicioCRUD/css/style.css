@@ -1,0 +1,121 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}     
+body {
+    background-color: #f3f5f8;
+    color: #707881;
+}
+
+aside {
+    background-color: #2d3744;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.responsive_aside {
+    min-width: 15%;
+}
+
+.responsive_section {
+    min-width: 85%;
+    margin: 0px 0px 0px 15%;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #707881;
+}
+
+.logo {
+    width: 60%;
+    margin: 0 auto;
+    padding: 18px 0px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.title {
+    margin-left: 2em;
+    margin-top: 1em;
+    margin-bottom: 0em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bgTable {
+    background-color: white;
+    border-radius: 18px;
+}
+
+#dataTable {
+    width: 97%;
+    margin: 15px auto;
+}
+
+button {
+    background-color: transparent;
+    border: 0px;
+}
+
+.iconClick {
+    width: 16px;
+    height: 16px;
+    color: white;
+    margin: 0px 4px;
+}
+
+.iconEditClick:hover {
+    fill: #35dc54;
+}
+
+.iconDeleteClick:hover {
+    fill: #dc3545;
+}
+
+.nuevoPost {
+    border-radius: 4px;
+    padding: 0px 8px 4px 8px;
+    border: 1px solid #6eb96e;
+    background-color: #93cb93;
+    color: white;
+}
+
+.tableGetAll {    
+    width: 80%;
+    margin: 0 auto;
+    margin-left: 16%;
+    height: fit-content;
+    height: -webkit-fill-available;
+}
+
+.sep {
+    position: relative;
+    left: 280px;
+}
+
+.mb-3 {
+    text-align: left;
+}
+
+.newProd {
+    background-color: #e9ecef;
+    border-radius: 18px 18px 0px 0px;
+    padding: 12px;
+    padding-left: 18px;
+    color: #467fc5;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal-footer {
+    justify-content: flex-start;
+}
