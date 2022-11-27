@@ -58,7 +58,7 @@
                             </a>
                             <ul>
                                 <li>
-                                    <a href="./milestonesPost.html" class="nav-link text-white">
+                                    <a href="./posts/milestonesPost.html" class="nav-link text-white">
                                         <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
                                         <span class="fs-6">Añadir Milestones</span>
                                     </a>
@@ -74,7 +74,7 @@
             <section class="tableGetAll bgTable text-center col-sm-11 mt-4">
                 <div id="resultados"></div>
                 <div class="modal fade" id="goalsMilestonesModal" tabindex="-1" aria-labelledby="goalsMilestonesModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-xl">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="goalsMilestonesModalLabel">Goals del Milestone seleccionado</h5>
@@ -82,6 +82,25 @@
                             </div>
                             <div class="modal-body">
                                 <div id="resultadosGoals"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="modalDeleteMilestone" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Eliminar información</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ¿Estás seguro de querer borrar esta información?<br/>
+                                <span id="nombreProducto"></span>
+                            </div>
+                            <div id="mostrarInformación"></div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-danger" onclick="eliminarMilestone()">Eliminar</button>
                             </div>
                         </div>
                     </div>
