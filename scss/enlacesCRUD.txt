@@ -1,0 +1,3 @@
+https://editor.swagger.io/
+
+http://ligafalm.eu:28100/swagger-ui/index.html#/
