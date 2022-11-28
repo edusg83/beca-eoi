@@ -1,4 +1,8 @@
+"use strict";
 //let nombre:string='EEE';
+Object.defineProperty(exports, "__esModule", { value: true });
+const nombres_1 = require("./nombres");
+console.log(nombres_1.cliente1);
 let nombre = 'Néstor';
 let edad = 27;
 let estudio = true;
