@@ -1,8 +1,8 @@
 //let nombre:string='EEE';
 
-import{cliente1} from './nombres';
+//import{cliente1} from './nombres';
 
-console.log(cliente1);
+//console.log(cliente1);
 
 let nombre:string='Néstor';
 
@@ -51,3 +51,26 @@ console.log(cursos);
 console.log(unknown);
 
 console.log(place);
+
+function suma(op1:number,op2:number):number{return op1 + op2;}
+
+const suma1 =(op1:number,op2?:number)=>{return op1 + op2;}
+
+function suma2(op1:number,op2=33):number{return op1 + op2;}
+
+console.log(suma(9,41));
+
+console.log(suma1(50));
+
+console.log(suma2(undefined,33));
+
+import datosPersonales from './interfaces';
+import verDatosPersonales from './functions';
+
+let cliente1:datosPersonales = {
+    edad : 100,
+    nombre:'ANTONIO',
+    apellidos:'MARTINEZ'
+};
+
+verDatosPersonales(cliente1);
