@@ -1,0 +1,1 @@
+export let cliente1:string='Charly';

@@ -1,5 +1,9 @@
 //let nombre:string='EEE';
 
+import{cliente1} from './nombres';
+
+console.log(cliente1);
+
 let nombre:string='Néstor';
 
 let edad:number=27;

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compilar":"tsc -w",
+    "compilar":"tsc -w --module commonjs",
     "ejecutar":"nodemon built/app.js"
   },
   "author": "",
