@@ -17,41 +17,6 @@ axios.get(urlMilestone,{headers})
 .then((data1)=> {
   dataMils = data1.data;
 
-    let nom = `
-    <select class="form-select" name="user">
-    <option value="#" selected="true" disabled>Select User</option>
-    `
-    let dir;
-        dir = `
-
-          <option value="AdminUserTestUsername">AdminUserTestUsername</option>
-          <option value="UserTestUsername">UserTestUsername</option>
-        `;
-
-    let finTabla = `</select>`;
-    
-    var result = nom + dir + finTabla;
-
-    document.getElementById("Usuarios").innerHTML = result;
-
-    nom = `
-    <select class="form-select" name="milestone">
-      <option value="#" selected="true" disabled>Select Milestone</option>
-    `
-    dir = ``;
-    dataMils.forEach(item => {
-      dir += `
-      <option value="${item.id}">${item.name}</option>
-    `;
-    });
-     
-
-    finTabla = `</select>`;
-    
-    result = nom + dir + finTabla;
-
-    document.getElementById("Milestones").innerHTML = result;
-
     form.addEventListener("submit",function(elem) {
       elem.preventDefault();
   

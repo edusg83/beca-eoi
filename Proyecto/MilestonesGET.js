@@ -143,7 +143,7 @@ function showGoals(param1) {
       <ul>
       <hr/>`
     let dir = ``;
-    console.log(mail);
+
     mail.goals.forEach(item => {
     dir +=`
     <li>${item.name}</li>
