@@ -1,7 +1,7 @@
 import { datosPersonales } from "./DatosPersonales";
 
 export class Persona implements datosPersonales {
-    edad:number;
+     edad:number;
     nombre:string;
     apellidos:string;
 
@@ -19,7 +19,6 @@ export class Persona implements datosPersonales {
     setEdad(Edad:number):void{
         this.edad = Edad;
     }
-
 
     setNombre(Nombre:string):void{
         this.nombre = Nombre;
