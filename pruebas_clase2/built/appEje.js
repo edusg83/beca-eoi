@@ -1,17 +1,10 @@
 "use strict";
-//let nombre:string='EEE';
 Object.defineProperty(exports, "__esModule", { value: true });
-const clases_1 = require("./clases");
-let person1 = {
-    edad: 100,
-    nombre: 'ANTONIO',
-    apellidos: 'MARTINEZ'
-};
-//let operario:datosPersonales={
-//edad:100,
-//nombre:'ANTONIO',
-//apellidos:'MARTINEZ'
-//}
-let operario1 = new clases_1.default(person1);
-console.log(operario1);
-//console.log('OPERARIO: ' + operario.nombre + " " +operario.apellidos);
+const interfaces_1 = require("./interfaces");
+const interfaces_2 = require("./interfaces");
+const interfaces_3 = require("./interfaces");
+const int2_1 = require("./int2");
+console.log(interfaces_1.default);
+console.log(interfaces_2.default);
+console.log(interfaces_3.default);
+console.log((0, int2_1.default)(5, 14));
