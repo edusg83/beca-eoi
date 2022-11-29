@@ -3,5 +3,5 @@ export interface datosPersonales{
     nombre:string;
     edad:number;
     apellidos:string;
-    domicilio?:string;
+    domicilio:string;
     }
