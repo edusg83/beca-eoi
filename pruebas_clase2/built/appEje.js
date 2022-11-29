@@ -13,3 +13,17 @@ for (let valor of array_1.animales)
     console.log(valor);
 console.log(array_1.animales2);
 console.log(array_1.aviones);
+let suma = (op1, op2) => { return op1 + op2; };
+console.log(suma(14, 50));
+let product = (op3, op4) => { return op3 * op4; };
+console.log(product(9, 14));
+let concat = (p1, p2) => { return p1 + " " + p2; };
+console.log(concat('Néstor', 'Costa'));
+let fun = (s1) => { return s1; };
+console.log(fun("Hola Mundo"));
+let valor = 12;
+let planti = `Esto es una plantilla con el valor ${valor}`;
+console.log(planti);
+let val2 = 'HOLA';
+let planti2 = `${val2},esto es una saluda amistoso`;
+console.log(planti2);
