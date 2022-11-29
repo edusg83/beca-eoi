@@ -1,8 +1,8 @@
 {
-  "name": "pruebas",
+  "name": "ejercicios789",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "compilar":"tsc -w --module commonjs",
     "ejecutar":"nodemon built/app.js"
