@@ -1,0 +1,14 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "outDir": "./built",
+        "allowJs": true,
+        "target": "ES6"
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "watchOptions": {
+        "watchFile": "useFsEvents"
+    }
+}
