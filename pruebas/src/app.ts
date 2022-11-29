@@ -1,3 +1,27 @@
+import {datosPersonales} from './interfaces';
+
+import {verDatosPersonales} from './funciones';
+
+
+
+let Sara:datosPersonales = {
+    edad:24,
+    nombre: 'Sara',
+    apellidos: 'Martínez Luengo',
+    domicilio: 'Salamanca'
+
+};
+
+
+
+console.log(verDatosPersonales(Sara));
+
+
+
+
+
+
+/*
 import {nombre1, nombre2} from './nombres'
 import {default as porDefecto} from './nombres';
 
@@ -20,3 +44,4 @@ function suma2(op1:number,op2='12'):number{
 }
 
 console.log(suma2(1))
+*/

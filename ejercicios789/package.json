@@ -1,0 +1,12 @@
+{
+  "name": "pruebas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compilar":"tsc -w --module commonjs",
+    "ejecutar":"nodemon built/app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
