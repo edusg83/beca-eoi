@@ -1,4 +1,1 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.cliente1 = void 0;
-exports.cliente1 = 'ANTONIO EXPORTADO';
+//export let cliente1:string='ANTONIO EXPORTADO';

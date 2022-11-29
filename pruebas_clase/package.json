@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "compilar":"tsc -w --module commonjs",
-    "ejecutar":"nodemon built/app.js"
+    "ejecutar":"nodemon built/appEje.js"
   },
   "author": "",
   "license": "ISC"

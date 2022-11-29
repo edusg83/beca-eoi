@@ -1,1 +1,1 @@
-export let cliente1:string='ANTONIO EXPORTADO';
+//export let cliente1:string='ANTONIO EXPORTADO';
