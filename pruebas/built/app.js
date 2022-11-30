@@ -79,13 +79,21 @@
 // persona1.edad=100;
 // persona1.apellidos="MARTINEZ";
 // console.log(persona1);
-//EJERCICIO 8
+//EJERCICIO 7
 // import Persona from "./clases";
 // import Operario from "./clases";
-// // LE PASO COMO PARAMETRO PERSONA 1 DEL EJERCICIO 6
-// let operario1:Operario = new Operario(persona1);
-// operario1.getNombreCompleto();
-// operario1.getEdad();
+// import {datosPersonales} from "./clases";
+// LE PASO COMO PARAMETRO PERSONA 1 DEL EJERCICIO 6
+// let datosOperario:datosPersonales = {edad:100, nombre:"ANTONIO",apellidos:"MARTINEZ GARCIA"};
+// let operario1=new Persona(datosOperario);
+// console.log(operario1.getEdad());
+// console.log(operario1.getNombreCompleto());
+//EJERCICIO 8
+// let operario2=new Operario({edad:100, nombre:"ANTONIO",apellidos:"MARTINEZ GARCIA"});
+// console.log(operario2.getEdad());
+// console.log(operario2.getNombreCompleto());
+// operario2.setEdad(22);
+// console.log(operario2.getEdad());
 //EJERCICIO 13
 // const generica=<T>(parametro:T):T=>{
 //      return parametro;
@@ -100,27 +108,44 @@
 //      estado:U;
 //  }
 // let cliente1: objetoCliente<string, string>={cliente:"ANTONIO", estado:"ACTIVO"};
+// console.log(cliente1);
 // let cliente2: objetoCliente<number, number>={cliente:12, estado:1};
+// console.log(cliente2);
 // enum CLIENTES {codigo, estado};
 // let cliente3: objetoCliente<CLIENTES, CLIENTES> = {cliente:CLIENTES.codigo, estado:CLIENTES.estado};
+// console.log(cliente3);
 //EJERCICIO 15
 // interface funciones<T,U>{
-//     p1:T;
-//     p2:U;
-//     primero(p1:T,p2:U):T;
+//     (p1:T,p2:U):T;
 // }
 //OPCION 1
-// let mayor=<tipo>(param1:tipo,param2:tipo):tipo=>{
+// let mayor:funciones<number,number>=(param1:number,param2:number)=>{
+//      if(param1>param2){return param1;
+//      }else if(param2>param1){return param2;
+//      }else {
+//           return "No hay un numero mayor que otro";
+//      }
+// }
+//OPCION 2 (DUDA)
+// let mayor:funciones=<tipo,>(param1:tipo,param2:tipo):tipo=>{
 //      if(typeof param1==="number" && typeof param2==="number"){
 //           if(param1>param2){return param1;}
 //           if(param2>param1){return param2;}
 //      }
 // }
-//OPCION 2
+//OPCION 3
+// let mayor:funciones<number,number>=(param1:number,param2:number)=>{
+//      return param1>param2?param1:param2;
+// }
+//OPCION 4
 // let mayor= (param1:number,param2:number):number=>{
 //      return Math.max(param1,param2);
 // }
 // console.log(mayor(2,27));
+// let f1:funciones<number,number>=(p1:number,p2:number)=>{
+//      return mayor(p1,p2);
+// }
+// console.log(f1(12, 13));
 //EJERCICIO 16
 // let animales:Array<string>=["PERRO", "GATO", "MIEMBRO DE LOS MOJINOS"];
 // animales.forEach((valor)=>{
@@ -134,7 +159,7 @@
 // animal.forEach((valor)=>{
 //      console.log(valor);
 // });
-// for(let posicion in animal) console.log(posicion);
+// // for(let posicion in animal) console.log(posicion);
 // for(let valor of animal) console.log(valor);
 // let aviones = new Set();
 // aviones.add("BOEING");
@@ -142,12 +167,8 @@
 // aviones.forEach((valor)=>{
 //      console.log(valor);
 // });
-// for(let posicion in aviones){
-//      console.log(posicion);
-// } 
-// for(let valor of aviones){
-//      console.log(valor);
-// } 
+// for(let posicion in aviones) console.log(posicion);
+// for(let valor of aviones) console.log(valor);
 //EJERCICIO 17
 // let suma = (op1:number,op2:number):number => { return op1+op2; }
 // let multiplicacion = (op1:number,op2:number):number => { return op1*op2; }

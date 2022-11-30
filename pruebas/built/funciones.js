@@ -1,11 +1,9 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.verDatosPersonales = void 0;
-let verDatosPersonales = (param) => {
-    console.log(param);
-    return param;
-};
-exports.verDatosPersonales = verDatosPersonales;
+//EJERCICIO 6
+// import {datosPersonales} from "./interfaces";
+// export let verDatosPersonales = (param:datosPersonales):datosPersonales=>{
+//     console.log(param);
+//     return param;
+// }
 //OTRA MANERA DE HACER LA FUNCION
 // export const verDatosPersonales=(datos:datosPersonales):void=>{
 //     try{
