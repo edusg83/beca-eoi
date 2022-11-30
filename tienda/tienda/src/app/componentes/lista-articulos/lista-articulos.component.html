@@ -1,7 +1,4 @@
 <h1>Welcome</h1>
-<section>
- 
-</section>
 
 <!--Directivas estructurales de Angular 
 *ngIf
@@ -10,17 +7,21 @@
 -->
 <h2>Actualmente tenemos {{articulos | total: 'stock'}} articulos</h2>
 
-<article class="flex-row">
-  <section *ngFor='let articulo of articulos;let i =index' class="articulo">
-    <h2>[{{i}}]{{articulo.id}}</h2>
+<app-lista-articulos>
+    <article class="flex-row">
+        <section *ngFor='let articulo of articulos;let i =index' class="articulo">
+          <h2>[{{i}}]{{articulo.id}}</h2>
+      
+          <section [ngSwitch] = 'articulo.name'>
+            <p *ngSwitchCase="'Articulo1'"><strong>{{articulo.name | uppercase}}</strong></p>
+            <p *ngSwitchDefault>{{articulo.name}}</p>
+          </section>
+          <p>{{articulo.description}}</p>
+          <p *ngIf="articulo.stock>0">{{articulo.stock}} en Stock</p>
+          <p *ngIf="articulo.stock==0"><strong>Sin Stock</strong></p>
+          <p>{{articulo.price | currency:'EUR'}}</p>
+        </section>
+      </article>
+</app-lista-articulos>
 
-    <section [ngSwitch] = 'articulo.name'>
-      <p *ngSwitchCase="'Articulo1'"><strong>{{articulo.name | uppercase}}</strong></p>
-      <p *ngSwitchDefault>{{articulo.name}}</p>
-    </section>
-    <p>{{articulo.description}}</p>
-    <p *ngIf="articulo.stock>0">{{articulo.stock}} en Stock</p>
-    <p *ngIf="articulo.stock==0"><strong>Sin Stock</strong></p>
-    <p>{{articulo.price | currency:'EUR'}}</p>
-  </section>
-</article>
+
