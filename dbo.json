@@ -4,6 +4,16 @@
       "nombre": "Tony",
       "edad": 21,
       "id": 1
+    },
+    {
+      "nombre": "Anthony Cepeda",
+      "edad": 31,
+      "id": 2
+    },
+    {
+      "nombre": "Italo Guzman",
+      "edad": 41,
+      "id": 3
     }
   ],
   "pedido": []
