@@ -1,0 +1,36 @@
+@url=http://192.168.1.147:3000/clientes
+
+@id = 1
+
+GET {{url}}
+
+
+###
+
+POST {{url}}
+Content-Type: application/json
+
+{
+    "nombre":"Antonio",
+    "edad":"21"
+}
+
+
+###
+
+PUT {{url}}/{{id}}
+Content-Type: application/json
+
+{
+    "nombre":"Hermenegildo Perez",
+    "edad": "95"
+}
+
+
+###
+
+DELETE {{url}}/{{id}}
+
+
+###
+GET {{url}}?nombre_like=A

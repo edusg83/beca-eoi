@@ -1,4 +1,15 @@
 {
-    "clientes":[],
-    "productos":[]
+  "clientes": [
+    {
+      "nombre": "Hermenegildo Perez",
+      "edad": "95",
+      "id": 1
+    },
+    {
+      "nombre": "Antonio",
+      "edad": "21",
+      "id": 2
+    }
+  ],
+  "productos": []
 }
