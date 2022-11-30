@@ -1,0 +1,17 @@
+<!--Directivas estructurales de angular
+*ngIf
+*ngFor
+NgSwitch
+-->
+<h2>Actualmente tenemos {{articulos | total: 'stock'}} articulos</h2>
+
+<article class="flex-row">
+  <section *ngFor="let articulo of articulos" class="articulo">
+    <h2>{{articulo.id}}</h2>
+    <p>{{articulo.name | uppercase}}</p>
+    <p>{{articulo.description}}</p>
+    <p *ngIf="articulo.stock>0">{{articulo.stock}} en Stock</p>
+    <p *ngIf="articulo.stock==0"><strong>Sin Stock</strong></p>
+    <p>{{articulo.price | currency:'EUR'}}</p>
+  </section>
+</article>
