@@ -1,0 +1,16 @@
+<h1>Welcome</h1>
+<section>
+ 
+</section>
+
+<!--Directivas estructurales de Angular 
+*ngIf
+*ngFor
+*NgSwich
+-->
+<section *ngFor='let articulo of articulos'>
+  <h2>{{articulo.id}}</h2>
+  <p>{{articulo.name}}</p>
+  <p>{{articulo.description}}</p>
+  <p>{{articulo.stock}}</p>
+</section>
