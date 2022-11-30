@@ -7,7 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "inst":"npm i"
+    "inst":"npm i",
+    "Crear Interface":"ng g interface interfaces/IArticulo",
+    "Crear Pipe":"ng g pipe pipes/Total",
+    "Crear Componente":"ng g component componentes/lista-articulos"
   },
   "private": true,
   "dependencies": {

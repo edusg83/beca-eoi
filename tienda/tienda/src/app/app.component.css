@@ -1,3 +1,12 @@
-h1{
-    color:red;
+.articulo{
+    margin:1em;
+    border: 1px solid gray;
+    border-radius:15px;
+    width:150px;
+}
+
+.flex-row{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
