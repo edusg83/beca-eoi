@@ -1,0 +1,12 @@
+@url=http://192.168.56.1:3000/cliente
+
+GET {{url}}
+
+###
+POST {{url}}
+Content-Type: application/json
+
+{
+    "nombre":"Tony",
+    "edad": 21
+}

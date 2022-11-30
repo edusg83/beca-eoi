@@ -1,4 +1,10 @@
 {
-    "cliente":[],
-    "pedido":[]
+  "cliente": [
+    {
+      "nombre": "Tony",
+      "edad": 21,
+      "id": 1
+    }
+  ],
+  "pedido": []
 }
