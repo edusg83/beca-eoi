@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Articulo } from 'src/app/clases/articulo';
-import { IArticulo } from 'src/app/interfaces/iarticulo';
-import {ARTICULOS} from 'src/app/mocks/mocks';
+import { ArticulosServiceService } from 'src/app/servicios/articulos-service.service';
 
 @Component({
   selector: 'app-lista-articulos',
@@ -16,8 +15,20 @@ export class ListaArticulosComponent implements OnInit {
     
   tecla?: string;
 
+  constructor(private servicioArticulo:ArticulosServiceService){
+    this.articulos=[];
+  }
+
   ngOnInit(): void {
-    this.articulos=ARTICULOS;
+    this.servicioArticulo.getArticulos().subscribe({
+      next: (ok:Array<Articulo>)=>{
+        this.articulos = ok;
+      },
+      error: (error)=>{
+
+      }
+    } 
+    );
   }
 
   DownQuantity(articulo:Articulo){

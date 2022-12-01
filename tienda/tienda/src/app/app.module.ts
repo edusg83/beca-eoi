@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { TotalPipe } from './pipes/total.pipe';
 import { ListaArticulosComponent } from './componentes/lista-articulos/lista-articulos.component';
 import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { PostComponent } from './componentes/post/post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TotalPipe,
-    ListaArticulosComponent
+    ListaArticulosComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
