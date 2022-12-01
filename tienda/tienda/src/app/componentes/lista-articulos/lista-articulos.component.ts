@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IArticulo } from 'src/app/interfaces/iarticulo';
 
 @Component({
   selector: 'app-lista-articulos',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./lista-articulos.component.css']
 })
 export class ListaArticulosComponent {
-  articulos: Array<any> = [
+  articulos: Array<IArticulo> = [
     {
       id: 1,
       name: "Articulo1",
@@ -37,9 +38,4 @@ export class ListaArticulosComponent {
     }
     ];
   
-    totalArticulos():number{
-      return this.articulos.reduce(
-        (acumulado,articulo)=> {acumulado + articulo.stock;},0
-      );
-    }
 }
