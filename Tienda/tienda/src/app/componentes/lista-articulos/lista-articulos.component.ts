@@ -1,36 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Articulo } from 'src/app/clases/articulo';
 import { article } from 'src/app/interfaces/Article';
+import { ARTICULOS } from 'src/app/mocks/mocks';
 
 @Component({
   selector: 'app-lista-articulos',
   templateUrl: './lista-articulos.component.html',
   styleUrls: ['./lista-articulos.component.css']
 })
-export class ListaArticulosComponent {
+export class ListaArticulosComponent implements OnInit {
 
-  articulos:Array<article> = [
-  {  
-    id : 1,
-    name:"Articulo1",
-    description:"Descripcion1",
-    stock:5,
-    price:120
-  },
-  {  
-    id : 2,
-    name:"Articulo2",
-    description:"Descripcion2",
-    stock:5,
-    price:50.2
-  },
-  {  
-    id : 3,
-    name:"Articulo3",
-    description:"Descripcion3",
-    stock:8,
-    price:70
-  }
-  ]
+  articulos:Array<Articulo> = [
+  ];
   
+  ngOnInit(): void {
+    this.articulos = ARTICULOS;
+  }
+
   
 }

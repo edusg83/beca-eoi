@@ -1,13 +1,14 @@
 
 <h2>Actualmente tenemos {{articulos | total:'stock'}} productos en Stock</h2>
 
-<article class="flex-row">
+<article *ngIf="articulos"  class="flex-row">
     <section *ngFor = "let articulo of articulos" class="article">
+      <img [src]="articulo.image" alt="">
       <h2 >{{articulo.id}}</h2>
       <p>{{articulo.name}}</p>
       <p>{{articulo.description}}</p>
-      <p *ngIf="articulo.stock > 0">{{articulo.stock}} en Stock</p>
-      <p *ngIf="articulo.stock == 0">Sin stock</p>
+      <p *ngIf="articulo.stock>0" [class.en-stock]="articulo.stock>0">{{articulo.stock}} en Stock</p>
+      <p *ngIf="articulo.stock==0" [class.sin-stock]="articulo.stock==0">Sin stock</p>
       <p>{{articulo.price | currency:'EUR'}}</p>
     </section>
   </article>
