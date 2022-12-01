@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TotalPipe } from './pipes/total.pipe';
 import { ListaArticulosComponent } from './componentes/lista-articulos/lista-articulos.component';
 import { FormsModule } from '@angular/forms';
+import { ArticulosServiceService } from './servicios/articulos-service.service';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ArticulosServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

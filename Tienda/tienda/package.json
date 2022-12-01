@@ -11,7 +11,8 @@
     "Crear interfaz": "ng g interface interfaces/Article",
     "Crear pipe":"ng g pipe pipes/total",
     "Crear componente": "ng g component componentes/lista-articulos",
-    "Crear clase": "ng g class clases/Articulo"
+    "Crear clase": "ng g class clases/Articulo",
+    "crear servicio": "ng g service servicios/ArticulosService"
   },
   "private": true,
   "dependencies": {
