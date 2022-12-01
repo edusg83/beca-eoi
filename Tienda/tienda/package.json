@@ -8,8 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "inst": "npm i",
-    "Crear interfaz": "ng g interface interfaces/Interfaz",
-    "Crear pipe":"ng g pipe pipes/hola"
+    "Crear interfaz": "ng g interface interfaces/Article",
+    "Crear pipe":"ng g pipe pipes/total",
+    "Crear componente": "ng g component componentes/lista-articulos"
   },
   "private": true,
   "dependencies": {

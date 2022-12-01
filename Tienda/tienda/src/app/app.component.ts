@@ -8,28 +8,5 @@ import { article } from './interfaces/Article';
 })
 export class AppComponent {
 
-  articulos:Array<article> = [
-  {  
-    id : 1,
-    name:"Articulo1",
-    description:"Descripcion1",
-    stock:5,
-    price:120
-  },
-  {  
-    id : 2,
-    name:"Articulo2",
-    description:"Descripcion2",
-    stock:5,
-    price:50.2
-  }
-  ]
-
-
-
-  totalArticulos():number{
-    return this.articulos.reduce(
-      (acumulado, articulo) => acumulado+articulo.stock,0
-    );
-  }
+ 
 }

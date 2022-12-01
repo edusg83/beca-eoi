@@ -5,7 +5,7 @@ import { article } from '../interfaces/Article';
 })
 export class TotalPipe implements PipeTransform {
 
-  transform(articulos: Array<article>, args?: string){
+  transform(articulos: Array<article>, args?: string):number{
     return articulos.reduce(
       (acumulado, articulo) =>{ return acumulado+articulo['stock'];},0
     );
