@@ -12,7 +12,8 @@
     "Crear pipe":"ng g pipe pipes/total",
     "Crear componente": "ng g component componentes/lista-articulos",
     "Crear clase": "ng g class clases/Articulo",
-    "crear servicio": "ng g service servicios/ArticulosService"
+    "crear servicio": "ng g service servicios/ArticulosService",
+    "arrancar json server": "json-server --host 192.168.1.147 -w db.json"
   },
   "private": true,
   "dependencies": {
