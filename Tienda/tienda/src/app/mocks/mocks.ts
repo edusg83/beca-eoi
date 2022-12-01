@@ -7,7 +7,8 @@ export const ARTICULOS:Array<Articulo>=[
         description:"Descripcion1",
         image : "assets/balon.png",
         stock:5,
-        price:120
+        price:120,
+        quantity:0,
     },
     {  
         id : 2,
@@ -15,7 +16,8 @@ export const ARTICULOS:Array<Articulo>=[
         description:"Descripcion2",
         image : "assets/balon.png",
         stock:5,
-        price:50.2
+        price:50.2,
+        quantity:0,
     },
     {  
         id : 3,
@@ -23,7 +25,9 @@ export const ARTICULOS:Array<Articulo>=[
         description:"Descripcion3",
         image : "assets/balon.png",
         stock:8,
-        price:70
+        price:70,
+        quantity:0,
+
     },
     {  
         id : 4,
@@ -31,6 +35,7 @@ export const ARTICULOS:Array<Articulo>=[
         description:"Descripcion4",
         image : "assets/balon.png",
         stock:0,
-        price:35
+        price:35,
+        quantity:0,
     }          
 ]

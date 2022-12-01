@@ -12,10 +12,32 @@ export class ListaArticulosComponent implements OnInit {
 
   articulos:Array<Articulo> = [
   ];
+
+  tecla?:string;
   
   ngOnInit(): void {
     this.articulos = ARTICULOS;
   }
 
+  upQuantity(articulo:Articulo){
+    if (articulo.stock>0){
+      articulo.quantity++;
+      articulo.stock--;
+    }
+    
+  }
+
+  downQuantity(articulo:Articulo){
+    if (articulo.quantity>0){
+      articulo.quantity--;
+      articulo.stock++;
+    }
+    
+  }
   
+
+teclaPulsada(evento:any){
+  this.tecla=evento.keyCode;
+}
+
 }

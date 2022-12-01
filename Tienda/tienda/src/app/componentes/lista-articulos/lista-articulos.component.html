@@ -10,5 +10,23 @@
       <p *ngIf="articulo.stock>0" [class.en-stock]="articulo.stock>0">{{articulo.stock}} en Stock</p>
       <p *ngIf="articulo.stock==0" [class.sin-stock]="articulo.stock==0">Sin stock</p>
       <p>{{articulo.price | currency:'EUR'}}</p>
+      
+      <div>
+        <button type="button" (click) = "upQuantity(articulo)">+</button>
+        {{articulo.quantity}}
+        <button type="button" (click) = "downQuantity(articulo)">-</button>
+      </div>
+
+      <!-- <div>
+        <input (keydown)="teclaPulsada($event)" [(ngModel)] = "articulo.quantity">
+        <br>
+        {{tecla | json}}
+      </div> -->
+
+      <div>
+        Precio total: {{articulo.price*articulo.quantity | currency:'EUR'}}
+      </div>
+
     </section>
+   
   </article>
