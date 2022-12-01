@@ -7,7 +7,7 @@
 -->
 <h2>Actualmente tenemos {{articulos | total: 'stock'}} articulos</h2>
 
-<app-lista-articulos>
+
     <article class="flex-row">
         <section *ngFor='let articulo of articulos;let i =index' class="articulo">
           <h2>[{{i}}]{{articulo.id}}</h2>
@@ -17,11 +17,28 @@
             <p *ngSwitchDefault>{{articulo.name}}</p>
           </section>
           <p>{{articulo.description}}</p>
-          <p *ngIf="articulo.stock>0">{{articulo.stock}} en Stock</p>
-          <p *ngIf="articulo.stock==0"><strong>Sin Stock</strong></p>
+          <!-- <img [src] = "articulo.image" alt=""> -->
+          <span [class.fuera-stock] = "articulo.stock==0"></span>
+          <span [class.en-stock] = "articulo.stock>0">{{articulo.stock}}</span>
+          <!-- <p [class.fuera-stock] *ngIf="articulo.stock>0">{{articulo.stock}} en Stock</p>
+          <p [class.en-stock] *ngIf="articulo.stock==0"><strong>Sin Stock</strong></p> -->
           <p>{{articulo.price | currency:'EUR'}}</p>
+          <section *ngIf="articulo.stock>0">
+            <button type="button" (click)="UpQuantity(articulo)">+</button>
+            <p>{{articulo.quantity}}</p>
+            <button type="button" (click)="DownQuantity(articulo)">-</button>
+          </section>
+          <section>
+            <input (mouseover)="teclaPulsada($event)" [(ngModel)]="articulo.quantity">
+            <br>
+            {{tecla | json}}
+          </section>
+          <section>
+            Total compra : {{articulo.price*articulo.quantity}}
+          </section>
         </section>
+        
       </article>
-</app-lista-articulos>
+
 
 

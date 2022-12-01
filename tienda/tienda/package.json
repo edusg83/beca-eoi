@@ -10,7 +10,8 @@
     "inst":"npm i",
     "Crear Interface":"ng g interface interfaces/IArticulo",
     "Crear Pipe":"ng g pipe pipes/Total",
-    "Crear Componente":"ng g component componentes/lista-articulos"
+    "Crear Componente":"ng g component componentes/lista-articulos",
+    "crear clase":"ng g class clases/Articulo"
   },
   "private": true,
   "dependencies": {

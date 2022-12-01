@@ -10,3 +10,19 @@
     flex-wrap: wrap;
     flex-direction: row;
 }
+
+.en-stock:after{
+    content:'Uds. disponible';
+    width:200px;
+    background-color: yellow;
+}
+
+.fuera-stock:after{
+    content:'Fuera de stock';
+    width:200px;
+    background-color:red;
+}
+
+.azul{
+    color:blue;
+}
