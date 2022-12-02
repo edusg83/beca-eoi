@@ -1,3 +1,3 @@
 export const params={
-    URL_BACK: 'http://192.168.1.46:3000/articulos'
+    URL_BACK: 'http://192.168.56.1:3000/articulos'
 };

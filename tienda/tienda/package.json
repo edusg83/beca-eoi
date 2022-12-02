@@ -13,7 +13,7 @@
     "Crear Componente":"ng g component componentes/delete",
     "crear clase":"ng g class clases/Articulo",
     "crear sercicio":"ng g service servicios/ArticulosService",
-    "json-server":"json-server --host 192.168.1.46 -w db.json"
+    "json-server":"json-server --host 192.168.56.1 -w db.json"
   },
   "private": true,
   "dependencies": {
