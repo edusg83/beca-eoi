@@ -10,9 +10,10 @@
     "inst": "npm i",
     "Crear interfaz": "ng g interface interfaces/Article",
     "Crear pipe":"ng g pipe pipes/total",
-    "Crear componente": "ng g component componentes/padre",
+    "Crear componente": "ng g component clientes/components/delete-cliente --module clientes/modulo-clientes",
     "Crear clase": "ng g class clases/Articulo",
     "crear servicio": "ng g service servicios/ArticulosService",
+    "crear modulo":"ng g module clientes/modulo-clientes --routing true",
     "arrancar json server": "json-server --host 192.168.1.147 -w db.json"
   },
   "private": true,

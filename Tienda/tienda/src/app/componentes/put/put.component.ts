@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Articulo } from 'src/app/clases/articulo';
 import { ArticulosServiceService } from 'src/app/servicios/articulos-service.service';
 
@@ -7,7 +8,7 @@ import { ArticulosServiceService } from 'src/app/servicios/articulos-service.ser
   templateUrl: './put.component.html',
   styleUrls: ['./put.component.css']
 })
-export class PutComponent {
+export class PutComponent implements OnInit{
   id?:number;
   name?:string;
   description?:string;
@@ -18,9 +19,25 @@ export class PutComponent {
   quantity:number = 0; 
 
 
-  constructor(private servicioArticulo: ArticulosServiceService){
+  constructor(private servicioArticulo: ArticulosServiceService, private route:ActivatedRoute, private router:Router){
 
   }
+
+
+  ngOnInit(){
+    this.route.params.subscribe(params=>{
+      const id = <string>params['id']
+      this.id = parseInt(id);
+    })
+  }
+
+  ngOnChanges(changes:SimpleChanges):void{
+    this.route.params.subscribe(params=>{
+      const id = <string>params['id']
+      this.id = parseInt(id);
+    });
+  }
+
 
 put(){
   let articulo = new Articulo;

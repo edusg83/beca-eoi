@@ -6,11 +6,11 @@
         <legend>Actualizar artículo</legend> 
         <p>
             <label for = "id" style="padding: 5px;" >ID</label>
-            <input type="number" name="id" id="id" max="20" placeholder="ID" [(ngModel)] = "id">
+            <input type="number" name="id" id="id" max="20" placeholder="ID" value="{{id}}">
         </p>  
         <p>
             <label for = "nombre" style="padding: 5px;" >Nombre</label>
-            <input type="text" name="nombre" id="nom" max="20" placeholder="Nombre" [(ngModel)] = "name">
+            <input type="text" name="nombre" id="nom" max="20" placeholder="Nombre" [(ngModel)]="name">
         </p>    
         <p>
             <label for = "descripcion"style="padding: 5px;" >Descripción</label>

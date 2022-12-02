@@ -3,15 +3,19 @@
 
 
 <nav>
+  <input type="text" name="id" [(ngModel)]="id">
   <button type="button" [routerLink]="['/go-post']">Ir a Post</button>
+  <button type="button" [routerLink]="['/go-put', id]">Ir a Put</button>
+  <button type="button" (click)="goToPut(id)">Ir a Put 2</button>
   <button type="button" [routerLink]="['/go-list']">Ir a Lista</button>
+  <button type="button" [routerLink]="['/go-delete']">Ir a Delete</button>
 </nav>
 
 
 
 
 <router-outlet>
-  
+
 </router-outlet>
 
 
