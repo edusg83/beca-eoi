@@ -25,14 +25,14 @@ export class ArticulosServiceService {
     return this.http.post<Articulo>(params.URL_BACK,articulo,httpOptions);
   }
 
-  putArticulo(articulo:Articulo){
+  putArticulo(articulo:Articulo, id:number){
     const httpOptions={
       headers: new HttpHeaders({ 
         'Content-Type': 'application/json'
       })
     };
-
-    return this.http.put<Articulo>(params.URL_BACK,articulo.id,httpOptions);
+    const url = `${params.URL_BACK}/${id}`;
+    return this.http.put<Articulo>(url,articulo,httpOptions);
   }
 
   deleteArticulo(id:number):Observable<{}>{

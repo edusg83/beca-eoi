@@ -8,7 +8,9 @@ import { ArticulosServiceService } from 'src/app/servicios/articulos-service.ser
   styleUrls: ['./put.component.css']
 })
 export class PutComponent {
-  name: string = Articulo.name;
+  id:any;
+  name: string = '';
+  description: string = '';
 
   constructor(private servicioArticulo:ArticulosServiceService){
     
@@ -17,7 +19,7 @@ export class PutComponent {
   hacerPut(){
     let art: Articulo = {
       name: this.name,
-      description: 'Articulo 1',
+      description: this.description,
       image: 'assets/balon.png',
       price: 12.4,
       stock: 12,
@@ -25,13 +27,6 @@ export class PutComponent {
       quantity: 0
   };
 
-  this.servicioArticulo.putArticulo(art).subscribe({
-    next: (articulo:Articulo)=>{
-      console.log(articulo);
-    },
-    error: (error)=>{
-      console.log(error);
-    }
-  })
+  this.servicioArticulo.putArticulo(art,this.id).subscribe({});
   }
 }
