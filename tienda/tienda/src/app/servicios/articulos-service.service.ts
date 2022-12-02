@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Articulo } from '../clases/articulo';
-import { ARTICULOS } from '../mocks/mocks';
 import {params} from '../environment/environment';
 import { Observable } from 'rxjs';
 
@@ -24,5 +23,15 @@ export class ArticulosServiceService {
     };
 
     return this.http.post<Articulo>(params.URL_BACK,articulo,httpOptions);
+  }
+
+  putArticulo(articulo:Articulo){
+    const httpOptions={
+      headers: new HttpHeaders({ 
+        'Content-Type': 'application/json'
+      })
+    };
+
+    return this.http.put<Articulo>(params.URL_BACK,articulo.id,httpOptions);
   }
 }
