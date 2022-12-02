@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Articulo } from 'src/app/clases/articulo';
 import { ArticulosServiceService } from 'src/app/servicios/articulos-service.service';
 
@@ -17,8 +17,12 @@ export class PostComponent implements OnInit {
   name:string='';
 
   constructor(private servicioArticulo:ArticulosServiceService){}
-    ngOnInit(): void {
-      this.datoHijoOutput.emit(this.datoHijo+'OUTPUT');
+  ngOnChanges(changes: SimpleChanges):void {
+    this.datoHijoOutput.emit(changes['datoHijo'].currentValue+ 'OUTPUT');
+  }  
+  
+  ngOnInit(): void {
+      // this.datoHijoOutput.emit(this.datoHijo+'OUTPUT');
     }
   
   enviarDatosAPadre(){

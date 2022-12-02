@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { IArticulo } from './interfaces/iarticulo';
 
 @Component({
@@ -12,8 +13,16 @@ export class AppComponent {
 
   datoHijoOutput:string='';
 
+  id:number = 0;
+
+  constructor(private router : Router){}
+
   recogeOutputHijo(event:string){
     this.datoHijoOutput=event;
+  }
+
+  iraPost(id:number){
+    this.router.navigate(['/go-post',id]);
   }
 
   articulos:Array<IArticulo> = [
