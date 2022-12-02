@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Articulo } from 'src/app/clases/articulo';
 import { ArticulosServiceService } from 'src/app/servicios/articulos-service.service';
 
@@ -7,13 +7,26 @@ import { ArticulosServiceService } from 'src/app/servicios/articulos-service.ser
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent {
+export class PostComponent implements OnInit {
+
+  @Input()
+  datoHijo: string = '';
+  @Output()
+  datoHijoOutput:EventEmitter<string>=new EventEmitter();
 
   name:string='';
 
-  constructor(private servicioArticulo:ArticulosServiceService){
-    
+  constructor(private servicioArticulo:ArticulosServiceService){}
+    ngOnInit(): void {
+      this.datoHijoOutput.emit(this.datoHijo+'OUTPUT');
+    }
+  
+  enviarDatosAPadre(){
+    this.datoHijoOutput.emit(this.datoHijo+'OUTPUT');
   }
+  // ngOnInit(): void {
+  //   throw new Error('Method not implemented.');
+  // }
 
   hacerPost() {
     let art: Articulo = {

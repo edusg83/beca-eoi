@@ -9,7 +9,10 @@
 *NgSwich
 -->
 <app-lista-articulos></app-lista-articulos>
-<app-post></app-post>
+<strong>Padre</strong>
+<input [(ngModel)]="datoPadre">
+<p>Dato Output recibido del hijo : {{datoHijoOutput}}</p>
+<app-post [datoHijo]="datoPadre" (datoHijoOutput)="recogeOutputHijo($event)"></app-post>
 <app-put></app-put>
 <app-delete></app-delete>
 <!-- <h2>Actualmente tenemos {{articulos | total: 'stock'}} articulos</h2>
@@ -28,3 +31,4 @@
     <p>{{articulo.price | currency:'EUR'}}</p>
   </section>
 </article> -->
+

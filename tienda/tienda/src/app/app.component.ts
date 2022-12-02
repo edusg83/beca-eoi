@@ -8,6 +8,14 @@ import { IArticulo } from './interfaces/iarticulo';
 })
 export class AppComponent {
   
+  datoPadre:string='';
+
+  datoHijoOutput:string='';
+
+  recogeOutputHijo(event:string){
+    this.datoHijoOutput=event;
+  }
+
   articulos:Array<IArticulo> = [
     {
     id:1,
