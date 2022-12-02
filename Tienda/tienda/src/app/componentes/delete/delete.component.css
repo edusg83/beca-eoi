@@ -1,0 +1,24 @@
+
+.formularioTipo1{
+    padding:10px; 
+    border-style: solid;
+    border-color: black; 
+    border-width: 3px; 
+    margin-right: 800px;
+    margin-left: 10px;
+    margin-bottom: 50px;
+    background-color: white;
+    color:black
+}
+
+
+.formularioTipo2{
+    padding:10px; 
+    border-style: solid;
+    border-color: black; 
+    border-width: 3px; 
+    margin-right: 50px;
+    margin-bottom: 50px;
+    background-color: white;
+    color:black
+}

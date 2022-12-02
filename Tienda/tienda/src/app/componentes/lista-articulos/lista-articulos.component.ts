@@ -22,7 +22,15 @@ export class ListaArticulosComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.articulos = this.servicioArticulo.getArticulos();
+    this.servicioArticulo.getArticulos().subscribe({
+      next: (datos:Array<Articulo>)=>{
+        this.articulos = datos;
+      },
+      error: (error) =>{
+
+      }
+      
+  });
   }
 
   upQuantity(articulo:Articulo){

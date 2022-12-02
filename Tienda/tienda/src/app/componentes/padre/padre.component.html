@@ -1,0 +1,9 @@
+<p>padre works!</p>
+
+
+
+<input [(ngModel)]="datoPadre">
+
+<app-hijo [hijo]="datoPadre" (eventoOutputHijo)="recogerDatos($event)"></app-hijo>
+
+<p>{{outputHijo}}</p>

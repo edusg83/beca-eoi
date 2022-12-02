@@ -1,0 +1,27 @@
+<!-- <p input [(ngModel)] = "name"></p> -->
+
+
+<form name="FormularioPost" id = "formularioPost" class="formularioTipo1">
+    <fieldset id = "info">
+        <legend>Crear artículo</legend>     
+        <p>
+            <label for = "nombre" style="padding: 5px;" >Nombre</label>
+            <input type="text" name="nombre" id="nom" max="20" placeholder="Nombre" [(ngModel)] = "name">
+        </p>    
+        <p>
+            <label for = "descripcion"style="padding: 5px;" >Descripción</label>
+            <input type="text" name="descripcion" id="des" placeholder="Descripción" [(ngModel)] = "description">
+        </p>  
+        <p>
+            <label for = "stock" style="padding: 5px;" >Stock</label>
+            <input type="number" name="stock" id="st" placeholder="Stock" [(ngModel)] = "stock">
+        </p> 
+        <p>
+            <label for = "precio" style="padding: 5px;">Precio</label>
+            <input type="number" name="precio" id="prec" placeholder="Precio"  [(ngModel)] = "price">
+        </p>    
+        
+
+        <button type="button" (click)="post()">Crear</button>
+    </fieldset>
+</form>

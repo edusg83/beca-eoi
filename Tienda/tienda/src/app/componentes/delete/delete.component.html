@@ -1,0 +1,13 @@
+<!-- <p input [(ngModel)] = "name"></p> -->
+
+
+<form name="FormularioDelete" id = "formularioDelete" class="formularioTipo1">
+    <fieldset id = "info">
+        <legend>Borrar artículo</legend> 
+        <p>
+            <label for = "id" style="padding: 5px;" >ID</label>
+            <input type="number" name="id" id="id" max="20" placeholder="ID" [(ngModel)] = "id">
+        </p>  
+        <button type="button" (click)="borrar()">Borrar</button>
+    </fieldset>
+</form>

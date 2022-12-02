@@ -2,10 +2,33 @@
 
 
 
+<nav>
+  <button type="button" [routerLink]="['/go-post']">Ir a Post</button>
+  <button type="button" [routerLink]="['/go-list']">Ir a Lista</button>
+</nav>
 
 
-<app-lista-articulos></app-lista-articulos>
 
+
+<router-outlet>
+  
+</router-outlet>
+
+
+
+
+
+
+
+
+
+
+<!-- <app-lista-articulos></app-lista-articulos>
+<post></post>
+<put></put>
+<delete></delete>
+
+<app-padre></app-padre> -->
 <!-- Directivas estructurales de angular
 
   *ngIf
