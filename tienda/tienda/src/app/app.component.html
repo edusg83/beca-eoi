@@ -8,13 +8,13 @@
 *ngFor
 *NgSwich
 -->
-<app-lista-articulos></app-lista-articulos>
+<!-- <app-lista-articulos></app-lista-articulos>
 <strong>Padre</strong>
 <input [(ngModel)]="datoPadre">
 <p>Dato Output recibido del hijo : {{datoHijoOutput}}</p>
 <app-post [datoHijo]="datoPadre" (datoHijoOutput)="recogeOutputHijo($event)"></app-post>
 <app-put></app-put>
-<app-delete></app-delete>
+<app-delete></app-delete> -->
 <input [(ngModel)]="id">
 <nav>
   <button type="button" [routerLink]="['/go-post']">Ir a Post</button>
@@ -22,6 +22,8 @@
   <button type="button" [routerLink]="['/go-lista-articulos']">Ir a Lista Articulos</button>
 
   <button type="button" (click)="iraPost(id)">Ir al Post</button>
+
+  <button type="button" [routerLink]="['/go-clientes']">Ir clientes</button>
 </nav>
 <router-outlet>
   

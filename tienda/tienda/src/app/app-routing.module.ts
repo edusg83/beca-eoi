@@ -10,6 +10,10 @@ const routes: Routes = [
 },
 {
   path:'got-lista-articulos',component:ListaArticulosComponent
+},
+{
+  path:'go-clientes',
+  loadChildren: ()=> import('./clientes/modulo-clientes/modulo-clientes.module').then(m=>m.ModuloClientesModule)
 }
 
 ];
