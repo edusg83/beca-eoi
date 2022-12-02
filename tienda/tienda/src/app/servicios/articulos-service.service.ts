@@ -34,4 +34,14 @@ export class ArticulosServiceService {
 
     return this.http.put<Articulo>(params.URL_BACK,articulo.id,httpOptions);
   }
+
+  deleteArticulo(id:number):Observable<{}>{
+    const httpOptions={
+      headers: new HttpHeaders({ 
+        'Content-Type': 'application/json'
+      })
+    };
+    let url = params.URL_BACK + "/" + id;
+    return this.http.delete<Articulo>(url,httpOptions);
+  }
 }
