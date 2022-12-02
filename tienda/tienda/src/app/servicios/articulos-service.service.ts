@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class ArticulosServiceService {
-
+ 
   constructor(private http:HttpClient) { }
 
   getArticulos(): Observable<Array<Articulo>>{
@@ -20,5 +20,25 @@ export class ArticulosServiceService {
       })
     };
     return this.http.post<Array<Articulo>>(params.URL_BACK, articulo, httpOptions);
+  }
+
+  putArticulo(articulo: Articulo): Observable<Array<Articulo>>{
+    const httpOptions={
+      headers:new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    const url = `${params.URL_BACK}/${articulo.id}`;
+    return this.http.put<Array<Articulo>>(url, articulo, httpOptions);
+  }
+
+  deleteArticulo(id:number): Observable<{}>{
+    const httpOptions={
+      headers:new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    const url = `${params.URL_BACK}/${id}`;
+    return this.http.delete(url, httpOptions);
   }
 }

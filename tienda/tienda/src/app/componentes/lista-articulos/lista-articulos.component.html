@@ -11,14 +11,20 @@ ngSwitch
     <h1>{{articulo.name}}</h1>
     <img class="image" [src]="articulo.image" alt="">
 
-    <section>
+    <section >
+      <p>{{articulo.description}}</p>
       <span [ngSwitch]="articulo.stock">
         <span *ngSwitchCase="0">
           <span [class.fuera-stock]="articulo.stock==0">Sin Stock</span>
         </span>
-        <span *ngSwitchDefault>
+        <span *ngSwitchDefault class="negrita">
             {{articulo.stock}} Unidades</span>
       </span>
+      
+    </section>
+
+    <section id="price" class="infoFloat">
+      <span>{{articulo.price | currency:'EUR':true}}</span>
     </section>
 
     <section>

@@ -10,7 +10,7 @@
     "inst": "npm i",
     "Crear Interface": "ng g interface interfaces/IArticulo",
     "Crear Pipe": "ng g pipe pipes/Total",
-    "Crear Componente": "ng g component componentes/post",
+    "Crear Componente": "ng g component componentes/delete",
     "crear clase": "ng g class clases/Articulo",
     "crear servicio": "ng g service servicios/ArticulosService",
     "json-server": "json-server --host 192.168.0.172 -w db.json"

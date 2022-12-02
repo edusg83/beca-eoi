@@ -1,0 +1,8 @@
+.CRUDorder{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tittle, .CRUDorder{
+    border-bottom: 1px solid gray;
+}

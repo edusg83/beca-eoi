@@ -1,11 +1,11 @@
 <section>
-    <h2>Crear nuevo articulo</h2>
+    <h2>Modificar articulo</h2>
+    <p>Id: <input type="number" [(ngModel)]="id"></p>
     <p>Nombre: <input [(ngModel)]="name"></p>
     <p>Description: <input [(ngModel)]="description"></p>
     <p>Image: <input [(ngModel)]="image"></p>
     <p>Price: <input type="number" [(ngModel)]="price"></p>
     <p>Stock: <input type="number" [(ngModel)]="stock"></p>
-    
     <br>
-    <button type="button" (click)="hacerPost()">Create</button>
+    <button type="button" (click)="hacerPut()">Update</button>
 </section>

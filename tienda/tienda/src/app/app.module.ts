@@ -9,13 +9,17 @@ import { FormsModule } from '@angular/forms';
 import { ArticulosServiceService } from './servicios/articulos-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PostComponent } from './componentes/post/post.component';
+import { PutComponent } from './componentes/put/put.component';
+import { DeleteComponent } from './componentes/delete/delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TotalPipe,
     ListaArticulosComponent,
-    PostComponent
+    PostComponent,
+    PutComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,

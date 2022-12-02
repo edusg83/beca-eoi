@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Artículo 1",
-      "description": "Artículo 1",
+      "description": "DescripcionArtículo 1",
       "image": "assets/balon.png",
       "price": 12.4,
       "stock": 12,
@@ -13,7 +13,7 @@
     {
       "id": 2,
       "name": "Artículo 2",
-      "description": "Artículo 2",
+      "description": "DescripcionArtículo 2",
       "image": "assets/basketball.png",
       "price": 21.5,
       "stock": 0,
@@ -21,14 +21,24 @@
       "quantity": 0
     },
     {
+      "id": 3,
       "name": "Articulo 3",
-      "description": "Descripcion Articulo 3",
+      "description": "Descripcion articulo 3",
       "image": "assets/tenis_pelota.png",
-      "price": "4",
-      "stock": "20",
+      "price": 3.99,
+      "stock": 20,
       "selected": false,
-      "quantity": 0,
-      "id": 3
+      "quantity": 0
+    },
+    {
+      "id": 4,
+      "name": "Articulo 4",
+      "description": "Descripcion articulo 4",
+      "image": "assets/tenis_pelota.png",
+      "price": 4,
+      "stock": 10,
+      "selected": false,
+      "quantity": 0
     }
   ]
 }

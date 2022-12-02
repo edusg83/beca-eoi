@@ -18,3 +18,18 @@
 .fuera-stock{
     color: red;
 }
+
+.infoFloat{
+    float: right;
+}
+
+.negrita{
+    font-weight: bold;
+}
+
+#price{
+    font-size: larger;
+    font-weight: bold;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
