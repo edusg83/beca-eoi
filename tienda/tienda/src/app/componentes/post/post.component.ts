@@ -17,7 +17,7 @@ export class PostComponent {
 
   hacerPost() {
     let art: Articulo = {
-      name. this.name,
+      name: this.name,
       description: 'Articulo 1',
       image: 'assets/balon.png',
       price: 12.4,

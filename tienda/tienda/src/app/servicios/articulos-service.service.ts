@@ -16,7 +16,7 @@ export class ArticulosServiceService {
     return this.http.get<Array<Articulo>>(params.URL_BACK);
   }
 
-  postArticulo(){
+  postArticulo(articulo:Articulo){
     const httpOptions={
       headers: new HttpHeaders({ 
         'Content-Type': 'application/json'
