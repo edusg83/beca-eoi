@@ -13,7 +13,7 @@
     </section>
 
     <footer>
-        <section class="mensaje" [class.error]="!formularioCliente.valid">FORMULARIO NO VALIDO</section>
+        <section class="error" *ngIf="!formularioCliente.valid">FORMULARIO NO VALIDO</section>
     </footer>
 
     <section>
