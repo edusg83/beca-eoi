@@ -1,0 +1,20 @@
+<p>dashboard works!</p>
+
+
+<nav>
+    <button type="button" [routerLink]="['/go-clientes/go-post-cliente']">Ir a Post</button>
+    <button type="button" [routerLink]="['/go-clientes/go-put-cliente', id]">Ir a Put</button>
+    <button type="button" (click)="goToPut(id)">Ir a Put 2</button>
+    <button type="button" [routerLink]="['/go-clientes/go-list-cliente']">Ir a Lista</button>
+    <button type="button" [routerLink]="['/go-clientes/go-delete-cliente']">Ir a Delete</button>
+    <button type="button" [routerLink]="['/go-clientes']">Volver a clientes</button>
+  </nav>
+  
+  
+  
+  
+  <router-outlet>
+  
+  </router-outlet>
+  
+  

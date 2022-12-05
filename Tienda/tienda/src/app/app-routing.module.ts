@@ -17,6 +17,10 @@ const routes: Routes = [
   },
   {
     path:"go-delete", component:DeleteComponent
+  },
+  {
+    path:"go-clientes",
+    loadChildren: ()=> import('./clientes/modulo-clientes/modulo-clientes.module').then(m=>m.ModuloClientesModule)
   }
 ];
 

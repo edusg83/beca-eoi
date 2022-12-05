@@ -1,1 +1,28 @@
 <p>post-cliente works!</p>
+
+
+<form [formGroup]="formularioCliente">
+    <section>
+        <label for="name">Nombre</label>
+        <input id="nombre" type="text" formControlName="nombre">
+        <section class="mensaje" [class.error]="!formularioCliente.get('nombre')?.valid"></section>
+    </section>
+    <section>
+        <label for="edad">Edad</label>
+        <input id="edad" type="number" formControlName="edad">
+    </section>
+
+    <footer>
+        <section class="mensaje" [class.error]="!formularioCliente.valid">FORMULARIO NO VALIDO</section>
+    </footer>
+
+    <section>
+        Dirty:  {{formularioCliente.dirty}}
+        <br>
+        Valid :{{formularioCliente.valid}}
+    </section>
+   
+
+
+
+</form>

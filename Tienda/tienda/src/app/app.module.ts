@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TotalPipe } from './pipes/total.pipe';
 import { ListaArticulosComponent } from './componentes/lista-articulos/lista-articulos.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ArticulosServiceService } from './servicios/articulos-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PostComponent } from './componentes/post/post.component';
