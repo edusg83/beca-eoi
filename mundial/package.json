@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "crear componente": "ng g component teams/components/put-team --module teams/teams-module",
+    "crear modulo": "ng g module teams/teams-module --routing true"
   },
   "private": true,
   "dependencies": {
