@@ -1,0 +1,1 @@
+ng new "nombre del proyecto" --style=css (Crear nuevo proyecto Angular con css)
