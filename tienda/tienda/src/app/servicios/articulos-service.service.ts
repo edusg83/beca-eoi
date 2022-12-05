@@ -11,6 +11,8 @@ export class ArticulosServiceService {
 
   constructor(private http:HttpClient) { }
 
+  datoServicio?:string
+
   getArticulos():Observable<Array<Articulo>> {
     return this.http.get<Array<Articulo>>(params.URL_BACK);
   }

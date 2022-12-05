@@ -10,11 +10,12 @@
     "inst":"npm i",
     "Crear Interface":"ng g interface interfaces/IArticulo",
     "Crear Pipe":"ng g pipe pipes/Total",
-    "Crear Componente":"ng g component clientes/components/delete-cliente --module clientes/modulo-clientes",
+    "Crear Componente":"ng g component clientes/components/dashboard-cliente --module clientes/modulo-clientes",
     "crear clase":"ng g class clases/Articulo",
     "crear sercicio":"ng g service servicios/ArticulosService",
     "json-server":"json-server --host 192.168.56.1 -w db.json",
-    "crear modulo":"ng g module clientes/modulo-clientes --routing true"
+    "crear modulo":"ng g module clientes/modulo-clientes --routing true",
+    "crear com":"ng component components/padre"
   },
   "private": true,
   "dependencies": {

@@ -6,6 +6,8 @@ import { PostClienteComponent } from '../components/post-cliente/post-cliente.co
 import { GetClienteComponent } from '../components/get-cliente/get-cliente.component';
 import { PutClienteComponent } from '../components/put-cliente/put-cliente.component';
 import { DeleteClienteComponent } from '../components/delete-cliente/delete-cliente.component';
+import { DashboardClienteComponent } from '../components/dashboard-cliente/dashboard-cliente.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,11 +15,13 @@ import { DeleteClienteComponent } from '../components/delete-cliente/delete-clie
     PostClienteComponent,
     GetClienteComponent,
     PutClienteComponent,
-    DeleteClienteComponent
+    DeleteClienteComponent,
+    DashboardClienteComponent
   ],
   imports: [
     CommonModule,
-    ModuloClientesRoutingModule
+    ModuloClientesRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class ModuloClientesModule { }

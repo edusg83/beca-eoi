@@ -1,1 +1,20 @@
 <p>post-cliente works!</p>
+
+<form [formGroup]="formularioCliente">
+    <section>
+        <label for="nombre">Nombre</label>
+        <input id="nombre" type="text" formControlName="nombre">
+        <section class="error" *ngIf="!formularioCliente.get('nombre')?.valid"></section>
+    </section>
+    <section>
+        <label for="nombre">Edad</label>
+        <input id="edad" type="number" formControlName="edad">
+    </section>
+    <footer>
+        <button type="button" [disabled]="formularioCliente.valid" (click)="validar()">Validar formulario</button>
+        <section class="error" *ngIf="!formularioCliente.valid" >Formulario no valido</section>
+    </footer>
+
+    Dirty: {{this.formularioCliente.dirty}}<br>
+    Valid: {{this.formularioCliente.valid}}
+</form>
