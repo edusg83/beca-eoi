@@ -1,1 +1,14 @@
-<p>post-jugadores works!</p>
+
+<section>
+    <input [(ngModel)]="name">
+    <br>
+    <input [(ngModel)]="age">
+    <br>
+    <label>Especifique su posicion: </label>
+    <select [(ngModel)]="posicion">
+        <option value="Defensa">DEFENSA</option>
+        <option value="Medio">MEDIO</option>
+        <option value="Delantero">DELANTERO</option>
+    </select>
+    <button type="button" (click)="addPlayer()">Añadir Jugador</button>
+</section>

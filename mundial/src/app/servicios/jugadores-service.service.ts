@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {JUGADORES} from '../mocks/mockJuga'
 import {Jugadores} from '../clases/jugadores'
@@ -14,5 +14,15 @@ export class JugadoresServiceService {
 
   getJugadores():Observable<Array<Jugadores>>{
     return this.http.get<Array<Jugadores>>(params.URL_PLAYERS);
+  }
+
+  postJugador(jugador:Jugadores){
+    const httpOptions={
+      headers : new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    return this.http.post<Jugadores>(params.URL_PLAYERS,jugador,httpOptions);
   }
 }
