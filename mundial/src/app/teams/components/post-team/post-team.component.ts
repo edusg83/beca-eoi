@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Team } from 'src/app/classes/team';
+import { TeamsService } from 'src/app/services/teams.service';
 
 @Component({
   selector: 'app-post-team',
@@ -6,6 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./post-team.component.css']
 })
 export class PostTeamComponent {
-  id:number=0;
-  name?:string;
+  name:string="";
+
+  constructor(private teamService:TeamsService){ }
+
+
+  postTeam(){
+    let team = new Team();
+    team.name = this.name;
+    team.players = new Array<number>;
+    console.log(team.players)
+
+    this.teamService.postTeam(team);
+  }
+
 }

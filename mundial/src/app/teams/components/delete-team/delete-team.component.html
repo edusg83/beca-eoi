@@ -1,1 +1,10 @@
-<p>delete-team works!</p>
+<form name="FormularioDelete" id = "formularioDelete" class="formularioTipo1">
+    <fieldset id = "info">
+        <legend>Eliminar selección</legend>     
+        <p>
+            <label for = "id" style="padding: 5px;" >ID</label>
+            <input type="text" name="id" placeholder="ID" [(ngModel)] = "id">
+        </p>    
+        <button type="button" (click)="deleteTeam()">Borrar</button>
+    </fieldset>
+</form>

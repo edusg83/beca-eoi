@@ -1,48 +1,49 @@
 {
-    "teams":[
-        {
-            "id":1,
-            "name":"Japón",
-            "players":"[]"
-        },
-        {
-            "id":2,
-            "name":"Camerún",
-            "players":"[]"
-        }
-
-
-    ],
-    "players":[
-        {
-            "id":1,
-            "name":"Eiji Kawashima",
-            "age":39,
-            "position":"PORTERO",
-            "number":1
-        },
-        {
-            "id":2,
-            "name":"Kaoru Mitoma",
-            "age":25,
-            "position":"MEDIO",
-            "number":9
-        },
-        {
-            "id":3,
-            "name":"Nouhou Tolo",
-            "age":25,
-            "position":"DEFENSA",
-            "number":25
-        },
-        {
-            "id":4,
-            "name":"Souaibou Marou",
-            "age":22,
-            "position":"DELANTERO",
-            "number":26
-        }
-
-
-    ]
-  }
+  "teams": [
+    {
+      "id": 1,
+      "name": "Japón",
+      "players": "[]"
+    },
+    {
+      "id": 2,
+      "name": "Camerún",
+      "players": "[]"
+    },
+    {
+      "id": 3,
+      "name": "Argentina",
+      "players": []
+    }
+  ],
+  "players": [
+    {
+      "id": 1,
+      "name": "Eiji Kawashima",
+      "age": 39,
+      "position": "PORTERO",
+      "number": 1
+    },
+    {
+      "id": 2,
+      "name": "Kaoru Mitoma",
+      "age": 25,
+      "position": "MEDIO",
+      "number": 9
+    },
+    {
+      "id": 3,
+      "name": "Nouhou Tolo",
+      "age": 25,
+      "position": "DEFENSA",
+      "number": 25
+    },
+    {
+      "id": 4,
+      "name": "Souaibou Marou",
+      "age": 22,
+      "position": "DELANTERO",
+      "number": 26
+    }
+  ]
+}
