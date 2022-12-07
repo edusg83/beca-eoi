@@ -9,8 +9,10 @@
     "test": "ng test",
     "install":"npm i",
     "interfaces":"ng g interface interfaces/IMundial",
-    "componente":"ng g component componentes/lista-jugadores",
-    "clase":"ng g class clases/Selecciones"
+    "componente":"ng g component componentes/delete-jugadores",
+    "clase":"ng g class clases/Selecciones",
+    "servicio":"ng g service servicios/SeleccionService",
+    "json-server":"json-server --host 192.168.56.1 -w db.json"
   },
   "private": true,
   "dependencies": {
