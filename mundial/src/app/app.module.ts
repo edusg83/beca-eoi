@@ -10,6 +10,10 @@ import { PostJugadoresComponent } from './componentes/post-jugadores/post-jugado
 import { PutJugadoresComponent } from './componentes/put-jugadores/put-jugadores.component';
 import { GetJugadoresComponent } from './componentes/get-jugadores/get-jugadores.component';
 import { DeleteJugadoresComponent } from './componentes/delete-jugadores/delete-jugadores.component';
+import { PostSeleccionesComponent } from './componentes/post-selecciones/post-selecciones.component';
+import { PutSeleccionesComponent } from './componentes/put-selecciones/put-selecciones.component';
+import { GetSeleccionesComponent } from './componentes/get-selecciones/get-selecciones.component';
+import { DeleteSeleccionesComponent } from './componentes/delete-selecciones/delete-selecciones.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { DeleteJugadoresComponent } from './componentes/delete-jugadores/delete-
     PostJugadoresComponent,
     PutJugadoresComponent,
     GetJugadoresComponent,
-    DeleteJugadoresComponent
+    DeleteJugadoresComponent,
+    PostSeleccionesComponent,
+    PutSeleccionesComponent,
+    GetSeleccionesComponent,
+    DeleteSeleccionesComponent
   ],
   imports: [
     BrowserModule,
