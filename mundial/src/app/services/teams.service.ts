@@ -15,20 +15,20 @@ export class TeamsService {
 
 
   getTeams():Observable<Array<Team>>{
-    return this.http.get<Array<Team>>(PARAMS.URL_BACK)
+    return this.http.get<Array<Team>>(PARAMS.URL_TEAMS)
   }
 
   getTeam(id:number):Observable<Team>{
-    return this.http.get<Team>(PARAMS.URL_BACK+"/"+id)
+    return this.http.get<Team>(PARAMS.URL_TEAMS+"/"+id)
   }
 
   postTeam(team:Team){
-    this.http.post<Team>(PARAMS.URL_BACK, team).subscribe();
+    this.http.post<Team>(PARAMS.URL_TEAMS, team).subscribe();
   }
 
 
   deleteTeam(id:number){
-    this.http.delete<Team>(PARAMS.URL_BACK+"/"+id).subscribe();
+    this.http.delete<Team>(PARAMS.URL_TEAMS+"/"+id).subscribe();
   }
 
 }

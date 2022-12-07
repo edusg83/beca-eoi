@@ -22,28 +22,32 @@
       "name": "Eiji Kawashima",
       "age": 39,
       "position": "PORTERO",
-      "number": 1
+      "number": 1,
+      "team": "Japón"
     },
     {
       "id": 2,
       "name": "Kaoru Mitoma",
       "age": 25,
       "position": "MEDIO",
-      "number": 9
+      "number": 9,
+      "team": "Japón"
     },
     {
       "id": 3,
       "name": "Nouhou Tolo",
       "age": 25,
       "position": "DEFENSA",
-      "number": 25
+      "number": 25,
+      "team": "Camerún"
     },
     {
       "id": 4,
       "name": "Souaibou Marou",
       "age": 22,
       "position": "DELANTERO",
-      "number": 26
+      "number": 26,
+      "team": "Camerún"
     }
   ]
 }
