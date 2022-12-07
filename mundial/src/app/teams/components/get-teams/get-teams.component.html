@@ -1,1 +1,24 @@
-<p>get-teams works!</p>
+<h1>Lista de Selecciones</h1>
+    <table id="dataTable" class="tg">
+        <thead>
+            <tr>
+                <th class="th">Id</th>
+                <th class="th">Nombre</th>
+                <th class="th">Jugadores</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        
+        <tr  *ngFor="let team of teams">
+            <td class="tg-0lax">
+                {{team.id}}
+            </td>
+            <td class="tg-0lax">{{team.name}}</td>
+            <td class="tg-0lax"> Players </td>     
+        </tr>
+        
+
+
+        </tbody>
+    </table>

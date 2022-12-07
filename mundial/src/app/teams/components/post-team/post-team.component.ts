@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./post-team.component.css']
 })
 export class PostTeamComponent {
-
+  id:number=0;
+  name?:string;
 }

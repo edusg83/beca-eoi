@@ -8,7 +8,10 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "crear componente": "ng g component teams/components/put-team --module teams/teams-module",
-    "crear modulo": "ng g module teams/teams-module --routing true"
+    "crear modulo": "ng g module teams/teams-module --routing true",
+    "crear servicio": "ng g service services/Teams",
+    "crear clase":"ng g class classes/Team",
+    "arrancar json server": "json-server --host 192.168.1.147 -w db.json"
   },
   "private": true,
   "dependencies": {

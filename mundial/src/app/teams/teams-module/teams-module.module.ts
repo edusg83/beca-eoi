@@ -9,6 +9,9 @@ import { GetTeamsComponent } from '../components/get-teams/get-teams.component';
 import { PostTeamComponent } from '../components/post-team/post-team.component';
 import { PutTeamComponent } from '../components/put-team/put-team.component';
 import { RouterModule } from '@angular/router';
+import { TeamsService } from 'src/app/services/teams.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +26,9 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     TeamsModuleRoutingModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
+    FormsModule
   ]
 })
 export class TeamsModuleModule { }

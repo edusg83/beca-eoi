@@ -1,1 +1,30 @@
-<p>get-team works!</p>
+
+<form name="FormularioGet" id = "formularioGet" class="formularioTipo1">
+    <fieldset id = "info">
+        <legend>Buscar selección</legend>     
+        <p>
+            <label for = "id" style="padding: 5px;" >ID</label>
+            <input type="text" name="id" placeholder="ID" [(ngModel)] = "id">
+        </p>    
+        <button type="button" (click)="getTeam()">Buscar</button>
+    </fieldset>
+</form>
+
+<table id="dataTable" class="tg" *ngIf="ok==true">
+    <thead>
+        <tr>
+            <th class="th">Id</th>
+            <th class="th">Nombre</th>
+            <th class="th">Jugadores</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr> 
+            <td class="tg-0lax">
+                {{id}}
+            </td>
+            <td class="tg-0lax">{{name}}</td>
+            <td class="tg-0lax"> Players </td>     
+        </tr>
+    </tbody>
+</table>

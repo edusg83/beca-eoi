@@ -2,7 +2,7 @@
 <h2>Actualmente tenemos {{articulos | total:'stock'}} productos en Stock</h2>
 
 <article *ngIf="articulos"  class="flex-row">
-    <section *ngFor = "let articulo of articulos" class="article">
+    <section *ngFor="let articulo of articulos" class="article">
       <img [src]="articulo.image" alt="">
       <h2 >{{articulo.id}}</h2>
       <p>{{articulo.name}}</p>

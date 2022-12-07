@@ -57,6 +57,7 @@ function tablaHitos(){
             </tr>`;
         });
 
+
         tabla += filas+finTabla;
         document.getElementById("tablaHitos").innerHTML = tabla;
     });
