@@ -2,11 +2,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TeamsService } from './services/teams.service';
+
 
 
 @NgModule({
@@ -19,7 +19,7 @@ import { TeamsService } from './services/teams.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [TeamsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
