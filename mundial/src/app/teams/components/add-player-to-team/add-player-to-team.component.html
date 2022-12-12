@@ -1,0 +1,24 @@
+
+<form name="formularioAdd" id="formularioAdd" class="formularioTipo1" >
+    <fieldset id="info">
+        <legend>Añadir jugador selección</legend>     
+        <p>
+            <label>Selección</label>
+            <select name="teamName"  [(ngModel)]="team.id" (click)="getTeam()" >
+                <option *ngFor="let teamSelected of teams" [value]="teamSelected.id">
+                    {{teamSelected.name}}
+                </option>
+            </select>
+        </p>    
+        <p>
+            <label>Jugador</label>
+            <select name="playerName"  [(ngModel)]="player.id"  (click)="getPlayer()" (click)="filterPlayers()">
+                <option *ngFor="let playerSelected of playersList" [value]="playerSelected.id">
+                    {{playerSelected.name}}
+                </option>
+            </select>
+        </p>    
+        
+        <button type="button" (click)="addPlayer()" [routerLink]="['/goToTeams']">Actualizar</button>
+    </fieldset>
+</form>

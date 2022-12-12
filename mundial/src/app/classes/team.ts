@@ -1,6 +1,6 @@
 export class Team {
   id:number=0;
-  name:string="";
+  name:string="Sin asignar";
   players:Array<number>=[];
 
 

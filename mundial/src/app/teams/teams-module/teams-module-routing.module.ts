@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddPlayerToTeamComponent } from '../components/add-player-to-team/add-player-to-team.component';
 import { DeleteTeamComponent } from '../components/delete-team/delete-team.component';
 import { GetTeamComponent } from '../components/get-team/get-team.component';
 import { GetTeamsComponent } from '../components/get-teams/get-teams.component';
@@ -22,6 +23,9 @@ const routes: Routes = [
       },
       {
         path:'put-team', component:PutTeamComponent
+      },
+      {
+        path:'add-player-to-team', component:AddPlayerToTeamComponent
       },
       {
         path:'delete-team', component:DeleteTeamComponent

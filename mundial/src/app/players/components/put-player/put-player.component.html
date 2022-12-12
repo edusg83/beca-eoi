@@ -1,1 +1,49 @@
-<p>put-player works!</p>
+
+<form name="formularioPut" id = "formularioPut" class="formularioTipo1" >
+    <fieldset id = "info">
+        <legend>Actualizar jugador</legend>     
+        <p>
+            <label>Jugador</label>
+            <select name="playerName"  [(ngModel)]="player.id" (click)="getPlayer()">
+                <option *ngFor="let playerSelected of players" [value]="playerSelected.id">
+                    {{playerSelected.name}}
+                </option>
+            </select>
+            <!-- <button type="button" (click)="getPlayer()">Buscar</button> -->
+        </p>    
+        <section>
+            <p>
+                <label for="name" style="padding: 5px;" >Nombre</label>
+                <input type="text" name="name" [value]="player.name" [(ngModel)]="newPlayer.name">
+            </p> 
+             <p>
+                <label for = "age" style="padding: 5px;" >Edad</label>
+                <input type="number" name="age" [value]="player.age" [(ngModel)]="newPlayer.age">
+            </p>  
+            <p>
+                <label for = "position" style="padding: 5px;" >Posición</label>
+                <select name="playerPosition"  [(ngModel)]="newPlayer.position">
+                    <option value="PORTERO">PORTERO</option>
+                    <option value="DEFENSA">DEFENSA</option>
+                    <option value="MEDIO">MEDIO</option>
+                    <option value="DELANTERO">DELANTERO</option>
+                </select>
+            </p>    
+            <p>
+                <label for = "number" style="padding: 5px;" >Dorsal</label>
+                <input type="number" name="number" [value]="player.number" [(ngModel)]="newPlayer.number">
+            </p>
+            <p>
+                <label for = "team" style="padding: 5px;" >Selección</label>
+                <select name="playerTeam"  [(ngModel)]="newPlayer.teamId">
+                    <option *ngFor="let team of teams" value="{{team.id}}">
+                        {{team.name}}
+                    </option>       
+                </select>
+            </p>     
+               
+        </section>
+        
+        <button type="button" (click)="putPlayer()" [routerLink]="['/goToPlayers']">Actualizar</button>
+    </fieldset>
+</form>

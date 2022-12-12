@@ -1,24 +1,48 @@
 <h1>Lista de Selecciones</h1>
-    <table id="dataTable" class="tg">
-        <thead>
-            <tr>
-                <th class="th">Id</th>
-                <th class="th">Nombre</th>
-                <th class="th">Jugadores</th>
-            </tr>
-        </thead>
-        <tbody>
-
-        
-        <tr  *ngFor="let team of teams">
-            <td class="tg-0lax">
-                {{team.id}}
-            </td>
-            <td class="tg-0lax">{{team.name}}</td>
-            <td class="tg-0lax"> Players </td>     
-        </tr>
-        
+    
 
 
-        </tbody>
-    </table>
+<section class="row">
+    <div class="col">
+        <table id="dataTable" class="tg">
+            <thead>
+                <tr>
+                    <th class="th">Nombre</th>
+                    <th class="th">Jugadores</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let team of teams">
+                    <td class="tg-0lax">{{team.name}}</td>
+                    <td class="tg-0lax">
+                        <button type="button" (click)="verJugadores(team.id)"> Ver jugadores </button>
+                    </td>     
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col" *ngIf="ok==true">
+        <h2>Jugadores de la selección de {{team.name}}</h2>
+        <table id="playersTable" class="tg">
+            <thead>
+                <tr>
+                    <th class="th">Nombre</th>
+                    <th class="th">Edad</th>
+                    <th class="th">Posición</th>
+                    <th class="th">Dorsal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let player of teamPlayers">
+                    <td class="tg-0lax">{{player.name}}</td>
+                    <td class="tg-0lax" style="text-align: center;">{{player.age}}</td>
+                    <td class="tg-0lax">{{player.position}}</td>
+                    <td class="tg-0lax" style="text-align: center;">{{player.number}}</td> 
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+

@@ -10,17 +10,23 @@ import { TeamsService } from 'src/app/services/teams.service';
 export class DeleteTeamComponent {
 
   id:number=0;
-  name?:string;
-  players:Array<number>=[];
-  ok:boolean=false;
+  teams:Array<Team>=[];
 
   constructor(private teamService:TeamsService){
 
   }
 
+  ngOnInit():void {
+    this.teamService.getTeams().subscribe({
+      next: (teams:Array<Team>)=>{
+        this.teams = teams;
+      }
+    });
+  }
 
-deleteTeam(){
-  this.teamService.deleteTeam(this.id);
-}
+
+  deleteTeam(){
+    this.teamService.deleteTeam(this.id);
+  }
 
 }

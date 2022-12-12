@@ -9,7 +9,7 @@ import { PutPlayerComponent } from '../components/put-player/put-player.componen
 import { DeletePlayerComponent } from '../components/delete-player/delete-player.component';
 import { PlayersDashboardComponent } from '../components/players-dashboard/players-dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     PlayersModuleRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class PlayersModuleModule { }

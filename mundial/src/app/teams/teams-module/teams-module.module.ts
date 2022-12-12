@@ -11,7 +11,8 @@ import { PutTeamComponent } from '../components/put-team/put-team.component';
 import { RouterModule } from '@angular/router';
 import { TeamsService } from 'src/app/services/teams.service';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddPlayerToTeamComponent } from '../components/add-player-to-team/add-player-to-team.component';
 
 
 @NgModule({
@@ -21,14 +22,16 @@ import { FormsModule } from '@angular/forms';
     GetTeamComponent,
     GetTeamsComponent,
     PostTeamComponent,
-    PutTeamComponent
+    PutTeamComponent,
+    AddPlayerToTeamComponent
   ],
   imports: [
     CommonModule,
     TeamsModuleRoutingModule,
     RouterModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class TeamsModuleModule { }

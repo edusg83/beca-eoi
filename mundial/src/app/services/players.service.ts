@@ -25,6 +25,9 @@ export class PlayersService {
     this.http.post<Player>(PARAMS.URL_PLAYERS, player).subscribe();
   }
 
+  putPlayer(player:Player){
+    this.http.put<Player>(PARAMS.URL_PLAYERS+"/"+player.id, player).subscribe();
+  }
 
   deletePlayer(id:number){
     this.http.delete<Player>(PARAMS.URL_PLAYERS+"/"+id).subscribe();

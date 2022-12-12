@@ -2,9 +2,13 @@
     <fieldset id = "info">
         <legend>Eliminar selección</legend>     
         <p>
-            <label for = "id" style="padding: 5px;" >ID</label>
-            <input type="text" name="id" placeholder="ID" [(ngModel)] = "id">
+            <label>Selecciones</label>
+            <select name="teamName"  [(ngModel)] = "id">
+                <option *ngFor="let team of teams" value="{{team.id}}">
+                    {{team.name}}
+                </option>
+            </select>
         </p>    
-        <button type="button" (click)="deleteTeam()">Borrar</button>
+        <button type="button" (click)="deleteTeam()" [routerLink]="['/goToTeams']"> Borrar</button>
     </fieldset>
 </form>

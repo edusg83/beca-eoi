@@ -3,8 +3,12 @@
     <fieldset id = "info">
         <legend>Buscar jugador</legend>     
         <p>
-            <label for = "id" style="padding: 5px;" >ID</label>
-            <input type="text" name="id" placeholder="ID" [(ngModel)] = "id">
+            <label>Jugadores</label>
+            <select name="playerName"  [(ngModel)] = "id">
+                <option *ngFor="let player of players" value="{{player.id}}">
+                    {{player.name}}
+                </option>
+            </select>
         </p>    
         <button type="button" (click)="getPlayer()">Buscar</button>
     </fieldset>
@@ -28,7 +32,7 @@
             <td class="tg-0lax" style="text-align: center;">{{age}}</td>
             <td class="tg-0lax">{{position}}</td>
             <td class="tg-0lax" style="text-align: center;">{{number}}</td>
-            <td class="tg-0lax">{{team}}</td>      
+            <td class="tg-0lax">{{team.name}}</td>      
         </tr>
     </tbody>
 </table>

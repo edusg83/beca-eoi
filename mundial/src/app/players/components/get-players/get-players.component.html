@@ -2,7 +2,6 @@
     <table id="dataTable" class="tg">
         <thead>
             <tr>
-                <th class="th">Id</th>
                 <th class="th">Nombre</th>
                 <th class="th">Edad</th>
                 <th class="th">Posición</th>
@@ -14,12 +13,11 @@
 
         
         <tr  *ngFor="let player of players">
-            <td class="tg-0lax">{{player.id}}</td>
             <td class="tg-0lax">{{player.name}}</td>
             <td class="tg-0lax" style="text-align: center;">{{player.age}}</td>
             <td class="tg-0lax">{{player.position}}</td>
             <td class="tg-0lax" style="text-align: center;">{{player.number}}</td>
-            <td class="tg-0lax">{{player.team}}</td>   
+            <td class="tg-0lax">{{player.team.name}}</td>   
         </tr>
         
 

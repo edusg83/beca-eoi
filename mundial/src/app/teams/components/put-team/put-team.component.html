@@ -1,1 +1,23 @@
-<p>put-team works!</p>
+
+<form name="formularioPut" id="formularioPut" class="formularioTipo1" >
+    <fieldset id="info">
+        <legend>Actualizar selección</legend>     
+        <p>
+            <label>Selección</label>
+            <select name="teamName"  [(ngModel)]="id"  (click)="getTeam()">
+                <option *ngFor="let teamSelected of teams" [value]="teamSelected.id">
+                    {{teamSelected.name}}
+                </option>
+            </select>
+        </p>    
+        <section>
+            <p>
+                <label for="name" style="padding: 5px;" >Nombre</label>
+                <input type="text" name="name" [value]="name" [(ngModel)]="newName">
+            </p> 
+        </section>
+        
+        <button type="button" (click)="putTeam()" [routerLink]="['/goToTeams']">Actualizar</button>
+    </fieldset>
+</form>
+

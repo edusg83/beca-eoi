@@ -1,1 +1,30 @@
-<p>post-player works!</p>
+
+<form name="FormularioPost" id = "formularioPost" class="formularioTipo1">
+    <fieldset id = "info">
+        <legend>Crear jugador</legend>     
+        <p>
+            <label for = "name" style="padding: 5px;" >Nombre</label>
+            <input type="text" name="name" placeholder="Nombre" [(ngModel)] = "name">
+        </p> 
+        <p>
+            <label for = "age" style="padding: 5px;" >Edad</label>
+            <input type="number" name="age" placeholder="Edad" [(ngModel)] = "age">
+        </p>    
+        <p>
+            <label for = "position" style="padding: 5px;" >Posición</label>
+            <select name="playerPosition"  [(ngModel)] = "position">
+                <option value="PORTERO">PORTERO</option>
+                <option value="DEFENSA">DEFENSA</option>
+                <option value="MEDIO">MEDIO</option>
+                <option value="DELANTERO">DELANTERO</option>
+            </select>
+        </p>    
+        <p>
+            <label for = "number" style="padding: 5px;" >Dorsal</label>
+            <input type="number" name="number" placeholder="Dorsal" [(ngModel)] = "number">
+        </p>       
+        <button type="button" (click)="postPlayer()" [routerLink]="['/goToPlayers']">Crear</button>
+        
+
+    </fieldset>
+</form>

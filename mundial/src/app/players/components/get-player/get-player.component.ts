@@ -16,9 +16,18 @@ export class GetPlayerComponent {
   number:number=0;
   team:Team = new Team();
   ok:boolean=false;
+  players:Array<Player>=[];
 
   constructor(private playerService:PlayersService){
 
+  }
+
+  ngOnInit():void {
+    this.playerService.getPlayers().subscribe({
+      next: (players:Array<Player>)=>{
+        this.players = players.sort((a, b)=>a.name.localeCompare(b.name));
+      }
+    });
   }
 
 

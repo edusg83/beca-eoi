@@ -1,1 +1,14 @@
-<p>delete-player works!</p>
+<form name="FormularioDelete" id = "formularioDelete" class="formularioTipo1">
+    <fieldset id = "info">
+        <legend>Eliminar jugador</legend>     
+        <p>
+            <label>Jugadores</label>
+            <select name="playerName"  [(ngModel)] = "id">
+                <option *ngFor="let player of players" value="{{player.id}}">
+                    {{player.name}}
+                </option>
+            </select>
+        </p>    
+        <button type="button" (click)="deletePlayer()" [routerLink]="['/goToPlayers']">Borrar</button>
+    </fieldset>
+</form>

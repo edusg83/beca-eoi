@@ -27,6 +27,11 @@ export class TeamsService {
   }
 
 
+  putTeam(team:Team){
+    this.http.put<Team>(PARAMS.URL_TEAMS+"/"+team.id, team).subscribe();
+  }
+
+
   deleteTeam(id:number){
     this.http.delete<Team>(PARAMS.URL_TEAMS+"/"+id).subscribe();
   }

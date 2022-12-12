@@ -12,21 +12,32 @@ export class GetTeamComponent {
   name?:string;
   players:Array<number>=[];
   ok:boolean=false;
+  teams:Array<Team>=[];
+
 
   constructor(private teamService:TeamsService){
 
   }
 
 
-getTeam(){
-  this.teamService.getTeam(this.id).subscribe({
-    next: (team:Team)=>{
-      console.log(team.name)
-      this.name = team.name;
-      this.players = team.players;
-      this.ok = true;
-    }
-  });
-}
+  getTeam(){
+    this.teamService.getTeam(this.id).subscribe({
+      next: (team:Team)=>{
+        console.log(team.name)
+        this.name = team.name;
+        this.players = team.players;
+        this.ok = true;
+        console.log(this.id)
+      },
+    });
+  }
+
+  ngOnInit():void {
+    this.teamService.getTeams().subscribe({
+      next: (teams:Array<Team>)=>{
+        this.teams = teams;
+      }
+    });
+  }
 
 }

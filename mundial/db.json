@@ -3,17 +3,42 @@
     {
       "id": 1,
       "name": "Japón",
-      "players": "[]"
+      "players": [
+        1,
+        2
+      ]
     },
     {
       "id": 2,
       "name": "Camerún",
-      "players": "[]"
+      "players": [
+        3,
+        4
+      ]
     },
     {
       "id": 3,
       "name": "Argentina",
-      "players": []
+      "players": [
+        5,
+        7
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Inglaterra",
+      "players": [
+        6,
+        8
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Irán",
+      "players": [
+        9,
+        10
+      ]
     }
   ],
   "players": [
@@ -23,7 +48,15 @@
       "age": 39,
       "position": "PORTERO",
       "number": 1,
-      "team": "Japón"
+      "teamId": "1",
+      "team": {
+        "id": 1,
+        "name": "Japón",
+        "players": [
+          1,
+          2
+        ]
+      }
     },
     {
       "id": 2,
@@ -31,7 +64,15 @@
       "age": 25,
       "position": "MEDIO",
       "number": 9,
-      "team": "Japón"
+      "teamId": "1",
+      "team": {
+        "id": 1,
+        "name": "Japón",
+        "players": [
+          1,
+          2
+        ]
+      }
     },
     {
       "id": 3,
@@ -39,7 +80,15 @@
       "age": 25,
       "position": "DEFENSA",
       "number": 25,
-      "team": "Camerún"
+      "teamId": "2",
+      "team": {
+        "id": 2,
+        "name": "Camerún",
+        "players": [
+          3,
+          4
+        ]
+      }
     },
     {
       "id": 4,
@@ -47,7 +96,108 @@
       "age": 22,
       "position": "DELANTERO",
       "number": 26,
-      "team": "Camerún"
+      "teamId": "2",
+      "team": {
+        "id": 2,
+        "name": "Camerún",
+        "players": [
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "name": "Lionel Messi",
+      "age": 35,
+      "position": "DELANTERO",
+      "number": 10,
+      "teamId": "3",
+      "team": {
+        "id": 3,
+        "name": "Argentina",
+        "players": [
+          "5"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "name": "Harry Kane",
+      "age": 29,
+      "position": "DELANTERO",
+      "number": 9,
+      "teamId": 4,
+      "team": {
+        "id": 4,
+        "name": "Inglaterra",
+        "players": [
+          6
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "name": "Franco Armani",
+      "age": 40,
+      "position": "PORTERO",
+      "number": 1,
+      "teamId": "3",
+      "team": {
+        "id": 3,
+        "name": "Argentina",
+        "players": [
+          "5",
+          7
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "name": "Raheem Sterling",
+      "age": 25,
+      "position": "DELANTERO",
+      "number": 8,
+      "teamId": 4,
+      "team": {
+        "id": 4,
+        "name": "Inglaterra",
+        "players": [
+          6,
+          8
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "name": "Shojae Khalilzadeh",
+      "age": 33,
+      "position": "DEFENSA",
+      "number": 25,
+      "teamId": 5,
+      "team": {
+        "id": 5,
+        "name": "Irán",
+        "players": [
+          9
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "name": "Saeid Ezatolahi",
+      "age": 26,
+      "position": "MEDIO",
+      "number": 6,
+      "teamId": "5",
+      "team": {
+        "id": 5,
+        "name": "Irán",
+        "players": [
+          9,
+          10
+        ]
+      }
     }
   ]
 }

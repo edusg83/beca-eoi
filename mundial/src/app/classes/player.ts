@@ -6,6 +6,7 @@ export class Player {
     age:number=0;
     position:string="";
     number:number=0;
+    teamId:number=0;
     team:Team = new Team();
 
 }
