@@ -11,7 +11,8 @@
     "crear modulo": "ng g module players/players-module --routing true",
     "crear servicio": "ng g service services/Players",
     "crear clase":"ng g class classes/Player",
-    "arrancar json server": "json-server --host 192.168.0.47 -w db.json",
+    "M arrancar json server": "json-server --host 192.168.1.147 -w db.json",
+    "P arrancar json server": "json-server --host 192.168.0.47 -w db.json",
     "bootstrap": "ng add @ng-bootstrap/ng-bootstrap"
   },
   "private": true,
